@@ -8,3 +8,7 @@ Build Android project
 Update json file in _projects sub folder and run build_all.bat file on command prompt after compilation we will get all source code and apk in dump folder. 
 
 
+
+Build IOS project
+
+Update merchantData.plist in Data folder and create project by TMStoreCreatorer and build project in xcode.
