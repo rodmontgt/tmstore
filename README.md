@@ -11,4 +11,4 @@ Update json file in _projects sub folder and run build_all.bat file on command p
 
 Build IOS project
 
-Update merchantData.plist in Data folder and create project by TMStoreCreatorer and build project in xcode.
+Update merchantData.plist in Data folder and create project by TMStoreCreatorer and build project in xcode.you may also check with *Building project in TMStoreCreatorer.mov* video file
