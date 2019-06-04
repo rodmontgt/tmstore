@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RadioButton
+        android:id="@+id/btn_payment_gateway_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/normal_text_color"
+        tools:text="btn_payment_gateway_name" />
+
+    <TextView
+        android:id="@+id/text_payment_gateway_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/normal_text_color_lite"
+        android:textSize="10sp"
+        tools:text="text_payment_gateway_description" />
+
+    <TextView
+        android:id="@+id/text_payment_gateway_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/normal_text_color_lite"
+        android:textSize="10sp"
+        tools:text="text_payment_gateway_instructions" />
+</LinearLayout>

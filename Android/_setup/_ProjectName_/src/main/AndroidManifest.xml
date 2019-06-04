@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.twist.tmstore"
+    android:versionCode="126"
+    android:versionName="3.0.9">
+    
+    <!--
+        WARNING :
+        DON'T CHANGE PACKAGE 'com.twist.tmstore' here.
+        If you need to change then only change applicationId in build.gradle
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
+    <!--Remove audio recording permission -->
+    <uses-permission
+        android:name="android.permission.RECORD_AUDIO"
+        tools:node="remove" />
+    
+    <!-- Remove SMS permission -->
+    <uses-permission
+        android:name="android.permission.RECEIVE_SMS"
+        tools:node="remove" />
+    
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    
+    <!-- set call permission to optional to be listed on tablets as well -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    
+    <application
+        android:name=".TMStoreApp"
+        android:allowBackup="false"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:node="merge"
+        tools:overrideLibrary="android.support.v7.appcompat,android.support:design"
+        tools:replace="android:icon,android:theme,android:allowBackup"
+        tools:targetApi="m">
+        <!-- Set usesCleartextTraffic to true for http sites only when required. -->
+        
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+        
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="@string/app_db_name" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="@integer/app_db_version" />
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/ic_stat" />
+        <meta-data
+            android:name="com.utils.glide.UnsafeOkHttpGlideModule"
+            android:value="GlideModule" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1aba6c3975fd2f5ba786d9b9ee3017adeaeead25" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_android_geo_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        
+        <!-- Android Oreo 8.0 compatibility -->
+        <!--<uses-library
+            android:name="org.apache.http.legacy"
+            android:required="true" />-->
+        <activity
+            android:name=".LauncherActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                
+                <data
+                    android:host="@string/host_url"
+                    android:pathPrefix="/"
+                    android:scheme="http" />
+                <data
+                    android:host="@string/host_url"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+                
+                <!-- for google play store -->
+                <data
+                    android:host="play.google.com"
+                    android:pathPrefix="/"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        
+        <activity
+            android:name=".ProductDetailActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".ProfileActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".SettingsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".ChangeCurrencyActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".ProductImagesActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".VendorsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        
+        <activity
+            android:name=".ProductReviewActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        
+        <!-- payment gateway activities start -->
+        
+        <activity
+            android:name=".payments.web.CCAvenueActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.DusuPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PayPalProActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.TapPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PayULatamActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.BrainTreeActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.InstaMojoActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.MyGateActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.StripeActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.AuthorizeNetActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.TwistPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PesaPalActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.VcsCoZaActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.SenangPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.MollieActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PayTMActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PlugnPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.GestpayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.ConektaActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.paystack.PayStackActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.paypal.PayPalActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.payucoza.PayUCoZaActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.WebPayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.SatispayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.SagepayActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.HesabeActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".payments.web.PayfortActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:screenOrientation="portrait" />
+        
+        <!-- payment gateway activities end -->
+        
+        <activity
+            android:name=".ProductUploadActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ShippingAddressPickerActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".multistore.MultiStoreMapActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".multistore.BarcodeReaderActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".multistore.MultiStoreListActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".multistore.MultiStoreListAllActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation|layoutDirection|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        
+        <!-- Play Store Install Receiver -->
+        <receiver
+            android:name=".InstallReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- For FCM Notification Handling -->
+        <meta-data
+            android:name="com.parse.push.gcm_sender_id"
+            android:value="@string/gcm_sender_id" />
+        
+        
+        <receiver
+            android:name=".notifications.ParseNotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        
+        <service
+            android:name=".notifications.MyParseFirbseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        
+        
+        <!-- for Firebase Cloud Messaging Services -->
+        <service
+            android:name=".notifications.MyFcmMessagingService"
+            android:exported="false"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".notifications.MyFcmRegistrationService"
+            android:exported="false" />
+        <service
+            android:name=".notifications.PushReceiverIntentService"
+            android:exported="false" />
+        <service
+            android:name=".services.FetchAddressIntentService"
+            android:exported="false" />
+        <service
+            android:name=".services.GeocodeAddressIntentService"
+            android:exported="false" />
+        <service
+            android:name=".services.GeocodeLocationIntentService"
+            android:exported="false" />
+        
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+        
+        <provider
+            android:name="com.twist.tmstore.DatabaseContentProvider"
+            android:authorities="${applicationId}"
+            android:enabled="true"
+            android:exported="false" />
+    
+    </application>
+
+</manifest>

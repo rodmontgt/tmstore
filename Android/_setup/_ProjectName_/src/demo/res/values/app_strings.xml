@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">TMStoreDemo</string>
+    <string name="live_chat_license_number">7509831</string>
+    <string name="live_chat_user_name">TMStoreDemo</string>
+</resources>

@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_theme"
+        android:gravity="center">
+
+        <com.utils.customviews.CustomFontTextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/txt_common_1"
+            customAttrs:fontName="FONT_MED" />
+
+    </RelativeLayout>
+
+    <com.utils.customviews.CustomFontTextView
+        android:id="@+id/txt_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        customAttrs:fontName="FONT_LIGHT" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="end|center">
+
+        <Button
+            android:id="@+id/btn_update_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="140dp"
+            android:background="@color/clear"
+            android:text="@string/update_now"
+            android:textColor="@color/color_theme"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:background="@color/clear"
+            android:text="@string/later"
+            android:textColor="@color/color_theme"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</LinearLayout>

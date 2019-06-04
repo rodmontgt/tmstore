@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_auction_history_detail"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:text="@string/title_date"
+    android:textColor="@color/normal_text_color"
+    android:textSize="@dimen/order_text_size" />

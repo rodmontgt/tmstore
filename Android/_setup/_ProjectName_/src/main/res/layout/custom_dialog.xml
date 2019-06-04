@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/send_quote"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/normal_text_color"
+        android:textStyle="bold" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                
+                <ImageView
+                    android:id="@+id/iv_form7_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@color/mdtp_dark_gray"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/app_splash" />
+                
+                <LinearLayout
+                    android:id="@+id/layout_dynamic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp" />
+            
+            </FrameLayout>
+            
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_common_1"
+                android:padding="10dp"
+                android:text="@string/ok"
+                android:textColor="@drawable/txt_common_1"
+                android:visibility="visible" />
+        
+        </LinearLayout>
+    
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/left_border_layout_white"
+    tools:context=".fragments.filters.Filter_Attribute">
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listview_filter_attribute_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_filter_attribute_options" />
+
+    <com.utils.customviews.CustomFontTextView xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/text_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:visibility="gone"
+        customAttrs:fontName="FONT_LIGHT"
+        tools:text="attribute_options_unavailable" />
+
+</RelativeLayout>

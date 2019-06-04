@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/auction_item_condition_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_item_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/title_item_condition"
+                android:textColor="@color/normal_text_color"
+                android:textSize="@dimen/auction_text_size" />
+
+            <TextView
+                android:id="@+id/text_item_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:textSize="@dimen/auction_text_size"
+                android:textStyle="bold"
+                tools:text="Item condition" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/remaining_time_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/title_remaining_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:text="@string/title_remaining_time"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/remaining_time_counter_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/color_bg_theme"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_remaining_time_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="Year" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="Months" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_weeks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="Weeks" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_days"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="10 Days" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_hours"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="45 Hours" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="25 Minutes" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/separator" />
+
+                <TextView
+                    android:id="@+id/text_remaining_time_sec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:padding="4dp"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/auction_text_size"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="30 seconds" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/auction_ends_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_auction_ends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/title_auction_ends"
+                android:textColor="@color/normal_text_color"
+                android:textSize="@dimen/auction_text_size" />
+
+            <TextView
+                android:id="@+id/text_auction_ends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:textSize="@dimen/auction_text_size"
+                android:textStyle="bold"
+                tools:text="Auction ends" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/time_zone_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_time_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/title_time_zone"
+                android:textColor="@color/normal_text_color"
+                android:textSize="@dimen/auction_text_size" />
+
+            <TextView
+                android:id="@+id/text_time_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:textSize="@dimen/auction_text_size"
+                android:textStyle="bold"
+                tools:text="Time Zone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/current_bid_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_current_bid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/title_Current_bid"
+                android:textColor="@color/normal_text_color"
+                android:textSize="@dimen/auction_text_size" />
+
+            <TextView
+                android:id="@+id/text_current_bid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:textSize="@dimen/auction_text_size"
+                android:textStyle="bold"
+                tools:text="Current bid" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bid_button_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@color/white"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/bid_qty_section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center|center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_bid_qty_minus"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="6dp"
+                    android:background="@color/clear"
+                    android:gravity="center|center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:srcCompat="@drawable/ic_vc_minus_round" />
+
+                <EditText
+                    android:id="@+id/bid_quantity"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/edit_text_bg"
+                    android:ems="2"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/normal_text_color"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/bid_currency"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ems="2"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/normal_text_color"
+                    android:textSize="12sp"
+                    tools:text="rs." />
+
+                <ImageButton
+                    android:id="@+id/btn_bid_qty_plus"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@color/clear"
+                    android:gravity="center|center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:srcCompat="@drawable/ic_vc_plus_round" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_bid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_common_1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:stateListAnimator="@null"
+                android:text="@string/btn_bid"
+                android:textColor="@drawable/txt_common_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/auction_history_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:id="@+id/auction_history_header_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/title_auction_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="@string/title_auction_history"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/txt_auction_history_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end|center"
+                    android:paddingBottom="4dp"
+                    android:text="@string/title_auction_history"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/separator" />
+
+            <LinearLayout
+                android:id="@+id/auction_history_list_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_auction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+</LinearLayout>

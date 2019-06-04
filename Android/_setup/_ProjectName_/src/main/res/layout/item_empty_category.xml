@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_theme"
+    android:orientation="vertical">
+
+    <com.utils.customviews.CustomFontTextView xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/text_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:textStyle="bold|italic"
+        customAttrs:fontName="FONT_BD"
+        tools:text="Categories not available." />
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/item_bg"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/iv_notification_icon"
+            android:layout_width="@dimen/leftmargin_divider"
+            android:layout_height="@dimen/leftmargin_divider"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/drawable_notification"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_vc_notification" />
+        <!--<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_alignTop="@id/iv_notification_icon"
+            android:layout_alignBottom="@id/iv_notification_icon"
+            android:layout_alignRight="@id/iv_notification_icon"
+            android:src="@drawable/app_icon"
+            android:layout_alignParentStart="true" />-->
+        <TextView
+            android:id="@+id/tv_notification_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iv_notification_icon"
+            android:padding="5dp"
+            android:text="Title"
+            android:textAppearance="?android:textAppearance" />
+
+        <TextView
+            android:id="@+id/tv_notification_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_notification_title"
+            android:layout_toRightOf="@+id/iv_notification_icon"
+            android:padding="5dp"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/tv_notification_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.42pm"
+            android:padding="5dp"
+            android:textColor="@color/normal_text_color_lite"
+            android:layout_below="@+id/tv_notification_description"
+            android:layout_toEndOf="@+id/iv_notification_icon"
+            android:layout_toRightOf="@+id/iv_notification_icon" />
+        <ImageView
+            android:id="@+id/iv_expand"
+            app:srcCompat="@drawable/ic_vc_navigate"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

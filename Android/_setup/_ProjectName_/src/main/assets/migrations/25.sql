@@ -1,0 +1,1 @@
+ALTER TABLE Address ADD COLUMN last_modified_timestamp TEXT;

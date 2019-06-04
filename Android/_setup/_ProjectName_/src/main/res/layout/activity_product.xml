@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_theme" />
+
+    <LinearLayout
+        android:id="@+id/live_chat_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start|left"
+        android:layout_margin="14dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_anchor="@+id/content"
+        app:layout_anchorGravity="bottom|left|start">
+
+        <ImageButton
+            android:id="@+id/btn_live_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:background="@drawable/circle_bg"
+            android:gravity="center|center_vertical"
+            android:padding="@dimen/fab_margin"
+            android:textColor="@color/white"
+            android:visibility="gone"
+
+            app:srcCompat="@drawable/ic_vc_chat" />
+
+        <TextView
+            android:id="@+id/text_live_chat_unread_count"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginStart="-20dp"
+            android:background="@drawable/circle_bg"
+            android:gravity="center|center_vertical"
+            android:textColor="@color/highlight_text_color_2"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</FrameLayout>

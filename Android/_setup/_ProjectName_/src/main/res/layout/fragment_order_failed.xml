@@ -1,0 +1,98 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@color/color_bg_theme">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bottom_border_layout_white"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/payment_fail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="4dp"
+                android:textColor="@color/normal_text_color"
+                tools:text="Payment failed" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/reason_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bottom_border_layout_white"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/text_reason"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/highlight_text_color"
+                tools:text="Payment fail reason" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bottom_border_layout_white"
+            android:padding="4dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/contact_us_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/normal_text_color"
+                tools:text="Contact us line 1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bottom_border_layout_white"
+            android:padding="4dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/contact_us_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:textColor="@color/normal_text_color"
+                tools:text="Contact us line 2" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_common_1"
+            android:textColor="@drawable/txt_common_1"
+            android:visibility="visible"
+            tools:text="Retry" />
+
+    </LinearLayout>
+
+</ScrollView>

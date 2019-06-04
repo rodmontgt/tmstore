@@ -1,0 +1,56 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/left_border_layout_white"
+    tools:context=".fragments.filters.Filter_Sort">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/group_sorts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <!--<RadioButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Price - High to Low"-->
+            <!--android:id="@+id/radioButton"-->
+            <!--android:padding="@dimen/activity_horizontal_margin" />-->
+
+            <!--<RadioButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Price - Low to High"-->
+            <!--android:id="@+id/radioButton2"-->
+            <!--android:padding="@dimen/activity_horizontal_margin" />-->
+
+            <!--<RadioButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Popularity"-->
+            <!--android:id="@+id/radioButton3"-->
+            <!--android:padding="@dimen/activity_horizontal_margin" />-->
+
+            <!--<RadioButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Discount"-->
+            <!--android:id="@+id/radioButton4"-->
+            <!--android:padding="@dimen/activity_horizontal_margin" />-->
+
+            <!--<RadioButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Fresh Arrivals"-->
+            <!--android:id="@+id/radioButton5"-->
+            <!--android:padding="@dimen/activity_horizontal_margin" />-->
+
+        </RadioGroup>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

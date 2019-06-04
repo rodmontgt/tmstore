@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_theme"
+        android:elevation="2dp">
+
+
+        <TextView
+            android:id="@+id/header_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/title_dialog_get_code"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/txt_common_1" />
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/clear"
+            android:foreground="?selectableItemBackground"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_vc_close" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/get_code_step_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get_code_step_1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/normal_text_color" />
+
+            <TextView
+                android:id="@+id/get_code_step_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get_code_step_1"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/normal_text_color" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

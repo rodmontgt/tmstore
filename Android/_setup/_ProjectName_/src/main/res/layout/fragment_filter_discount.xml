@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/left_border_layout_white"
+    android:orientation="vertical"
+    tools:context=".fragments.filters.Filter_PriceRange">
+
+    <CheckBox
+        android:id="@+id/chkDiscount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:text="show_discounted_only" />
+
+</LinearLayout>

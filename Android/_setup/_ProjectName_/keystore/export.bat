@@ -1,0 +1,3 @@
+keytool -list -v -keystore TMStoreDemo.keystore -alias TMStoreDemo -storepass tmstore_tmstoredemo -keypass tmstore_tmstoredemo>>tmstoredemo_keys.txt
+echo "\n-------------------------------------------------------------\n">>tmstoredemo_keys.txt
+keytool -exportcert -alias TMStoreDemo -keystore TMStoreDemo.keystore -storepass tmstore_tmstoredemo | openssl sha1 -binary | openssl base64>>tmstoredemo_keys.txt

@@ -1,0 +1,290 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_splash_bg">
+    
+    <com.utils.customviews.TextureVideoView
+        android:id="@+id/intro_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    <ImageView
+        android:id="@+id/intro_anim_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    
+    <RelativeLayout
+        android:id="@+id/main_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_splash_bg">
+        
+        <ImageView
+            android:id="@+id/image_splash_full"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/btn_launch_sample"
+            android:layout_toRightOf="@+id/btn_launch_sample"
+            android:scaleType="fitCenter" />
+        
+        <LinearLayout
+            android:id="@+id/centerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:id="@+id/image_app_splash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/clear"
+                android:src="@drawable/app_splash" />
+            
+            <LinearLayout
+                android:id="@+id/layout_sample_app"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:visibility="gone">
+                
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    card_view:cardUseCompatPadding="true">
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="visible">
+                        
+                        <!--<com.utils.customviews.CustomFontTextView
+                            android:id="@+id/enter_app_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/activity_vertical_margin_half"
+                            android:paddingTop="@dimen/activity_vertical_margin_half"
+                            android:visibility="visible"
+                            app:fontName="FONT_MED"
+                            tools:text="Enter app code" />-->
+                        
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|bottom"
+                            android:gravity="start|bottom"
+                            android:orientation="horizontal">
+                            
+                            <Button
+                                android:id="@+id/btn_enter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/btn_common_1"
+                                android:textColor="@drawable/txt_common_1"
+                                tools:text="Enter" />
+                            
+                            <EditText
+                                android:id="@+id/editText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/btn_enter"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_toStartOf="@+id/btn_enter"
+                                android:layout_toLeftOf="@+id/btn_enter"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                tools:hint="prompt_demo_code" />
+                        </RelativeLayout>
+                    
+                    </LinearLayout>
+                
+                </android.support.v7.widget.CardView>
+                
+                <com.utils.customviews.CustomFontTextView
+                    android:id="@+id/txt_help_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    app:fontName="FONT_MED"
+                    tools:text="demo_code_help_1" />
+                
+                <com.utils.customviews.CustomFontTextView
+                    android:id="@+id/txt_help_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    app:fontName="FONT_MED"
+                    tools:text="demo_code_help_2" />
+            </LinearLayout>
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/text_merchant_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_splash_full"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:visibility="gone"
+            tools:text="Merchant Description" />
+        
+        <LinearLayout
+            android:id="@+id/loading_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_tmstore"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+            
+            <TextView
+                android:id="@+id/txt_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="1"
+                android:padding="8dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                tools:text="Loading UI" />
+            
+            <com.utils.customviews.progressbar.CircleProgressBar
+                android:id="@+id/progress"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                android:visibility="visible" />
+        
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/error_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_tmstore"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <TextView
+                android:id="@+id/txt_error_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                tools:text="Error" />
+            
+            <ImageButton
+                android:id="@+id/btn_retry"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/image_round_bg"
+                app:srcCompat="@drawable/ic_vc_refresh" />
+        
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/txt_tmstore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/normal_text_color"
+            tools:text="Powered by TM Store" />
+        
+        <Button
+            android:id="@+id/btn_launch_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txt_tmstore"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/btn_common_1"
+            android:textColor="@drawable/txt_common_1"
+            android:visibility="gone"
+            tools:text="Launch Sample" />
+        
+        <Button
+            android:id="@+id/btn_debug1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/clear"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text=" "
+            android:textColor="@color/clear"
+            android:visibility="visible" />
+        
+        <Button
+            android:id="@+id/btn_debug2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/clear"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text=" "
+            android:textColor="@color/clear"
+            android:visibility="visible" />
+        
+        <Button
+            android:id="@+id/btn_debug3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/clear"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text=" "
+            android:textColor="@color/clear"
+            android:visibility="visible" />
+        
+        <Button
+            android:id="@+id/btn_debug4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:background="@color/clear"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text=" "
+            android:textColor="@color/clear"
+            android:visibility="visible" />
+    </RelativeLayout>
+</RelativeLayout>

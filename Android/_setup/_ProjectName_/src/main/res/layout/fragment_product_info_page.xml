@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetailActivity">
+
+    <!-- CoordinatorLayout is a super-powered FrameLayout -->
+
+    <com.utils.customviews.progressbar.CircleProgressBar
+        android:id="@+id/progress_fulldata"
+        android:layout_width="@dimen/circle_progress_bar_size"
+        android:layout_height="@dimen/circle_progress_bar_size"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="@dimen/bottom_margin_progressbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.utils.customviews.ObservableScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="top"
+            android:background="@color/white"
+            tools:ignore="ScrollViewSize,UnusedAttribute">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@color/white"
+                android:orientation="vertical"
+                tools:ignore="ScrollViewSize,UnusedAttribute">
+
+                <TextView
+                    android:id="@+id/text_page_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_theme"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/color_actionbar_text"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/fragment_product_info_inner"
+                    layout="@layout/fragment_product_info_inner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </com.utils.customviews.ObservableScrollView>
+
+        <FrameLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/buy_cart_section_bottom_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/section_separator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/separator" />
+
+                <LinearLayout
+                    android:id="@+id/buy_cart_section_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cart_section_overlay_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

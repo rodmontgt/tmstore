@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/clear"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/layout_reviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:orientation="vertical" />
+    <!--android:divider="@null"-->
+    <!--android:dividerHeight="2dp"-->
+
+    <com.utils.customviews.progressbar.CircleProgressBar
+        android:id="@+id/progress_reviewdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

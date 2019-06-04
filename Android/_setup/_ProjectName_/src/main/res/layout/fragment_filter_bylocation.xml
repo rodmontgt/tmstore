@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/geolocation_viewmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/left_border_layout_white"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".fragments.filters.Fragment_FilterByLocation">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/label_loca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--android:paddingTop="14dp"-->
+
+        <EditText
+            android:id="@+id/text_find_loc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_vc_location"
+            android:drawableStart="@drawable/ic_vc_location"
+            android:ems="10"
+            tools:hint="@string/search_location"
+            android:inputType="textPostalAddress|textCapWords"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            android:textColor="@color/normal_text_color"
+            android:textColorHint="@color/normal_text_color_lite" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_my_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_common_1"
+        android:gravity="center"
+        android:textColor="@drawable/txt_common_1"
+        android:textStyle="bold"
+        tools:text="@string/text_autofill" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="6dp"
+                tools:text="@string/title_range"
+                android:visibility="gone" />
+            <!--android:hint="@string/label_hour_reservation"-->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/label_loc_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp">
+
+                <EditText
+                    android:id="@+id/text_loc_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789."
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="@color/normal_text_color"
+                    android:textColorHint="@color/normal_text_color_lite"
+                    tools:text="@string/title_range" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_range_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6dp"
+                tools:text="@string/title_range_in" />
+
+            <Spinner
+                android:id="@+id/spinner_loc_range"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

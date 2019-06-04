@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_bg_theme"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/price_section"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="end|center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingEnd="6dip"
+                    android:paddingLeft="6dip"
+                    android:paddingRight="6dip"
+                    android:paddingStart="6dip">
+
+                    <com.utils.customviews.CustomFontTextView xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:paddingLeft="5dip"
+                        android:paddingStart="5dip"
+                        android:textColor="@color/normal_text_color"
+                        customAttrs:fontName="FONT_MED"
+                        tools:text="name" />
+
+                    <TextView
+                        android:id="@+id/regular_price"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/normal_text_color_lite"
+                        android:textDirection="locale"
+                        tools:text="regular_price" />
+
+                    <TextView
+                        android:id="@+id/sale_price"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/normal_text_color"
+                        android:textDirection="locale"
+                        tools:text="sale_price" />
+
+                    <TextView
+                        android:id="@+id/txt_discount"
+                        style="?android:textAppearanceSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/highlight_text_color"
+                        tools:text="txt_discount" />
+
+                    <ToggleButton
+                        android:id="@+id/chk_wishlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/btn_common_1"
+                        android:minHeight="28dp"
+                        android:textAllCaps="true"
+                        android:textColor="@drawable/txt_common_1"
+                        android:textSize="12sp"
+                        android:visibility="gone" />
+
+                    <include
+                        layout="@layout/add_to_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/img_section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="180dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_toLeftOf="@+id/price_section"
+                    android:layout_toStartOf="@+id/price_section"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180dp"
+                        android:scaleType="fitCenter" />
+
+                    <LinearLayout
+                        android:id="@+id/out_of_stock_section"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/text_out_of_stock"
+                            style="?android:textAppearanceMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:padding="5dp"
+                            android:textColor="@color/white"
+                            tools:text="@string/out_of_stock_tag" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/text_saletag"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="start|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center_horizontal"
+                    android:paddingEnd="6dip"
+                    android:paddingLeft="6dip"
+                    android:paddingRight="6dip"
+                    android:paddingStart="6dip"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:text="@string/sale_tag" />
+
+                <TextView
+                    android:id="@+id/text_newtag"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/text_saletag"
+                    android:layout_gravity="start|center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:gravity="start|center_horizontal"
+                    android:paddingEnd="6dip"
+                    android:paddingLeft="6dip"
+                    android:paddingRight="6dip"
+                    android:paddingStart="6dip"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:text="@string/new_tag" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".fragments.filters.Fragment_FilterGroup">
+
+    <LinearLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_theme"
+        android:minHeight="?actionBarSize"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@color/clear"
+            android:foreground="?selectableItemBackground"
+            android:padding="12dp"
+            app:srcCompat="@drawable/ic_vc_close" />
+
+        <TextView
+            android:id="@+id/filter_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_actionbar_text"
+            android:textAllCaps="true"
+            tools:text="Filters" />
+
+        <TextView
+            android:id="@+id/text_clear_filters"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/clear"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textAllCaps="true"
+            android:foreground="?selectableItemBackground"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/color_actionbar_text"
+            tools:text="@string/clear_filters" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/header_box"
+        android:background="@drawable/drop_shadow" />
+
+    <LinearLayout
+        android:id="@+id/filter_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer_section"
+        android:layout_below="@+id/shadow_view"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="@dimen/filter_option_column_width"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants">
+
+            <LinearLayout
+                android:id="@+id/filters_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/fragments_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/left_border_layout_white">
+
+
+            <com.utils.customviews.CustomFontTextView
+                android:id="@+id/select_filter_to_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="select_filter_to_apply"
+                customAttrs:fontName="FONT_LIGHT" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/top_border_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/btn_apply_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_common_1"
+            android:minHeight="48dp"
+            android:text="@string/apply"
+            android:textColor="@drawable/txt_common_1" />
+    </LinearLayout>
+</RelativeLayout>

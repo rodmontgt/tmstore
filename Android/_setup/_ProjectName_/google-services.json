@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "158145281215",
+    "project_id": "tmstore-demo-gcm"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158145281215:android:aee2de4ee53d81a3",
+        "android_client_info": {
+          "package_name": "com.tmstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrvcZIk7LJZj_j0pqfpfuv4AYP1crcMaQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

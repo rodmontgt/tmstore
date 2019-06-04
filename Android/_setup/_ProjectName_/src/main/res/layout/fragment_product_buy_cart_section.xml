@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--<View-->
+    <!--android:id="@+id/btn_separator"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="@color/separator" />-->
+
+    <LinearLayout
+        android:id="@+id/button_cart_section"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/variation_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_qty_minus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@color/clear"
+                android:gravity="center|center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_vc_minus_round" />
+
+            <EditText
+                android:id="@+id/quantity"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/edit_text_bg"
+                android:ems="2"
+                android:gravity="center"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingBottom="4dp"
+                android:paddingEnd="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingStart="0dp"
+                android:paddingTop="4dp"
+                android:textColor="@color/normal_text_color"
+                android:textSize="12sp" />
+            <!--android:text="1"-->
+
+            <ImageButton
+                android:id="@+id/btn_qty_plus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginStart="6dp"
+                android:background="@color/clear"
+                android:gravity="center|center_vertical"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:srcCompat="@drawable/ic_vc_plus_round" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_to_cart2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_common_1"
+            android:stateListAnimator="@null"
+            android:text="@string/add_to_cart"
+            android:textColor="@drawable/txt_common_1" />
+
+        <com.utils.customviews.ControllableCheckBox
+            android:id="@+id/btn_wishlist1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/clear" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/button_buy_section"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/white"
+        android:visibility="gone">
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:layout_marginEnd="10dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginStart="10dp"-->
+        <!--android:layout_marginTop="5dp"-->
+
+        <Button
+            android:id="@+id/btn_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_common_1"
+            android:stateListAnimator="@null"
+            android:text="@string/buy"
+            android:textColor="@drawable/txt_common_1" />
+
+        <LinearLayout
+            android:id="@+id/layout_wishlist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45"
+            android:gravity="center|center_vertical">
+
+            <com.utils.customviews.ControllableCheckBox
+                android:id="@+id/btn_wishlist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/clear" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_1"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/separator" />
+
+        <LinearLayout
+            android:id="@+id/layout_add_to_cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.45"
+            android:clickable="true"
+            android:gravity="center">
+
+            <com.utils.customviews.ControllableCheckBox
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/clear"
+                android:contentDescription="@string/add_to_cart"
+                android:gravity="center"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</merge>

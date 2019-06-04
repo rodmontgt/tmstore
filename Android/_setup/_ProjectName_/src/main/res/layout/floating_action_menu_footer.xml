@@ -1,0 +1,251 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_gravity="bottom|start"
+
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/item_img_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:paddingStart="2dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_img_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_download" />
+
+        <TextView
+            android:id="@+id/ftb_text_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/download_selected"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_cart" />
+
+        <TextView
+            android:id="@+id/ftb_text_add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_img_add_single_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_add_single_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_wish_flat" />
+
+        <TextView
+            android:id="@+id/ftb_text_add_single_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/add_to_wishlist"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_add_multiple_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_add_multiple_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_wish_flat" />
+
+        <TextView
+            android:id="@+id/ftb_text_add_multiple_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/add_to_mlultiple_wishlist"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_share" />
+
+        <TextView
+            android:id="@+id/ftb_text_share"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/share"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="2dp"
+        android:paddingStart="2dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:pressedTranslationZ="12dp"
+            app:srcCompat="@drawable/ic_vc_delete" />
+
+        <TextView
+            android:id="@+id/ftb_text_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:background="@color/ftb_text_bg"
+            android:padding="2dp"
+            android:text="@string/delete"
+            android:textColor="@color/ftb_text" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="2dp"
+            app:elevation="2dp"
+            app:pressedTranslationZ="2dp"
+            app:srcCompat="@drawable/ic_vc_more_horiz" />
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:elevation="10dp"
+            android:paddingRight="2dp"
+            tools:ignore="RtlHardcoded,RtlSymmetry">
+
+            <ImageView
+                android:id="@+id/icon_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/img_icon_badge"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/selected_product_count_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="22"
+                android:textColor="@color/ftb_text_bg"
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
+
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>

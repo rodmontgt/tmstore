@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <LinearLayout
+        android:id="@+id/image_flag_bg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/currency_radio_button"
+        android:background="@drawable/bg_circle">
+
+        <com.utils.customviews.RoundedImageView
+            android:id="@+id/image_flag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <com.utils.customviews.CustomFontTextView xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/image_flag_bg"
+        android:layout_toRightOf="@+id/image_flag_bg"
+        android:ellipsize="end"
+        android:textColor="@color/normal_text_color"
+        android:textStyle="bold"
+        customAttrs:fontName="FONT_MED"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/description"
+        style="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_below="@+id/name"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/normal_text_color_lite"
+        tools:text="regular_price" />
+
+    <RadioButton
+        android:id="@+id/currency_radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:text="" />
+</RelativeLayout>

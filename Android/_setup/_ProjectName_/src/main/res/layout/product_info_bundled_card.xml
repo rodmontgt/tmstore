@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bundled_products_section"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <!--<TextView
+        android:id="@+id/header_bundled_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:text="header_bundled_products"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:visibility="gone" />-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bundled_products_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_bundled_product_list" />
+
+</LinearLayout>

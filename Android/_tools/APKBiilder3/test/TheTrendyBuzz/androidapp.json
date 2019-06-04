@@ -1,0 +1,17 @@
+{
+  "parse_app_id": "iUvFN0DF1I9djNdF9zSP8d47vNdLRdyFQD91YUdV",
+  "parse_client_key": "iHtTCx9mlbDNZkLte6aaexy8gKvKPkfBKWuaxWgs",
+  "txt_project_name": "TheTrendyBuzz",
+  "txt_package_name": "com.tmstore.thetrendybuzz",
+  "txt_display_name": "TheTrendyBuzz",
+  "certificateDetails": {
+    "aliasPassword": "tmstore_thetrendybuzz",
+    "aliasName": "TheTrendyBuzz",
+    "keyStoreName": "TheTrendyBuzz_keyStore.keystore",
+    "keyStorePassword": "tmstore_thetrendybuzz"
+  },
+  "app_files": {
+    "app_splash": "app_splash.png",
+    "app_icon": "app_icon.png"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="HardcodedText">
+        <ignore path="res/layout/fragment_product_info.xml" />
+    </issue>
+    <issue id="RtlHardcoded">
+        <ignore path="res/layout/fragment_product_info.xml" />
+    </issue>
+</lint>

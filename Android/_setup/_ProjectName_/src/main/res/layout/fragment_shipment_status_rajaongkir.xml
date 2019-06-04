@@ -1,0 +1,246 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_theme"
+    android:padding="@dimen/fragment_horizontal_margin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/section_shipment_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/delivery_status_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/text_delivery_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/card_header_bg"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/text_delivery_status"
+                    android:textColor="@color/normal_text_color"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <TextView
+                        android:id="@+id/text_delivery_receiver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_delivery_receiver"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_delivery_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_delivery_date"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_delivery_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_delivery_time"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/delivery_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/text_delivery_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_bg"
+                    android:gravity="center_vertical"
+                    android:padding="8dp"
+                    android:text="@string/label_delivery_details"
+                    android:textColor="@color/normal_text_color"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <TextView
+                        android:id="@+id/text_bill_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_bill_number"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_bill_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_bill_date"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_bill_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_bill_time"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_order_origin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_order_origin"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_order_destination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_order_destination"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_order_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_order_weight"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+                    <TextView
+                        android:id="@+id/text_shipper_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_shipper_name"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_shipper_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_shipper_address"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_shipper_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_shipper_city"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_receiver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_receiver_name"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_receiver_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_receiver_address"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/text_receiver_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/order_text_padding"
+                        android:text="@string/text_receiver_city"
+                        android:textColor="@color/normal_text_color"
+                        android:textSize="@dimen/order_text_size" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/list_manifest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/transparent"
+                android:dividerPadding="10dp"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/text_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/no_data"
+        android:textColor="@color/normal_text_color_lite" />
+
+    <com.utils.customviews.progressbar.CircleProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:visibility="visible" />
+
+</RelativeLayout>

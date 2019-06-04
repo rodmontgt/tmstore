@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="1dp"
+        android:color="@color/error_toast_stroke" />
+    <corners android:radius="16dp" />
+    <gradient
+        android:angle="-90"
+        android:endColor="@color/error_toast_background"
+        android:startColor="@color/error_toast_background" />
+</shape>

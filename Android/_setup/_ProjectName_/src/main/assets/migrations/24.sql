@@ -1,0 +1,3 @@
+ALTER TABLE Address ADD COLUMN latitude TEXT;
+ALTER TABLE Address ADD COLUMN longitude TEXT;
+ALTER TABLE AppUser ADD COLUMN address_json TEXT;

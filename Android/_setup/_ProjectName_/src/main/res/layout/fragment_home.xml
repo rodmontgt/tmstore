@@ -1,0 +1,66 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_theme"
+        android:orientation="vertical">
+
+        <com.utils.customviews.BannerImage
+            android:id="@+id/img_theme_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_theme_3"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/extra_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/dynamic_panel_v20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_home_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_bg_theme"
+            android:scrollbars="vertical"
+            app:layoutManager="GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_category_home_square" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dynamic_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left|start"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include
+            layout="@layout/floating_action_menu_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_menu_left_margin" />
+
+    </LinearLayout>
+
+</FrameLayout>
+

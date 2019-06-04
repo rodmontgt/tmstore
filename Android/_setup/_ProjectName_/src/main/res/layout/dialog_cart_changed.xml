@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_theme">
+
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/clear"
+            android:foreground="?selectableItemBackground"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_vc_close" />
+
+        <com.utils.customviews.CustomFontTextView
+            android:id="@+id/text_dialog_cart_update"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/title_dialog_cart_update"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/txt_common_1"
+            customAttrs:fontName="FONT_MED" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.utils.customviews.CustomFontTextView
+            android:id="@+id/txt_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            customAttrs:fontName="FONT_MED" />
+    </ScrollView>
+</LinearLayout>

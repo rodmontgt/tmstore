@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS RecentlyViewedItem (type INTEGER, item_id INTEGER, title TEXT, thumb TEXT, short_description TEXT, sku TEXT)

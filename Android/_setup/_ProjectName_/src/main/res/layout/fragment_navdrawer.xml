@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/drawer_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:foreground="?selectableItemBackground"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="com.twist.tmstore.fragments.Fragment_NavigationDrawer" />
+
+    <TextView
+        android:id="@+id/text_navdrawer_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center_vertical"
+        android:minHeight="80dp"
+        android:paddingEnd="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/normal_text_color"
+        android:visibility="visible"
+        tools:text="Term &amp; Condition" />
+    <!--android:autoLink="web"-->
+
+    <com.utils.customviews.BannerImage
+        android:id="@+id/image_seasonal_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_theme_2"
+        android:visibility="gone" />
+</LinearLayout>

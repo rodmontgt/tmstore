@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS WishGroup (group_id INTEGER,title TEXT NOT NULL);

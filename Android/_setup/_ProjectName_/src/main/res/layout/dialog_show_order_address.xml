@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header_box"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/location_address"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:background="@color/clear"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_vc_location" />
+
+        <TextView
+            android:id="@+id/header_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@drawable/txt_common_1"
+            android:textStyle="bold" />
+        <!--tools:text="@string/action_reset_password"-->
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_vc_close" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingEnd="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/name_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_name"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/company_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_company"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Company" />
+
+            <TextView
+                android:id="@+id/txt_company"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                tools:text="Company" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address1_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_address1"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="@string/title_address1" />
+
+            <TextView
+                android:id="@+id/txt_address1"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="@string/title_address1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address2_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_address2"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="@string/title_address2" />
+
+            <TextView
+                android:id="@+id/txt_address2"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="@string/title_address2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/city_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_city"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="City" />
+
+            <TextView
+                android:id="@+id/txt_city"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="City" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/state_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_state"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="State" />
+
+            <TextView
+                android:id="@+id/txt_state"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="State" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/postcode_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/title_postcode"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Postcode" />
+
+            <TextView
+                android:id="@+id/txt_postcode"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Postcode" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/country_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/title_country"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Country" />
+
+            <TextView
+                android:id="@+id/txt_country"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="gone"
+                tools:text="Country" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/title_email"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Country" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="gone"
+                tools:text="E-Mail" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title_phone"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                android:visibility="visible"
+                tools:text="Phone" />
+
+            <TextView
+                android:id="@+id/txt_phone"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/order_text_padding"
+                android:textColor="@color/normal_text_color"
+                tools:text="Phone" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_map_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_common_1"
+            android:drawableLeft="@drawable/ic_vc_location"
+            android:drawableStart="@drawable/ic_vc_location"
+            android:minWidth="120dp"
+            android:padding="12dp"
+            android:textColor="@drawable/txt_common_1"
+            android:textStyle="bold"
+            tools:text="@string/locate" />
+        <!--android:paddingEnd="15dp"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:paddingStart="15dp"-->
+        <!--android:drawableTint="@color/color_actionbar_text"-->
+
+    </LinearLayout>
+</LinearLayout>

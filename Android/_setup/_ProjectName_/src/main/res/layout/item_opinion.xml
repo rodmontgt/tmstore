@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_border_layout"
+    android:orientation="vertical"
+    android:paddingBottom="1dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:gravity="start|center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:src="@drawable/placeholder_product" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:orientation="vertical"
+            android:layout_marginStart="5dip">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dip"
+                android:paddingBottom="2dip"
+                android:textColor="@color/normal_text_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dip"
+                android:paddingTop="2dip"
+                android:textColor="@color/normal_text_color" />
+
+            <!--<RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/likes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="left|center"
+                    android:padding="6dip"
+                    android:paddingTop="2dip"
+                    android:textColor="@color/normal_text_color" />
+
+                <TextView
+                    android:id="@+id/dislikes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left|center"
+                    android:padding="6dip"
+                    android:paddingTop="2dip"
+                    android:textColor="@color/normal_text_color" />
+
+            </RelativeLayout>-->
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/clear"
+        android:gravity="end|center_vertical">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:srcCompat="@drawable/ic_vc_like" />
+
+            <TextView
+                android:id="@+id/likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingLeft="4dp"
+                android:textStyle="bold"
+                android:text="0"
+                android:paddingStart="4dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginStart="1dp">
+
+            <ImageView
+                android:id="@+id/img_unlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/clear"
+                android:paddingTop="4dp"
+                app:srcCompat="@drawable/ic_vc_dislike" />
+
+            <TextView
+                android:id="@+id/unlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:background="@color/white"
+                android:text="0"
+                android:textStyle="bold"
+                android:paddingStart="4dp" />
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/btn_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_vc_cart"
+            android:layout_marginStart="1dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

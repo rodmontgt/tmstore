@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="0dp"
+    android:animateLayoutChanges="false"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_minimum_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:text="@string/minimum_qty"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/normal_text_color"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/runtime_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/buy_cart_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_free_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="6dp"
+        android:text="@string/buy_button_description"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/normal_text_color"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/button_opinion_section"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/clear"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45"
+            android:gravity="center|center_vertical">
+
+            <ImageView
+                android:id="@+id/img_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:srcCompat="@drawable/ic_vc_like" />
+
+            <TextView
+                android:id="@+id/likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="0"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_2"
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/separator" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45"
+            android:gravity="center|center_vertical">
+
+            <ImageView
+                android:id="@+id/img_unlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/clear"
+                android:paddingTop="6dp"
+                app:srcCompat="@drawable/ic_vc_dislike" />
+
+            <TextView
+                android:id="@+id/unlikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="6dp"
+                android:paddingStart="6dp"
+                android:text="0"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_poll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_common_1"
+            android:drawableLeft="@drawable/ic_vc_whatsapp_compat"
+            android:drawableStart="@drawable/ic_vc_whatsapp_compat"
+            android:paddingEnd="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:paddingStart="15dp"
+            android:text="@string/title_poll"
+            android:textColor="@drawable/txt_common_1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_share_full_section"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/clear"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txt_share_full"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:text="@string/share_via_whatsapp"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/btn_share_full"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_common_1"
+            android:drawableLeft="@drawable/ic_vc_whatsapp_compat"
+            android:drawableStart="@drawable/ic_vc_whatsapp_compat"
+            android:paddingEnd="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
+            android:paddingStart="15dp"
+            android:text="@string/share"
+            android:textColor="@drawable/txt_common_1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pincode_settings_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:animateLayoutChanges="false"
+        android:orientation="vertical" />
+
+</LinearLayout>

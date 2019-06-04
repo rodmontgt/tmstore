@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/quick_cart_section"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    android:layout_marginEnd="6dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginStart="6dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="@drawable/btn_common_1"
+        android:text="add_to_cart"
+        android:textColor="@drawable/txt_common_1"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/quantity_section"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center|center_horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_qty_minus"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/clear"
+            android:gravity="center|center_vertical"
+            android:padding="0dp"
+            android:textColor="@color/white"
+            app:srcCompat="@drawable/ic_vc_minus_round" />
+
+        <EditText
+            android:id="@+id/quantity"
+            style="?android:textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/edit_text_bg"
+            android:ems="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingBottom="4dp"
+            android:paddingEnd="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingStart="0dp"
+            android:paddingTop="4dp"
+            android:text="1"
+            android:textColor="@color/normal_text_color"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/btn_qty_plus"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/clear"
+            android:gravity="center|center_vertical"
+            android:textColor="@color/white"
+            app:srcCompat="@drawable/ic_vc_plus_round" />
+
+    </LinearLayout>
+
+    <com.utils.customviews.progressbar.CircleProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_margin="2dp"
+        android:visibility="visible" />
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv"
+    android:layout_width="150dp"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:id="@+id/name_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_theme"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/text_categoryname"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="top"
+            android:scaleType="centerInside" />
+
+        <com.utils.customviews.CustomFontTextView
+            android:id="@+id/text_categoryname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:maxLines="2"
+            android:minLines="2"
+            android:padding="5dp"
+            android:text="text_categoryname"
+            android:textAllCaps="true"
+            android:textColor="@color/normal_text_color"
+            app:fontName="FONT_MED" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

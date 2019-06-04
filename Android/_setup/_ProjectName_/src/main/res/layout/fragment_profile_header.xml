@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/profile_txt"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <com.utils.customviews.BannerImage
+            android:id="@+id/profile_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@color/clear" />
+
+        <com.utils.customviews.RoundedImageView
+            android:id="@+id/iv_user_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/user_img" />
+        <!--android:layout_centerHorizontal="true"-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/iv_user_profile"
+            android:layout_toRightOf="@+id/iv_user_profile"
+            android:gravity="start"
+            android:orientation="vertical">
+            <!--android:layout_centerHorizontal="true"-->
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="TMStore"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/normal_text_color"
+                android:textSize="@dimen/fragment_title_size" />
+
+            <TextView
+                android:id="@+id/tv_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="test@example.com"
+                android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                android:textColor="@color/normal_text_color" />
+
+            <TextView
+                android:id="@+id/your_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="2dp"
+                android:text="@string/your_points"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/normal_text_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_vendor_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:padding="2dp"
+                android:text="@string/vendor_status_label"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/normal_text_color" />
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/booking_id_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title_booking_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_id"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/order_text_size" />
+
+        <TextView
+            android:id="@+id/text_booking_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_id"
+            android:textSize="@dimen/order_text_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/booking_start_date_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title_booking_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_start_date"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/order_text_size" />
+
+        <TextView
+            android:id="@+id/text_booking_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_start_date"
+            android:textSize="@dimen/order_text_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/booking_end_date_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title_booking_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_end_date"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/order_text_size" />
+
+        <TextView
+            android:id="@+id/text_booking_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_end_date"
+            android:textSize="@dimen/order_text_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/booking_status_section"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title_booking_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_status"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/order_text_size" />
+
+        <TextView
+            android:id="@+id/text_booking_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/order_text_padding"
+            android:paddingLeft="@dimen/order_text_padding"
+            android:paddingRight="@dimen/order_text_padding"
+            android:paddingStart="@dimen/order_text_padding"
+            android:text="@string/title_order_booking_status"
+            android:textSize="@dimen/order_text_size"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ProgressBar
+        android:id="@+id/progress_bar_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+      <!--  <TextView
+            android:id="@+id/text_deliveries_available"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/deliveries_available"
+            android:textColor="@color/normal_text_color" />
+-->
+         <TextView
+             android:id="@+id/text_delivery_date"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="2dp"
+             android:layout_marginTop="0dp"
+             android:visibility="visible"
+             android:text="@string/delivery_date" />
+
+        <EditText
+            android:id="@+id/edit_delivery_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_vc_calendar_compat"
+            android:drawableRight="@drawable/ic_vc_calendar_compat"
+            android:focusable="false"
+            android:hint="@string/hint_select_delivery_date"
+            android:inputType="none"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/text_delivery_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="6dp"
+            android:hint="@string/delivery_time"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_select_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" />
+    </LinearLayout>
+</LinearLayout>

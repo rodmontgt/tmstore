@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="key_app_lang">locale_override</string>
+    <string name="key_app_currency">app_currency</string>
+    <string name="welcome_string">welcome_string</string>
+    <string name="key_app_notification">pref_notification</string>
+    <string name="key_notification_channels">pref_notification_channels</string>
+    <string name="key_current_lang">current_language</string>
+    <string name="key_consent_dialog_enabled">consent_dialog_enabled</string>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title_deposit_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_border_background"
+        android:gravity="start|center"
+        android:padding="6dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/normal_text_color"
+        android:textDirection="locale"
+        tools:text="@string/label_deposit_fixed" />
+
+    <LinearLayout
+        android:id="@+id/deposit_info_button_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_pay_deposit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            tools:text="@string/pay_deposit" />
+        <!-- view to retain gap after applying flat styles on buttons -->
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp" />
+
+        <Button
+            android:id="@+id/btn_pay_full"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            tools:text="@string/pay_full" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/deposit_info_cost_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_deposit"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title_deposit_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:padding="6dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/normal_text_color"
+            android:textDirection="locale"
+            android:visibility="gone"
+            tools:text="@string/message_deposit_full" />
+    </RelativeLayout>
+</LinearLayout>

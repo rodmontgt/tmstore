@@ -1,0 +1,36 @@
+<!--<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:id="@+id/coordinatorLayout"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:background="@color/color_bg_theme">-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_bg_theme">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <!--<com.utils.customviews.BannerImage-->
+    <!--android:id="@+id/img_theme_3"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--android:src="@drawable/img_theme_3"-->
+    <!--android:visibility="gone" />-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/recyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/color_bg_theme"-->
+    <!--android:scrollbars="vertical"-->
+    <!--tools:listitem="@layout/item_category_home_square"-->
+    <!--app:layoutManager="GridLayoutManager"-->
+    <!--app:spanCount="2"/>-->
+</ScrollView><!--</android.support.v4.widget.NestedScrollView>-->

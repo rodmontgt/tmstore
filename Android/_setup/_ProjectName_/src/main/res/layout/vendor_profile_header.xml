@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vendor_profile_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.utils.customviews.RoundedImageView
+            android:id="@+id/image_vendor_icon"
+            android:layout_width="@dimen/vendor_icon_large_width"
+            android:layout_height="@dimen/vendor_icon_large_height"
+            android:layout_centerInParent="true"
+            android:layout_margin="8dp"
+            android:background="@drawable/vendor_profile_icon_bg"
+            android:src="@drawable/placeholder_category" />
+
+        <ImageButton
+            android:id="@+id/image_vendor_edit_shop_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/clear"
+            android:foreground="?selectableItemBackground"
+            app:srcCompat="@drawable/ic_vc_edit" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/seller_detail_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:orientation="vertical" />
+</LinearLayout>

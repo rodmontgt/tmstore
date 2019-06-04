@@ -1,0 +1,5 @@
+ALTER TABLE Cart ADD COLUMN booking_date TEXT;
+ALTER TABLE Cart ADD COLUMN booking_id TEXT;
+ALTER TABLE Cart ADD COLUMN order_id INTEGER;
+ALTER TABLE Cart ADD COLUMN deposit_price REAL;
+ALTER TABLE Cart ADD COLUMN cart_meta_json TEXT;

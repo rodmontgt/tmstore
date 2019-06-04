@@ -1,0 +1,175 @@
+{
+  "config": {
+    "language": {
+      "version": 1,
+      "defaultLocale": "hi_IN",
+      "locales": [
+        {
+          "locale": "en_US",
+          "title": "English",
+          "wpml": false
+        },
+        {
+          "locale": "hi_IN",
+          "title": "Hindi",
+          "wpml": false
+        },
+        {
+          "locale": "fr_FR",
+          "title": "français",
+          "wpml": false
+        },
+        {
+          "locale": "es_ES",
+          "title": "Español",
+          "wpml": false
+        },
+        {
+          "locale": "it_IT",
+          "title": "italiano",
+          "wpml": false
+        },
+        {
+          "locale": "ar_IL",
+          "title": "عربى",
+          "wpml": false
+        },
+        {
+          "locale": "id_ID",
+          "title": "Bahasa",
+          "wpml": false
+        },
+        {
+          "locale": "zh_CN",
+          "title": "简体中文",
+          "wpml": false
+        }
+      ]
+    },
+    "drawer_items": [
+      {
+        "id": 0
+      },
+      {
+        "id": 10
+      },
+      {
+        "id": 12
+      },
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      },
+      {
+        "id": 9
+      },
+      {
+        "id": 4
+      },
+      {
+        "id": 6
+      },
+      {
+        "id": 20
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 44
+      },
+      {
+        "id": 45
+      },
+      {
+        "id": 57,
+        "name": "PRIVACY POLICY",
+        "data": "https://www.thetmstore.com/privacy-policy/mobile/"
+      },
+      {
+        "id": 58,
+        "name": "TERMS AND CONDITIONS",
+        "data": "https://www.thetmstore.com/terms-and-conditions/mobile/"
+      }
+    ],
+    "profile_items": [
+      {
+        "id": 21
+      },
+      {
+        "id": 5
+      },
+      {
+        "id": 7
+      },
+      {
+        "id": 18
+      }
+    ],
+    "consent_dialog": {
+      "enabled": true,
+      "show_always": false,
+      "layout": [
+        {
+          "view": "text",
+          "type": "header",
+          "content": "Privacy Policy"
+        },
+        {
+          "view": "html",
+          "type": "normal",
+          "content": "https://www.thetmstore.com/privacy-policy/mobile/"
+        }
+      ]
+    }
+  },
+  "nav_drawer": {
+    "enabled": true,
+    "bg_color": "#fafafa",
+    "main_menu": {
+      "enabled": true,
+      "bg_color": "#fafafa",
+      "indicator_color": "#F26D76",
+      "icon": {
+        "visible": true,
+        "color": "#F26D76"
+      },
+      "divider": {
+        "color": "#efefef",
+        "height": 1
+      },
+      "title": {
+        "color": "#000000",
+        "caps_all": true
+      }
+    },
+    "child_menu": {
+      "enabled": true,
+      "bg_color": "#fafafa",
+      "divider": {
+        "color": "#efefef",
+        "height": 0
+      },
+      "title": {
+        "color": "#000000",
+        "caps_all": true
+      }
+    }
+  },
+  "apps": [
+    {
+      "app_name": "multivendor",
+      "plugin": "dokan",
+      "enabled": true,
+      "screen": "products",
+      "enable_seller_app": true
+    }
+  ],
+  "notifications": {
+    "type": "fcm",
+    "enabled": true,
+    "settings": true
+  }
+}

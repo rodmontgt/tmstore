@@ -1,0 +1,1215 @@
+    /*
+ * OAuthTesterView.java
+ */
+
+package oauthtester;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Desktop;
+import java.awt.Robot;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jdesktop.application.Action;
+import org.jdesktop.application.ResourceMap;
+import org.jdesktop.application.SingleFrameApplication;
+import org.jdesktop.application.FrameView;
+import org.jdesktop.application.TaskMonitor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Properties;
+import javax.lang.model.SourceVersion;
+import javax.swing.Timer;
+import javax.swing.Icon;
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+/**
+ * The application's main frame.
+ */
+public class OAuthTesterView extends FrameView {
+
+    public OAuthTesterView(SingleFrameApplication app) {
+        super(app);
+
+        initComponents();
+
+        // status bar initialization - message timeout, idle icon and busy animation, etc
+        ResourceMap resourceMap = getResourceMap();
+        int messageTimeout = resourceMap.getInteger("StatusBar.messageTimeout");
+        messageTimer = new Timer(messageTimeout, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                statusMessageLabel.setText("");
+            }
+        });
+        messageTimer.setRepeats(false);
+        int busyAnimationRate = resourceMap.getInteger("StatusBar.busyAnimationRate");
+        for (int i = 0; i < busyIcons.length; i++) {
+            busyIcons[i] = resourceMap.getIcon("StatusBar.busyIcons[" + i + "]");
+        }
+        busyIconTimer = new Timer(busyAnimationRate, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                busyIconIndex = (busyIconIndex + 1) % busyIcons.length;
+                statusAnimationLabel.setIcon(busyIcons[busyIconIndex]);
+            }
+        });
+        idleIcon = resourceMap.getIcon("StatusBar.idleIcon");
+        statusAnimationLabel.setIcon(idleIcon);
+        progressBar.setVisible(false);
+
+        // connecting action tasks to status bar via TaskMonitor
+        TaskMonitor taskMonitor = new TaskMonitor(getApplication().getContext());
+        taskMonitor.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                String propertyName = evt.getPropertyName();
+                if ("started".equals(propertyName)) {
+                    if (!busyIconTimer.isRunning()) {
+                        statusAnimationLabel.setIcon(busyIcons[0]);
+                        busyIconIndex = 0;
+                        busyIconTimer.start();
+                    }
+                    progressBar.setVisible(true);
+                    progressBar.setIndeterminate(true);
+                } else if ("done".equals(propertyName)) {
+                    busyIconTimer.stop();
+                    statusAnimationLabel.setIcon(idleIcon);
+                    progressBar.setVisible(false);
+                    progressBar.setValue(0);
+                } else if ("message".equals(propertyName)) {
+                    String text = (String)(evt.getNewValue());
+                    statusMessageLabel.setText((text == null) ? "" : text);
+                    messageTimer.restart();
+                } else if ("progress".equals(propertyName)) {
+                    int value = (Integer)(evt.getNewValue());
+                    progressBar.setVisible(true);
+                    progressBar.setIndeterminate(false);
+                    progressBar.setValue(value);
+                }
+            }
+        });
+    }
+
+    @Action
+    public void showAboutBox() {
+        if (aboutBox == null) {
+            JFrame mainFrame = OAuthTesterApp.getApplication().getMainFrame();
+            aboutBox = new OAuthTesterAboutBox(mainFrame);
+            aboutBox.setLocationRelativeTo(mainFrame);
+        }
+        OAuthTesterApp.getApplication().show(aboutBox);
+    }
+
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        menuBar = new javax.swing.JMenuBar();
+        javax.swing.JMenu fileMenu = new javax.swing.JMenu();
+        javax.swing.JMenuItem exitMenuItem = new javax.swing.JMenuItem();
+        javax.swing.JMenu helpMenu = new javax.swing.JMenu();
+        javax.swing.JMenuItem aboutMenuItem = new javax.swing.JMenuItem();
+        statusPanel = new javax.swing.JPanel();
+        javax.swing.JSeparator statusPanelSeparator = new javax.swing.JSeparator();
+        statusMessageLabel = new javax.swing.JLabel();
+        statusAnimationLabel = new javax.swing.JLabel();
+        progressBar = new javax.swing.JProgressBar();
+        pngSelecter = new javax.swing.JFileChooser();
+        mainPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txt_api_key = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txt_api_secret = new javax.swing.JTextField();
+        txt_project_name = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txt_package_name = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        txt_color_6 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txt_color_3 = new javax.swing.JTextField();
+        txt_color_2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txt_color_5 = new javax.swing.JTextField();
+        txt_color_7 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txt_color_4 = new javax.swing.JTextField();
+        txt_color_1 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        txt_file_splash = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        txt_file_icon = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        txt_file_banners = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JSeparator();
+        btn_submit = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        txt_common_name = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txt_org_unit = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txt_organization = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txt_locality = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        txt_country_code = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txt_state = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+
+        menuBar.setName("menuBar"); // NOI18N
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(oauthtester.OAuthTesterApp.class).getContext().getResourceMap(OAuthTesterView.class);
+        fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
+        fileMenu.setName("fileMenu"); // NOI18N
+
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(oauthtester.OAuthTesterApp.class).getContext().getActionMap(OAuthTesterView.class, this);
+        exitMenuItem.setAction(actionMap.get("quit")); // NOI18N
+        exitMenuItem.setName("exitMenuItem"); // NOI18N
+        fileMenu.add(exitMenuItem);
+
+        menuBar.add(fileMenu);
+
+        helpMenu.setText(resourceMap.getString("helpMenu.text")); // NOI18N
+        helpMenu.setName("helpMenu"); // NOI18N
+
+        aboutMenuItem.setAction(actionMap.get("showAboutBox")); // NOI18N
+        aboutMenuItem.setName("aboutMenuItem"); // NOI18N
+        helpMenu.add(aboutMenuItem);
+
+        menuBar.add(helpMenu);
+
+        statusPanel.setName("statusPanel"); // NOI18N
+
+        statusPanelSeparator.setName("statusPanelSeparator"); // NOI18N
+
+        statusMessageLabel.setName("statusMessageLabel"); // NOI18N
+
+        statusAnimationLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        statusAnimationLabel.setName("statusAnimationLabel"); // NOI18N
+
+        progressBar.setName("progressBar"); // NOI18N
+
+        javax.swing.GroupLayout statusPanelLayout = new javax.swing.GroupLayout(statusPanel);
+        statusPanel.setLayout(statusPanelLayout);
+        statusPanelLayout.setHorizontalGroup(
+            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(statusPanelSeparator)
+            .addGroup(statusPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(statusMessageLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                .addGroup(statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(statusAnimationLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(progressBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        statusPanelLayout.setVerticalGroup(
+            statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statusPanelLayout.createSequentialGroup()
+                .addComponent(statusPanelSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(statusPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(statusMessageLabel)
+                        .addComponent(statusAnimationLabel)))
+                .addGap(17, 17, 17))
+        );
+
+        pngSelecter.setAcceptAllFileFilterUsed(false);
+        pngSelecter.setDialogType(javax.swing.JFileChooser.CUSTOM_DIALOG);
+        pngSelecter.setDialogTitle(resourceMap.getString("pngSelecter.dialogTitle")); // NOI18N
+        pngSelecter.setFileFilter(new PNGFileFilter());
+        pngSelecter.setName("pngSelecter"); // NOI18N
+
+        mainPanel.setName("mainPanel"); // NOI18N
+
+        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
+        jLabel1.setName("jLabel1"); // NOI18N
+
+        txt_api_key.setText(resourceMap.getString("txt_api_key.text")); // NOI18N
+        txt_api_key.setName("txt_api_key"); // NOI18N
+
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setName("jLabel2"); // NOI18N
+
+        txt_api_secret.setText(resourceMap.getString("txt_api_secret.text")); // NOI18N
+        txt_api_secret.setName("txt_api_secret"); // NOI18N
+
+        txt_project_name.setName("txt_project_name"); // NOI18N
+        txt_project_name.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_project_nameFocusLost(evt);
+            }
+        });
+
+        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
+        jLabel10.setName("jLabel10"); // NOI18N
+
+        txt_package_name.setText(resourceMap.getString("txt_package_name.text")); // NOI18N
+        txt_package_name.setName("txt_package_name"); // NOI18N
+
+        jLabel11.setText(resourceMap.getString("jLabel11.text")); // NOI18N
+        jLabel11.setName("jLabel11"); // NOI18N
+
+        jSeparator1.setName("jSeparator1"); // NOI18N
+
+        txt_color_6.setText(resourceMap.getString("txt_color_6.text")); // NOI18N
+        txt_color_6.setName("txt_color_6"); // NOI18N
+
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
+        jLabel7.setName("jLabel7"); // NOI18N
+
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        txt_color_3.setText(resourceMap.getString("txt_color_3.text")); // NOI18N
+        txt_color_3.setName("txt_color_3"); // NOI18N
+
+        txt_color_2.setText(resourceMap.getString("txt_color_2.text")); // NOI18N
+        txt_color_2.setName("txt_color_2"); // NOI18N
+
+        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
+        jLabel6.setName("jLabel6"); // NOI18N
+
+        jLabel14.setText(resourceMap.getString("jLabel14.text")); // NOI18N
+        jLabel14.setName("jLabel14"); // NOI18N
+
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+
+        txt_color_5.setText(resourceMap.getString("txt_color_5.text")); // NOI18N
+        txt_color_5.setName("txt_color_5"); // NOI18N
+
+        txt_color_7.setText(resourceMap.getString("txt_color_7.text")); // NOI18N
+        txt_color_7.setName("txt_color_7"); // NOI18N
+
+        jLabel12.setText(resourceMap.getString("jLabel12.text")); // NOI18N
+        jLabel12.setName("jLabel12"); // NOI18N
+
+        txt_color_4.setText(resourceMap.getString("txt_color_4.text")); // NOI18N
+        txt_color_4.setName("txt_color_4"); // NOI18N
+
+        txt_color_1.setText(resourceMap.getString("txt_color_1.text")); // NOI18N
+        txt_color_1.setName("txt_color_1"); // NOI18N
+
+        jSeparator2.setName("jSeparator2"); // NOI18N
+
+        txt_file_splash.setEditable(false);
+        txt_file_splash.setText(resourceMap.getString("txt_file_splash.text")); // NOI18N
+        txt_file_splash.setName("txt_file_splash"); // NOI18N
+
+        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
+        jButton2.setName("jButton2"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        txt_file_icon.setEditable(false);
+        txt_file_icon.setText(resourceMap.getString("txt_file_icon.text")); // NOI18N
+        txt_file_icon.setName("txt_file_icon"); // NOI18N
+
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        txt_file_banners.setEditable(false);
+        txt_file_banners.setName("txt_file_banners"); // NOI18N
+
+        jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
+        jButton3.setName("jButton3"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jSeparator3.setName("jSeparator3"); // NOI18N
+
+        btn_submit.setText(resourceMap.getString("btn_submit.text")); // NOI18N
+        btn_submit.setName("btn_submit"); // NOI18N
+        btn_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_submitActionPerformed(evt);
+            }
+        });
+
+        jSeparator4.setName("jSeparator4"); // NOI18N
+
+        jCheckBox1.setSelected(true);
+        jCheckBox1.setText(resourceMap.getString("jCheckBox1.text")); // NOI18N
+        jCheckBox1.setEnabled(false);
+        jCheckBox1.setName("jCheckBox1"); // NOI18N
+
+        txt_common_name.setText(resourceMap.getString("txt_common_name.text")); // NOI18N
+        txt_common_name.setName("txt_common_name"); // NOI18N
+
+        jLabel15.setText(resourceMap.getString("jLabel15.text")); // NOI18N
+        jLabel15.setName("jLabel15"); // NOI18N
+
+        txt_org_unit.setText(resourceMap.getString("txt_org_unit.text")); // NOI18N
+        txt_org_unit.setName("txt_org_unit"); // NOI18N
+
+        jLabel16.setText(resourceMap.getString("jLabel16.text")); // NOI18N
+        jLabel16.setName("jLabel16"); // NOI18N
+
+        txt_organization.setName("txt_organization"); // NOI18N
+
+        jLabel17.setText(resourceMap.getString("jLabel17.text")); // NOI18N
+        jLabel17.setName("jLabel17"); // NOI18N
+
+        txt_locality.setName("txt_locality"); // NOI18N
+
+        jLabel18.setText(resourceMap.getString("jLabel18.text")); // NOI18N
+        jLabel18.setName("jLabel18"); // NOI18N
+
+        txt_country_code.setName("txt_country_code"); // NOI18N
+
+        jLabel19.setText(resourceMap.getString("jLabel19.text")); // NOI18N
+        jLabel19.setName("jLabel19"); // NOI18N
+
+        txt_state.setName("txt_state"); // NOI18N
+
+        jLabel20.setText(resourceMap.getString("jLabel20.text")); // NOI18N
+        jLabel20.setName("jLabel20"); // NOI18N
+
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
+            .addComponent(jSeparator1)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel10))
+                        .addGap(0, 5, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_project_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_api_secret, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_api_key, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_package_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_color_7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(btn_submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(10, 10, 10))
+            .addComponent(jSeparator4)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_file_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_file_splash, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_file_banners, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+            .addComponent(jSeparator3)
+            .addComponent(jCheckBox1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addComponent(txt_common_name, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(txt_org_unit, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(txt_organization, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(txt_locality, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(txt_state, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(txt_country_code, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        mainPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txt_api_key, txt_api_secret, txt_color_1, txt_color_2, txt_color_3, txt_color_4, txt_color_5, txt_color_6, txt_color_7, txt_package_name, txt_project_name});
+
+        mainPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
+
+        mainPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txt_file_banners, txt_file_icon, txt_file_splash});
+
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txt_api_key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txt_api_secret, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_project_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_package_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txt_color_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txt_color_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txt_color_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txt_color_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_color_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_color_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_color_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(txt_file_icon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(txt_file_splash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_file_banners, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_common_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_org_unit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_organization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_locality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_country_code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        setComponent(mainPanel);
+        setMenuBar(menuBar);
+        setStatusBar(statusPanel);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submitActionPerformed
+        submitData();
+    }//GEN-LAST:event_btn_submitActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        pngSelecter.setFileFilter(new PNGFileFilter());
+        pngSelecter.setMultiSelectionEnabled(false);
+        int returnVal = pngSelecter.showDialog(getComponent(), "Select");
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            appIcon = pngSelecter.getSelectedFile();
+            System.out.println("Opening: " + appIcon.getName() + ".");
+            txt_file_icon.setText(appIcon.getPath());
+        } else {
+            System.out.println("Open command cancelled by user.");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        pngSelecter.setFileFilter(new ImageFileFilter());
+        pngSelecter.setMultiSelectionEnabled(false);
+        int returnVal = pngSelecter.showDialog(getComponent(), "Select");
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            appSplash = pngSelecter.getSelectedFile();
+            System.out.println("Opening: " + appSplash.getName() + ".");
+            txt_file_splash.setText(appSplash.getPath());
+        } else {
+            System.out.println("Open command cancelled by user.");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        pngSelecter.setFileFilter(new ImageFileFilter());
+        pngSelecter.setMultiSelectionEnabled(true);
+        int returnVal = pngSelecter.showDialog(getComponent(), "Select");
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            appBanners = pngSelecter.getSelectedFiles();
+            String strBanners = "";
+            for(File file : appBanners) {
+                strBanners += file.getName()+"; ";
+                System.out.println("-- found banner: " + file.getName() + " --");
+            }
+            txt_file_banners.setText(strBanners);
+        } else {
+            System.out.println("Open command cancelled by user.");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txt_project_nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_project_nameFocusLost
+        String tempName = txt_project_name.getText().trim().replaceAll("\\s","");;
+        if(!tempName.equals("")){
+            //txt_package_name.setText(txt_package_name.getText()+tempName.toLowerCase());
+            txt_package_name.setText("com.tmstore."+tempName.toLowerCase());
+        }
+    }//GEN-LAST:event_txt_project_nameFocusLost
+
+    class PNGFileFilter extends javax.swing.filechooser.FileFilter {
+        @Override
+        public boolean accept(File file) {
+            // Allow only directories, or files with ".txt" extension
+            return file.isDirectory() || file.getAbsolutePath().endsWith(".png");
+        }
+        @Override
+        public String getDescription() {
+            // This description will be displayed in the dialog,
+            // hard-coded = ugly, should be done via I18N
+            return "PNG Image (*.png)";
+        }
+    }
+
+    class ImageFileFilter extends javax.swing.filechooser.FileFilter {
+        @Override
+        public boolean accept(File file) {
+            // Allow only directories, or files with ".txt" extension
+            return file.isDirectory() || file.getAbsolutePath().endsWith(".png") || file.getAbsolutePath().endsWith(".jpg") || file.getAbsolutePath().endsWith(".jpeg");
+        }
+        @Override
+        public String getDescription() {
+            // This description will be displayed in the dialog,
+            // hard-coded = ugly, should be done via I18N
+            return "Image file (*.png,*.jpg,*.jpeg)";
+        }
+    }
+    
+    class SigningKeyFileFilter extends javax.swing.filechooser.FileFilter {
+        @Override
+        public boolean accept(File file) {
+            // Allow only directories, or files with ".txt" extension
+            return file.isDirectory() || file.getAbsolutePath().endsWith(".jks");
+        }
+        @Override
+        public String getDescription() {
+            // This description will be displayed in the dialog,
+            // hard-coded = ugly, should be done via I18N
+            return "Key Store file (*.jks)";
+        }
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_submit;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JFileChooser pngSelecter;
+    private javax.swing.JProgressBar progressBar;
+    private javax.swing.JLabel statusAnimationLabel;
+    private javax.swing.JLabel statusMessageLabel;
+    private javax.swing.JPanel statusPanel;
+    private javax.swing.JTextField txt_api_key;
+    private javax.swing.JTextField txt_api_secret;
+    private javax.swing.JTextField txt_color_1;
+    private javax.swing.JTextField txt_color_2;
+    private javax.swing.JTextField txt_color_3;
+    private javax.swing.JTextField txt_color_4;
+    private javax.swing.JTextField txt_color_5;
+    private javax.swing.JTextField txt_color_6;
+    private javax.swing.JTextField txt_color_7;
+    private javax.swing.JTextField txt_common_name;
+    private javax.swing.JTextField txt_country_code;
+    private javax.swing.JTextField txt_file_banners;
+    private javax.swing.JTextField txt_file_icon;
+    private javax.swing.JTextField txt_file_splash;
+    private javax.swing.JTextField txt_locality;
+    private javax.swing.JTextField txt_org_unit;
+    private javax.swing.JTextField txt_organization;
+    private javax.swing.JTextField txt_package_name;
+    private javax.swing.JTextField txt_project_name;
+    private javax.swing.JTextField txt_state;
+    // End of variables declaration//GEN-END:variables
+
+    private final Timer messageTimer;
+    private final Timer busyIconTimer;
+    private final Icon idleIcon;
+    private final Icon[] busyIcons = new Icon[15];
+    private int busyIconIndex = 0;
+
+    private JDialog aboutBox;
+
+    String current_directory = "";
+    String project_root_directroy = "";
+    String project_directroy = "";
+    String project_name ="";
+    String iml_file_path = "";
+
+    File appIcon = null;
+    File appSplash = null;
+    File appSigningKey = null;
+    File[] appBanners;
+
+    private void submitData() {
+
+        if(validateData())
+        {
+            if(copySelectedImages())
+            {
+                if(createJSON())
+                {
+                    //ProjectSetupWizard projectSetupWizard = new ProjectSetupWizard(project_root_directroy+"/../setup", project_root_directroy);
+                    //projectSetupWizard.start();
+                }
+            }
+        }
+    }
+
+    private boolean copySelectedImages()
+    {
+        if(appIcon != null)
+        {
+            try
+            {
+                Path from = appIcon.toPath(); //convert from File to Path
+                Path to = Paths.get(project_root_directroy+"/app_icon.png"); //convert from String to Path
+                Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+            }
+            catch(Exception e)
+            {
+                System.out.println("-- copy app icon image failed --");
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        if(appSplash != null)
+        {
+            try
+            {
+                Path from = appSplash.toPath(); //convert from File to Path
+                Path to = Paths.get(project_root_directroy+"/app_splash.png"); //convert from String to Path
+                Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+            }
+            catch(Exception e)
+            {
+                System.out.println("-- copy app splash image failed --");
+                e.printStackTrace();
+                return false;
+            }
+        }
+        
+        if(appBanners != null && appBanners.length>0)
+        {
+            try {
+                for(int i=0; i<appBanners.length; i++) {
+                    File file = appBanners[i];
+                    Path from = file.toPath(); //convert from File to Path
+                    
+                    String extension = "";
+                    int index = file.getName().lastIndexOf('.');
+                    if (index > 0) {
+                        extension = file.getName().substring(index+1);
+                    }
+                
+                    Path to = Paths.get(project_root_directroy+"/app_banner"+i+"."+extension); //convert from String to Path
+                    Files.copy(from, to, StandardCopyOption.REPLACE_EXISTING);
+                }
+            }
+            catch(Exception e) {
+                System.out.println("-- copy app icon image failed --");
+                e.printStackTrace();
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    private String generateCompnayDetailString() {
+        String companyDetailString = "";// = "cn=Mark Jones, ou=JavaSoft, o=Sun, c=US";
+        companyDetailString += "CN="+txt_common_name.getText().trim();
+        companyDetailString += ", OU="+txt_org_unit.getText().trim();
+        companyDetailString += ", O="+txt_organization.getText().trim();
+        if(!txt_locality.getText().trim().equals(""))
+            companyDetailString += ", L="+txt_locality.getText().trim();
+        if(!txt_state.getText().trim().equals(""))
+            companyDetailString += ", S="+txt_state.getText().trim();
+        companyDetailString += ", C="+txt_country_code.getText().trim();
+        return companyDetailString;
+    }
+    
+    String keyStoreName;
+    String keyStorePath;
+    String keyStorePassword;
+    String aliasName;
+    String aliasPassword;
+        
+    private boolean generateKeyStore() {
+        keyStorePath = project_root_directroy;
+        keyStoreName = project_name+"_keyStore.keystore";
+        keyStorePassword = "tmstore_"+project_name.toLowerCase();
+        aliasName = project_name;
+        aliasPassword = keyStorePassword;
+        
+        String companyDetailString = generateCompnayDetailString();
+        System.out.println("-- companyDetailString: ["+companyDetailString+"] --");
+        
+        System.out.println("-- generateKeyStore --");
+        try {            
+            String command = "keytool -genkeypair -dname \""+companyDetailString+"\" -alias "+aliasName+" -keypass "+aliasPassword+" -keystore \""+keyStorePath+"/"+keyStoreName+"\" -storepass "+keyStorePassword+" -validity 9999";
+            System.out.println("-- command: ["+command+"] --");
+            //Process pr = Runtime.getRuntime().exec(command);
+            //Runtime.getRuntime().exec(new String[] { "cmd.exe", "/c", command });
+            //Runtime.getRuntime().exec( command );
+            String result = executeCommand(command);
+            System.out.println("-- result: ["+result+"] --");
+            if(result.equals("")){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(OAuthTesterView.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+            return false;
+        }
+    }
+    
+    private boolean createJSON(){
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put("txt_api_key",txt_api_key.getText().trim());
+        jSONObject.put("txt_api_secret",txt_api_secret.getText().trim());
+        jSONObject.put("txt_project_name",txt_project_name.getText().trim());
+        jSONObject.put("txt_package_name",txt_package_name.getText().trim());
+        JSONObject app_colors = new JSONObject();
+        {
+            app_colors.put("txt_color_1",txt_color_1.getText().trim().replace("#",""));
+            app_colors.put("txt_color_2",txt_color_2.getText().trim().replace("#",""));
+            app_colors.put("txt_color_3",txt_color_3.getText().trim().replace("#",""));
+            app_colors.put("txt_color_4",txt_color_4.getText().trim().replace("#",""));
+            app_colors.put("txt_color_5",txt_color_5.getText().trim().replace("#",""));
+            app_colors.put("txt_color_6",txt_color_6.getText().trim().replace("#",""));
+            app_colors.put("txt_color_7",txt_color_7.getText().trim().replace("#",""));
+        }
+        jSONObject.put("app_colors",app_colors);
+        
+        JSONObject app_files = new JSONObject();
+        {
+            if(appIcon != null){
+                app_files.put("app_icon","app_icon.png");
+            }
+
+            if(appSplash != null){
+                app_files.put("app_splash","app_splash.png");
+            }
+            
+            if(appBanners != null && appBanners.length>0){
+                JSONArray appBannersJson = new JSONArray();
+                for(int i=0; i<appBanners.length; i++) {
+                    File file = appBanners[i];
+                    String extension = "";
+                    int index = file.getName().lastIndexOf('.');
+                    if (index > 0) {
+                        extension = file.getName().substring(index+1);
+                    }
+                    appBannersJson.add("app_banner"+i+"."+extension);
+                }
+                app_files.put("app_banners",appBannersJson);
+            }
+        }
+        jSONObject.put("app_files",app_files);
+        
+        JSONObject certificateDetails = new JSONObject();
+        {
+            if(generateKeyStore()) {
+                certificateDetails.put("keyStoreName",keyStoreName);
+                certificateDetails.put("keyStorePath",keyStorePath);
+                certificateDetails.put("keyStorePassword",keyStorePassword);
+                certificateDetails.put("aliasName",aliasName);
+                certificateDetails.put("aliasPassword",aliasPassword);
+            } else {
+                return false;
+            }
+        }
+        jSONObject.put("certificateDetails",certificateDetails);                
+        
+        return saveJsonFile(jSONObject);
+    }
+
+    private boolean saveJsonFile(JSONObject jSONObject)
+    {
+        try { 
+            File file = new File(project_root_directroy+"/appinfo.json");
+
+            // if file doesnt exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(jSONObject.toJSONString());
+            bw.close();
+                        
+            System.out.println("Successfully Copied JSON Object to File...");
+            return true; //saveJsonFile2(jSONObject);
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("== error saving appinfo.json ==");
+            return false;
+        }
+    }
+
+    private boolean saveJsonFile2(JSONObject jSONObject)
+    {
+        try { 
+            File file = new File(project_root_directroy+"/appinfo.json");
+
+            // if file doesnt exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(jSONObject.toJSONString());
+            bw.close();
+                        
+            System.out.println("Successfully Copied JSON Object to File...");
+            return true;
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("== error saving appinfo.json ==");
+            return false;
+        }
+    }
+
+    public static void openWebpage(String urlString) {
+        try {
+            Desktop.getDesktop().browse(new URL(urlString).toURI());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private boolean validateData() {
+        
+        if(!isValidString(txt_api_key)) {
+             JOptionPane.showMessageDialog(null,"Invalid Api Key..");
+             return false;
+        }
+        if(!isValidString(txt_api_secret)) {
+             JOptionPane.showMessageDialog(null,"Invalid Api Secret..");
+             return false;
+        }
+        if(!isValidString(txt_project_name) ) { // || !SourceVersion.isName(txt_project_name.getText().trim())) {
+             JOptionPane.showMessageDialog(null,"Invalid Project Name..");
+             return false;
+        }
+        if(!isValidString(txt_package_name) || !txt_package_name.getText().contains(".")) {
+             JOptionPane.showMessageDialog(null,"Invalid Package Name..");
+             return false;
+        }
+        
+        if(!isValidHexNumber(txt_color_1.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Main Theme Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_2.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Misc Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_3.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Status bar Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_4.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Normal Button Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_5.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Pressed Button Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_6.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Slim Strip Color..");
+             return false;
+        }
+        if(!isValidHexNumber(txt_color_7.getText())) {
+             JOptionPane.showMessageDialog(null,"Invalid Slim Strip Text Color..");
+             return false;
+        }
+        
+        if(!isValidString(txt_common_name)) {
+             JOptionPane.showMessageDialog(null,"Invalid Developer/Auther/Common name..");
+             return false;
+        }
+        if(!isValidString(txt_org_unit)) {
+             JOptionPane.showMessageDialog(null,"Invalid Organization unit..");
+             return false;
+        }
+        if(!isValidString(txt_organization)) {
+             JOptionPane.showMessageDialog(null,"Invalid Organization name..");
+             return false;
+        }
+        
+        if(!isValidString(txt_country_code) || txt_country_code.getText().trim().length()!=2 ) {
+             JOptionPane.showMessageDialog(null,"Invalid Country code..");
+             return false;
+        }
+        
+        initDirPath();
+
+        System.out.println("-- Working Directory = " + current_directory + " --");
+        return true;
+    }
+    
+    public void initDirPath(){
+        current_directory = System.getProperty("user.dir");
+        project_name = txt_project_name.getText().trim().replaceAll("\\s","");
+        project_root_directroy = current_directory +"/"+ project_name;
+        
+        try {
+            new File(project_root_directroy).mkdir();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    static boolean isValidString (javax.swing.JTextField textField) {
+        
+        String cadena = textField.getText();
+        
+        if(cadena == null) {
+            return false;
+        }
+        
+        if(cadena.trim().equals("")){
+            return false;
+        }
+        
+        return true;
+    }
+    
+    static boolean isValidString (String cadena) {
+        
+        if(cadena == null) {
+            return false;
+        }
+        
+        if(cadena.trim().equals("")){
+            return false;
+        }
+        
+        return true;
+    }
+    
+    static boolean isValidHexNumber (String cadena) {
+        
+        if(!isValidString(cadena)) {
+            return false;
+        }
+        
+        if(cadena.charAt(0)=='#'){
+            cadena = cadena.substring(1);
+        }
+        
+        if(cadena.length()>8) {
+            return false;
+        }
+        
+        try {
+          Long.parseLong(cadena, 16);
+          return true;
+        }
+        catch (NumberFormatException ex) {
+          // Error handling code...
+          return false;
+        }
+  }
+
+    
+    
+    private String executeCommand(String command) {
+        System.out.println("-- executeCommand ["+command+"] --");
+        StringBuffer output = new StringBuffer();
+        Process p;
+        try {
+            p = Runtime.getRuntime().exec(command);
+            p.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line = "";			
+            while ((line = reader.readLine())!= null) {
+                output.append(line + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return output.toString();
+    }
+    
+    private String executeCommand(String[] command) {
+        System.out.println("-- executeCommandArray --");
+        for(int i=0; i<command.length; i++) {
+            System.out.println("["+command[i]+"]");
+        }
+        StringBuffer output = new StringBuffer();
+        Process p;
+        try {
+            p = Runtime.getRuntime().exec(command);
+            p.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line = "";			
+            while ((line = reader.readLine())!= null) {
+                output.append(line + "\n");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return output.toString();
+    }
+}

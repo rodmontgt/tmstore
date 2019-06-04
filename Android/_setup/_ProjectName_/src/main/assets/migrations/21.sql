@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS Notification (notification_id INTEGER, content TEXT, alert TEXT, title TEXT, notifyId TEXT, is_read INTEGER, type INTEGER, arrival_time REAL);

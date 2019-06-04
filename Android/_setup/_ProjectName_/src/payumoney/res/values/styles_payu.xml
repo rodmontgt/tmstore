@@ -1,0 +1,34 @@
+<resources>
+    <!--contains themes used in PayU related payment gateways -->
+
+    <style name="PayUbizTheme" parent="PayUbizAppTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="PayUmoneyTheme" parent="PayumoneyAppTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <!--
+        <color name="tabsScrollColor">#3488C4</color>
+        <color name="black">#000000</color>
+        <color name="color_paynow_button">#d92658</color>
+        <color name="color_enter_cvv">#9C9C9C</color>
+        <color name="color_text_on_card">#404040</color>
+        <color name="color_amt_background">#E6E6E6</color>
+        <color name="cb_errorRed">#e40000</color>
+        <color name="cb_payu_blue">#368ecd</color>
+        <color name="cb_vpa_text_background">#f6fcce</color>
+        <color name="cb_vpa_text_border">#dcd36b</color>
+        <color name="cb_vpa_text_highlighter">#00adf2</color>
+        <color name="cb_vpa_enter_vpa">#9b9b9b</color>
+      -->
+
+</resources>

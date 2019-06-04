@@ -1,0 +1,451 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_bg_theme"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_basic_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/clear"
+            android:gravity="start|start|center"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/basic_details"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_basic_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_bg"
+                    android:gravity="start"
+                    android:padding="12dp"
+                    android:text="@string/basic_details"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/normal_text_color"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txt_name_first"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="0.5"
+                        android:ems="10"
+                        android:hint="@string/first_name"
+                        android:inputType="textPersonName|textCapWords"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+                    <EditText
+                        android:id="@+id/txt_name_last"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="0.5"
+                        android:ems="10"
+                        android:hint="@string/last_name"
+                        android:inputType="textPersonName|textCapWords"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/txt_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+                    android:hint="@string/email_address"
+                    android:inputType="textEmailAddress"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="@color/normal_text_color_lite"
+                    android:textColorHint="@color/normal_text_color_lite" />
+
+                <EditText
+                    android:id="@+id/txt_mobile"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+                    android:hint="@string/mobile_number"
+                    android:inputType="phone"
+                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                    android:textColor="@color/normal_text_color"
+                    android:textColorHint="@color/normal_text_color_lite" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/clear"
+            android:gravity="start|start|center"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_bg"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/billing_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/text_autofill"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="@string/billing_address"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/normal_text_color"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_autofill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/normal_text_color"
+                        android:textStyle="bold"
+                        tools:text="Autofill" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/firstname_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+
+                        <EditText
+                            android:id="@+id/lastname_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/address_1_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/address"
+                        android:inputType="textPostalAddress|textCapWords"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+                    <EditText
+                        android:id="@+id/address_2_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/address"
+                        android:inputType="textPostalAddress|textCapWords"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+                    <LinearLayout
+                        android:id="@+id/region_section_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/city_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:hint="@string/city"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+
+                        <EditText
+                            android:id="@+id/postcode_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:hint="@string/postcode"
+                            android:inputType="textPersonName"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/email_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+                    <EditText
+                        android:id="@+id/phone_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/contact_number"
+                        android:inputType="phone"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <CheckBox
+            android:id="@+id/checkbox_shipping_as_billing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:padding="0dp"
+            android:text="@string/shipping_as_billing_address" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/billing_address_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@color/clear"
+            android:gravity="start|start|center"
+            android:visibility="visible"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shipping_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_bg"
+                    android:padding="12dp"
+                    android:text="@string/shipping_address"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/normal_text_color"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_copyabove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="12dp"
+                            android:text="@string/add_billing_address"
+                            android:textSize="12sp"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/firstname_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:ems="10"
+                            android:hint="@string/first_name"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+
+                        <EditText
+                            android:id="@+id/lastname_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:ems="10"
+                            android:hint="@string/last_name"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/address_1_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/address"
+                        android:inputType="textPostalAddress"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+
+                    <EditText
+                        android:id="@+id/address_2_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:ems="10"
+                        android:hint="@string/address"
+                        android:inputType="textPostalAddress"
+                        android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                        android:textColor="@color/normal_text_color"
+                        android:textColorHint="@color/normal_text_color_lite" />
+
+                    <LinearLayout
+                        android:id="@+id/region_section_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/city_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:hint="@string/city"
+                            android:inputType="textPersonName|textCapWords"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+
+                        <EditText
+                            android:id="@+id/postcode_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="0.5"
+                            android:ems="10"
+                            android:hint="@string/postcode"
+                            android:inputType="textPersonName"
+                            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                            android:textColor="@color/normal_text_color"
+                            android:textColorHint="@color/normal_text_color_lite" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/btn_common_1"
+            android:text="@string/update"
+            android:textColor="@drawable/txt_common_1"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</ScrollView>
