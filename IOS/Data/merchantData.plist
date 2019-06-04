@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pBranchDomain</key>
+	<string>bnc.lt</string>
+	<key>pBranchKey</key>
+	<string>key_live_kflJY7Y1Wxf97t6jdQxtRnonqqei5lOd</string>
+	<key>pBuild</key>
+	<string>1.2</string>
+	<key>pBundleIdentifier</key>
+	<string>com.tmstore.demo</string>
+	<key>pCertificateNameDev</key>
+	<string>iPhone Developer: pramod  pandey (7ECL5PZ763)</string>
+	<key>pCertificateNameDist</key>
+	<string>iPhone Distribution: Twist Mobile Pvt Ltd (CE65BN8JZG)</string>
+	<key>pDeveloperTeamId</key>
+	<string>CE65BN8JZG</string>
+	<key>pFBAppId</key>
+	<string>849622785160659</string>
+	<key>pFBAppSuffix</key>
+	<string>suffix</string>
+	<key>pItunesAppId</key>
+	<string>1085057567</string>
+	<key>pItunesPassword</key>
+	<string>Viratgreat30</string>
+	<key>pItunesUserId</key>
+	<string>virat@twistmobile.in</string>
+	<key>pName</key>
+	<string>TMStore</string>
+	<key>pNameIPA</key>
+	<string>TM Store</string>
+	<key>pParseAppId</key>
+	<string>HdsXVzCYvl49Zzx8VIfkPP3Va5Q7lzdsAbymIZiY</string>
+	<key>pParseClientKey</key>
+	<string>ZdVi6vtCVu3fu5TFM4rDaqNbayaQAMrT9dwdPUsc</string>
+	<key>pSource</key>
+	<string></string>
+	<key>pVersion</key>
+	<string>1.0.4</string>
+</dict>
+</plist>

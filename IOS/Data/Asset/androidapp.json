@@ -1,0 +1,30 @@
+{
+	"txt_base_url": "http:\/\/abayaa.net\/abysite",
+	"txt_package_name": "com.tmstore.hututu",
+	"txt_project_name": "hututu",
+	"txt_display_name": "hututu",
+	"build_flavour": "Common",
+	"app_files": {
+		"app_icon": "app_icon.png",
+		"app_splash": "app_splash.png"
+	},
+	"certificateDetails": {
+		"aliasName": "hututu",
+		"aliasPassword": "tmstore_hututu",
+		"keyStoreName": "Abayaa_keyStore.keystore",
+		"keyStorePassword": "tmstore_abayaa",
+		"contact_details": {
+			"common_name": "hututu",
+			"city": "kuwait",
+			"organization_name": "http:\/\/abayaa.net\/abysite",
+			"organization_unit": "eCommerce Store",
+			"state": "Kuwait",
+			"country": "KW"
+		}
+	},
+	"parse_app_id": "PM6BJ6wNRPUemi7bW6Mr12h0Gyf2HW3wco5JsUmN",
+	"parse_client_key": "klNEUJCNroxVnLMCZW3fpBvlt03WWoJaKSWxyHat",
+	"fb_id": "",
+	"fb_suffix": "",
+	"gcm_sender_id": ""
+}

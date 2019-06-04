@@ -1,0 +1,6 @@
+framework module Pods_TMStore {
+  umbrella header "Pods-TMStore-umbrella.h"
+
+  export *
+  module * { export * }
+}

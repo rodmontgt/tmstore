@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>color</key>
+	<dict>
+		<key>color_btn_big_bg</key>
+		<string>0x269CDBFF</string>
+		<key>color_btn_big_font</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_btn_disabled</key>
+		<string>0xEAEAEAFF</string>
+		<key>color_btn_normal</key>
+		<string>0x949494FF</string>
+		<key>color_btn_selected</key>
+		<string>0x269CDBFF</string>
+		<key>color_footer</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_header</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_theme</key>
+		<string>0x269CDBFF</string>
+	</dict>
+	<key>colorDefault</key>
+	<dict>
+		<key>color_btn_big_bg</key>
+		<string>0x269CDBFF</string>
+		<key>color_btn_big_font</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_btn_disabled</key>
+		<string>0xEAEAEAFF</string>
+		<key>color_btn_normal</key>
+		<string>0xB6B6B6FF</string>
+		<key>color_btn_selected</key>
+		<string>0x269CDBFF</string>
+		<key>color_footer</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_header</key>
+		<string>0xFFFFFFFF</string>
+		<key>color_theme</key>
+		<string>0x269CDBFF</string>
+	</dict>
+	<key>imagePath_AppIcon</key>
+	<string>Icon.png</string>
+	<key>imagePath_PlaceHolder</key>
+	<string>placeholderdemo.png</string>
+	<key>imagePath_SplashBg</key>
+	<string>splashBg.png</string>
+	<key>imagePath_SplashFg</key>
+	<string>splashFg.png</string>
+	<key>isAppForExternalUser</key>
+	<integer>1</integer>
+	<key>isDemoApp</key>
+	<integer>1</integer>
+	<key>isFreeApp</key>
+	<integer>0</integer>
+	<key>isPaidApp</key>
+	<integer>0</integer>
+	<key>isMultiStore</key>
+	<false/>
+	<key>isMultiStoreTMStore</key>
+	<string>NO</string>
+	<key>isNearBySearch</key>
+	<false/>
+</dict>
+</plist>
