@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RequiredKeyValues</key>
+	<dict>
+		<key>New item - 1</key>
+		<string>Registration Failed</string>
+		<key>New item - 2</key>
+		<string>No Network!</string>
+		<key>New item - 4</key>
+		<string>\n%@\nPrice:%@\n%@\n\nDo you like this product?\n\nLike\n%@\n\nDislike\n%@\n\n%@</string>
+		<key>New item - 5</key>
+		<string>Done</string>
+		<key>New item - 6</key>
+		<string>\tUse same address for Shipping</string>
+		<key>New item - 7</key>
+		<string>\tUse same address for Billing</string>
+		<key>New item - 8</key>
+		<string>Verifying Cart..</string>
+		<key>New item - 9</key>
+		<string>Reward Points</string>
+		<key>New item - 10</key>
+		<string>Move To Wishlist</string>
+		<key>New item - 14</key>
+		<string>Please Enter Shipping Address</string>
+		<key>New item - 15</key>
+		<string>Please Enter Billing Address</string>
+		<key>New item - 16</key>
+		<string>Fetching Store Location</string>
+		<key>New item - 17</key>
+		<string>Fetching Shippings</string>
+		<key>New item - 18</key>
+		<string>Fetching Taxes</string>
+		<key>New item - 19</key>
+		<string>Failed!</string>
+		<key>New item - 20</key>
+		<string>Fetching Taxes. Please try again.</string>
+		<key>New item - 21</key>
+		<string>Fetching Shippings. Please try again.</string>
+		<key>New item - 22</key>
+		<string>Fetching Store Location. Please try again.</string>
+		<key>New item - 26</key>
+		<string>Please enter %@ in %@</string>
+		<key>New item - 27</key>
+		<string>Checkout Info</string>
+		<key>New item - 28</key>
+		<string>Fee Info</string>
+		<key>New item - 30</key>
+		<string>No Shipping Available.</string>
+		<key>New item - 31</key>
+		<string>Tax Info</string>
+		<key>New item - 32</key>
+		<string>Total Amount</string>
+		<key>New item - 34</key>
+		<string>My Address</string>
+		<key>New item - 35</key>
+		<string>Click here to create new account /</string>
+		<key>New item - 37</key>
+		<string> * Enter Username</string>
+		<key>New item - 38</key>
+		<string>Total Tax</string>
+		<key>New item - 39</key>
+		<string>Total Extra Charges</string>
+		<key>New item - 40</key>
+		<string>Points Earned</string>
+		<key>New item - 41</key>
+		<string>Points Redeemed</string>
+		<key>New item - 42</key>
+		<string>On Hold</string>
+		<key>New item - 44</key>
+		<string>Total</string>
+		<key>New item - 45</key>
+		<string>Brand</string>
+		<key>New item - 46</key>
+		<string>Minimum Quantity</string>
+		<key>New item - 47</key>
+		<string>No user reviews yet.</string>
+		<key>New item - 48</key>
+		<string>Login required.</string>
+		<key>New item - 49</key>
+		<string>Change Pincode</string>
+		<key>New item - 50</key>
+		<string>Enter Pincode</string>
+		<key>New item - 51</key>
+		<string>Sponsor Friend</string>
+		<key>New item - 54</key>
+		<string>GET CODE for your WooCommerce Website by following these simple steps.</string>
+		<key>New item - 55</key>
+		<string>\n\n\n\t1.\tGo to your WordPress Admin Panel\n\n\t2.\tGo to Plugins -&gt; Add New\n\n\t3.\tSearch for \&quot;TMStore - WooCommerce Native Mobile App\&quot; Plugin\n\n\t4.\tInstall and Activate the Plugin\n\n\t5.\tGo to \&quot;TM Store\&quot; Plugin Page on your WordPress Admin Panel\n\n\t6.\tFill few Basic Details and Submit\n\n\t7.\tClick on \&quot;GET MOBILE APP\&quot;\n\n\t8.\tGet Code for your Demo Mobile App\n\n\n</string>
+		<key>New item - 56</key>
+		<string>Insert the Unique Code in the Demo Mobile App and view your Website in an App.</string>
+		<key>New item - 57</key>
+		<string>This coupon is already applied.</string>
+		<key>New item - 58</key>
+		<string>This coupon is not valid for purchase of more than %@ amount.</string>
+		<key>New item - 59</key>
+		<string>This Coupon can not be combined with previous coupons.</string>
+		<key>New item - 60</key>
+		<string>This coupon can not be applied on any of your selected Product.</string>
+		<key>New item - 61</key>
+		<string>This coupon is not valid for any of your selected Products.</string>
+		<key>New item - 62</key>
+		<string>This coupon is not valid for %@</string>
+		<key>New item - 63</key>
+		<string>This coupon surpasses total usage limit.</string>
+		<key>New item - 64</key>
+		<string>This coupon exceeds usage limit.</string>
+		<key>New item - 65</key>
+		<string>This coupon can not be applied on more than %d items.</string>
+		<key>New item - 66</key>
+		<string>This coupon is expired.</string>
+		<key>New item - 67</key>
+		<string>This coupon is not valid for one or more selected Category.</string>
+		<key>New item - 68</key>
+		<string>This coupon is not valid for those items which are already on sale.</string>
+		<key>New item - 69</key>
+		<string>This coupon is only valid for minimum purchase of %@ amount.</string>
+		<key>New item - 70</key>
+		<string>This coupon is not applicable for your Email id.</string>
+	</dict>
+</dict>
+</plist>

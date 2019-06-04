@@ -1,0 +1,249 @@
+{
+    "homeElements": [
+        {
+            "col": 1, 
+            "id": 1, 
+            "row": 1, 
+            "size_x": 12, 
+            "size_y": 7, 
+            "variables": {
+                "bannerCount": 2, 
+                "content": [
+                    {
+                        "bgUrl": "", 
+                        "bgcolor": "", 
+                        "img": "http://manage.thetmstore.com/assets-upload/naval.kishore@twistmobile.in/http___playcontest_in_demo_wordpress/custom-layout/banner_1491981848.jpg", 
+                        "redirect": "noredirect", 
+                        "redirect_id": -1
+                    }, 
+                    {
+                        "bgUrl": "", 
+                        "bgcolor": "", 
+                        "img": "http://manage.thetmstore.com/assets-upload/naval.kishore@twistmobile.in/http___playcontest_in_demo_wordpress/custom-layout/banner_1491981866.jpg", 
+                        "redirect": "noredirect", 
+                        "redirect_id": -1
+                    }
+                ], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#111111", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#FFFFFF"
+                }, 
+                "tileType": 3, 
+                "tileType_Id": -1
+            }
+        }, 
+        {
+            "col": 5, 
+            "id": 2, 
+            "row": 8, 
+            "size_x": 4, 
+            "size_y": 4, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#FFFFFF", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#000000"
+                }, 
+                "tileType": 1, 
+                "tileType_Id": 22
+            }
+        }, 
+        {
+            "col": 1, 
+            "id": 3, 
+            "row": 8, 
+            "size_x": 4, 
+            "size_y": 5, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#FFFFFF", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#000000"
+                }, 
+                "tileType": 1, 
+                "tileType_Id": 23
+            }
+        }, 
+        {
+            "col": 1, 
+            "id": 4, 
+            "row": 19, 
+            "size_x": 12, 
+            "size_y": 9, 
+            "variables": {
+                "content": [], 
+                "scrollerCount": 10, 
+                "scrollerFor": "category", 
+                "scrollerIds": -1, 
+                "scrollerType": "horizontal", 
+                "textStyle": {
+                    "alignment": "above", 
+                    "position": "left"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#000000", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#FFFFFF"
+                }, 
+                "tileTitle": "Trending Items", 
+                "tileType": 4, 
+                "tileType_Id": -1
+            }
+        }, 
+        {
+            "col": 1, 
+            "id": 5, 
+            "row": 13, 
+            "size_x": 6, 
+            "size_y": 6, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#FFFFFF", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#060C06"
+                }, 
+                "tileType": 1, 
+                "tileType_Id": 14
+            }
+        }, 
+        {
+            "col": 9, 
+            "id": 6, 
+            "row": 8, 
+            "size_x": 4, 
+            "size_y": 6, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#FFFFFF", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#000000"
+                }, 
+                "tileType": 1, 
+                "tileType_Id": 22
+            }
+        }
+    ], 
+    "max_app_version": "1.4.1", 
+    "min_app_version": "1.3.9"
+}

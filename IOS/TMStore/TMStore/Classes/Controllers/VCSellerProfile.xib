@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VCSellerProfile">
+            <connections>
+                <outlet property="currentItemHeading" destination="abv-wx-pAd" id="e82-xS-HSn"/>
+                <outlet property="lineView" destination="VPx-Q7-qgV" id="WJM-O9-ima"/>
+                <outlet property="mainView" destination="ekv-OX-Z5w" id="rF7-GA-Tqg"/>
+                <outlet property="mapView" destination="vGg-60-QbW" id="CW0-qC-1VC"/>
+                <outlet property="navBar" destination="aCi-hP-ENe" id="ECP-5x-pFG"/>
+                <outlet property="navigationBar" destination="aCi-hP-ENe" id="FEN-0G-bRC"/>
+                <outlet property="nextItemHeading" destination="nfT-II-pAG" id="O4u-Fk-2Xk"/>
+                <outlet property="previousItemHeading" destination="ver-C4-8hN" id="tU4-IK-uVG"/>
+                <outlet property="tableV" destination="Iah-Hv-ufg" id="2rn-rD-B6Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekv-OX-Z5w" userLabel="mainView">
+                    <rect key="frame" x="0.0" y="22" width="375" height="645"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-hP-ENe" userLabel="navBar">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <textAttributes key="titleTextAttributes">
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Heading" id="abv-wx-pAd" userLabel="currentItem">
+                                    <barButtonItem key="leftBarButtonItem" title="&lt; PrevHeading" id="ver-C4-8hN" userLabel="previousItem">
+                                        <connections>
+                                            <action selector="barButtonBackPressed:" destination="-1" id="QiE-4D-ueb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="Save" id="nfT-II-pAG" userLabel="nextItem">
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="-1" id="rtX-jp-Txn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPx-Q7-qgV" userLabel="lineView">
+                            <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="G7w-r6-32f"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iah-Hv-ufg">
+                            <rect key="frame" x="0.0" y="45" width="375" height="600"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="64O-Nb-gZP"/>
+                                <outlet property="delegate" destination="-1" id="frc-ZV-SHL"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="VPx-Q7-qgV" firstAttribute="leading" secondItem="aCi-hP-ENe" secondAttribute="leading" id="1UV-Be-XwF"/>
+                        <constraint firstItem="Iah-Hv-ufg" firstAttribute="width" secondItem="ekv-OX-Z5w" secondAttribute="width" id="3z2-Bh-quR"/>
+                        <constraint firstItem="VPx-Q7-qgV" firstAttribute="width" secondItem="ekv-OX-Z5w" secondAttribute="width" id="8bX-vB-yNA"/>
+                        <constraint firstItem="VPx-Q7-qgV" firstAttribute="centerX" secondItem="ekv-OX-Z5w" secondAttribute="centerX" id="DNQ-4p-xcg"/>
+                        <constraint firstItem="Iah-Hv-ufg" firstAttribute="centerX" secondItem="ekv-OX-Z5w" secondAttribute="centerX" id="N78-AW-Qsg"/>
+                        <constraint firstItem="Iah-Hv-ufg" firstAttribute="top" secondItem="VPx-Q7-qgV" secondAttribute="bottom" id="PZ3-WV-lcW"/>
+                        <constraint firstItem="aCi-hP-ENe" firstAttribute="centerX" secondItem="ekv-OX-Z5w" secondAttribute="centerX" id="bdH-iM-3hB"/>
+                        <constraint firstItem="VPx-Q7-qgV" firstAttribute="top" secondItem="aCi-hP-ENe" secondAttribute="bottom" id="dxa-Mk-bKa"/>
+                        <constraint firstItem="aCi-hP-ENe" firstAttribute="width" secondItem="ekv-OX-Z5w" secondAttribute="width" id="euX-ch-dZT"/>
+                        <constraint firstItem="aCi-hP-ENe" firstAttribute="top" secondItem="ekv-OX-Z5w" secondAttribute="top" id="oLp-9S-0jd"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="1UV-Be-XwF"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ekv-OX-Z5w" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="Cjq-Jn-Cmn"/>
+                <constraint firstItem="ekv-OX-Z5w" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="EQR-oV-3iA"/>
+                <constraint firstAttribute="bottom" secondItem="Iah-Hv-ufg" secondAttribute="bottom" id="Qrk-od-5Jx"/>
+                <constraint firstItem="ekv-OX-Z5w" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="SZM-BZ-HZy"/>
+                <constraint firstAttribute="bottom" secondItem="ekv-OX-Z5w" secondAttribute="bottom" id="Tie-nP-K8Q"/>
+                <constraint firstItem="ekv-OX-Z5w" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TuZ-rR-rgt"/>
+                <constraint firstItem="ekv-OX-Z5w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a3q-S9-ifu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="EQR-oV-3iA"/>
+                    <exclude reference="TuZ-rR-rgt"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="vGg-60-QbW" customClass="GMSMapView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="marker.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ddh-jh-I8l">
+                    <rect key="frame" x="173" y="210" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-165.5" y="-820"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="marker.png" width="31" height="50"/>
+    </resources>
+</document>

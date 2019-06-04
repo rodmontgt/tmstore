@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VCSelectCategory">
+            <connections>
+                <outlet property="_scrollView" destination="sR9-lg-x6N" id="8TT-48-KA0"/>
+                <outlet property="buttonDone" destination="2gr-3Z-9Qp" id="Oi0-Yt-v2g"/>
+                <outlet property="currentItemHeading" destination="YXO-qm-CcX" id="M2O-1m-d84"/>
+                <outlet property="lineView" destination="PlC-RR-t9w" id="JCz-tb-nie"/>
+                <outlet property="navigationBar" destination="fA5-SK-UVr" id="YnP-8j-8qx"/>
+                <outlet property="previousItemHeading" destination="vfV-Ec-2dw" id="Gtu-Eb-dot"/>
+                <outlet property="searchDisplayController" destination="qvY-Zy-1zi" id="prA-Jx-RbW"/>
+                <outlet property="tableCategory" destination="Fgm-KA-Poa" id="dNM-m0-af0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQa-aI-TQN" userLabel="mainView">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA5-SK-UVr" userLabel="navBar">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <textAttributes key="titleTextAttributes">
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Heading" id="YXO-qm-CcX" userLabel="currentItem">
+                                    <barButtonItem key="leftBarButtonItem" title="&lt; PrevHeading" id="vfV-Ec-2dw" userLabel="previousItem">
+                                        <connections>
+                                            <action selector="barButtonBackPressed:" destination="-1" id="OsK-Yg-gmd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="Done" id="2gr-3Z-9Qp" userLabel="previousItem">
+                                        <connections>
+                                            <action selector="barButtonDonePressed:" destination="-1" id="3HD-1r-ucw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlC-RR-t9w" userLabel="lineView">
+                            <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="8Ol-tf-rZg"/>
+                            </constraints>
+                        </view>
+                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="K3B-Kx-50H">
+                            <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="eww-bW-LmE"/>
+                            </connections>
+                        </searchBar>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sR9-lg-x6N" userLabel="scrollView">
+                            <rect key="frame" x="0.0" y="88" width="375" height="559"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXl-ZH-ruK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fgm-KA-Poa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="cDS-yz-0uh"/>
+                                                <outlet property="delegate" destination="-1" id="ujc-0u-FyK"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Fgm-KA-Poa" firstAttribute="leading" secondItem="yXl-ZH-ruK" secondAttribute="leading" id="6En-sU-4z9"/>
+                                        <constraint firstAttribute="trailing" secondItem="Fgm-KA-Poa" secondAttribute="trailing" id="CeW-xR-x23"/>
+                                        <constraint firstItem="Fgm-KA-Poa" firstAttribute="top" secondItem="yXl-ZH-ruK" secondAttribute="top" id="Xtg-vu-Fp8"/>
+                                        <constraint firstAttribute="bottom" secondItem="Fgm-KA-Poa" secondAttribute="bottom" id="hPJ-Ya-Xv7"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="yXl-ZH-ruK" firstAttribute="top" secondItem="sR9-lg-x6N" secondAttribute="top" id="bii-wT-agP"/>
+                                <constraint firstAttribute="trailing" secondItem="yXl-ZH-ruK" secondAttribute="trailing" id="ey5-zE-sHC"/>
+                                <constraint firstAttribute="bottom" secondItem="yXl-ZH-ruK" secondAttribute="bottom" id="oIb-yE-nIh"/>
+                                <constraint firstItem="yXl-ZH-ruK" firstAttribute="height" secondItem="sR9-lg-x6N" secondAttribute="height" id="uUa-Jr-pJD"/>
+                                <constraint firstItem="yXl-ZH-ruK" firstAttribute="leading" secondItem="sR9-lg-x6N" secondAttribute="leading" id="yTN-FN-awU"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="yXl-ZH-ruK" firstAttribute="width" secondItem="XQa-aI-TQN" secondAttribute="width" id="0Sg-wm-cMM"/>
+                        <constraint firstItem="fA5-SK-UVr" firstAttribute="centerX" secondItem="XQa-aI-TQN" secondAttribute="centerX" id="BQz-BF-yAV"/>
+                        <constraint firstItem="K3B-Kx-50H" firstAttribute="leading" secondItem="XQa-aI-TQN" secondAttribute="leading" id="Rjr-Ck-EnR"/>
+                        <constraint firstItem="fA5-SK-UVr" firstAttribute="leading" secondItem="XQa-aI-TQN" secondAttribute="leading" id="SoR-HA-HNc"/>
+                        <constraint firstAttribute="bottom" secondItem="sR9-lg-x6N" secondAttribute="bottom" id="Xhz-wW-ME5"/>
+                        <constraint firstAttribute="trailing" secondItem="PlC-RR-t9w" secondAttribute="trailing" id="ZdS-VT-Nog"/>
+                        <constraint firstItem="sR9-lg-x6N" firstAttribute="leading" secondItem="XQa-aI-TQN" secondAttribute="leading" id="ZqG-2m-Rjv"/>
+                        <constraint firstItem="fA5-SK-UVr" firstAttribute="top" secondItem="XQa-aI-TQN" secondAttribute="top" id="aCH-9a-cWZ"/>
+                        <constraint firstAttribute="trailing" secondItem="fA5-SK-UVr" secondAttribute="trailing" id="adq-Gw-UZG"/>
+                        <constraint firstItem="PlC-RR-t9w" firstAttribute="leading" secondItem="XQa-aI-TQN" secondAttribute="leading" id="dcx-Qu-bAQ"/>
+                        <constraint firstItem="sR9-lg-x6N" firstAttribute="top" secondItem="K3B-Kx-50H" secondAttribute="bottom" id="eJd-Iy-nou"/>
+                        <constraint firstItem="K3B-Kx-50H" firstAttribute="top" secondItem="PlC-RR-t9w" secondAttribute="bottom" id="iGZ-zJ-NTn"/>
+                        <constraint firstAttribute="trailing" secondItem="K3B-Kx-50H" secondAttribute="trailing" id="jTv-Bc-SFu"/>
+                        <constraint firstItem="fA5-SK-UVr" firstAttribute="bottom" secondItem="PlC-RR-t9w" secondAttribute="bottom" id="kNX-2N-jlm"/>
+                        <constraint firstAttribute="trailing" secondItem="sR9-lg-x6N" secondAttribute="trailing" id="kdJ-cS-AdU"/>
+                        <constraint firstItem="PlC-RR-t9w" firstAttribute="centerX" secondItem="XQa-aI-TQN" secondAttribute="centerX" id="u7H-VU-Fl0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XQa-aI-TQN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fAE-pv-Qlf"/>
+                <constraint firstAttribute="bottom" secondItem="XQa-aI-TQN" secondAttribute="bottom" id="iOq-So-hC0"/>
+                <constraint firstAttribute="trailing" secondItem="XQa-aI-TQN" secondAttribute="trailing" id="kUa-t4-3I1"/>
+                <constraint firstItem="XQa-aI-TQN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="vnX-UX-0yJ"/>
+            </constraints>
+            <point key="canvasLocation" x="-116.5" y="-65.5"/>
+        </view>
+        <searchDisplayController id="qvY-Zy-1zi">
+            <connections>
+                <outlet property="delegate" destination="-1" id="U89-Fn-gGe"/>
+                <outlet property="searchBar" destination="K3B-Kx-50H" id="d0l-Nl-Ccs"/>
+                <outlet property="searchContentsController" destination="-1" id="fyo-g6-Mkb"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="ABq-lh-Ug8"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="CRq-L8-eB3"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+</document>

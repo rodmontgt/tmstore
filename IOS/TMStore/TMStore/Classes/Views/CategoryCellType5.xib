@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fVa-Vc-Xqo" userLabel="CategoryCellType5" customClass="CCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bce-Nt-Qe1">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-aF-Hjp" userLabel="image-Product">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="10000" contentMode="center" image="placeholderdemo.png" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-Lk-O5g" userLabel="image-Dummy">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="240"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="white32x32.png" translatesAutoresizingMaskIntoConstraints="NO" id="UtJ-he-IjA" userLabel="Image-HeaderBg">
+                            <rect key="frame" x="0.0" y="240" width="300" height="60"/>
+                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dl-Dd-mtb" userLabel="label-ProductName">
+                            <rect key="frame" x="0.0" y="240" width="300" height="60"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                            <color key="textColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="UtJ-he-IjA" secondAttribute="trailing" id="2BB-W1-ZtX"/>
+                        <constraint firstAttribute="bottom" secondItem="ds6-aF-Hjp" secondAttribute="bottom" id="2aE-0X-tXz"/>
+                        <constraint firstItem="UtJ-he-IjA" firstAttribute="centerX" secondItem="Bce-Nt-Qe1" secondAttribute="centerX" id="6s3-jK-b5d"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="width" secondItem="UtJ-he-IjA" secondAttribute="width" id="7JL-sY-mQN"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="centerY" secondItem="UtJ-he-IjA" secondAttribute="centerY" id="9GD-h9-GWr"/>
+                        <constraint firstAttribute="height" secondItem="UtJ-he-IjA" secondAttribute="height" multiplier="5/1" id="AB9-Hr-neN"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="top" secondItem="Bce-Nt-Qe1" secondAttribute="top" id="QZA-0w-PXy"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="height" secondItem="UtJ-he-IjA" secondAttribute="height" id="hLj-4e-7Xq"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="centerX" secondItem="UtJ-he-IjA" secondAttribute="centerX" id="l57-rB-aV3"/>
+                        <constraint firstAttribute="trailing" secondItem="ds6-aF-Hjp" secondAttribute="trailing" id="lvo-4H-PcG"/>
+                        <constraint firstItem="UtJ-he-IjA" firstAttribute="leading" secondItem="Bce-Nt-Qe1" secondAttribute="leading" id="oFz-ur-rRG"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="leading" secondItem="Bce-Nt-Qe1" secondAttribute="leading" id="p95-tf-C0p"/>
+                        <constraint firstItem="bcd-Lk-O5g" firstAttribute="centerX" secondItem="Bce-Nt-Qe1" secondAttribute="centerX" id="urm-yJ-MeI"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="bcd-Lk-O5g"/>
+                            <exclude reference="UtJ-he-IjA"/>
+                            <exclude reference="4dl-Dd-mtb"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bce-Nt-Qe1" secondAttribute="trailing" id="c88-OW-DsR"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="centerX" secondItem="fVa-Vc-Xqo" secondAttribute="centerX" id="eTV-pN-C1c"/>
+                <constraint firstAttribute="bottom" secondItem="Bce-Nt-Qe1" secondAttribute="bottom" id="kli-AK-3uf"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="leading" secondItem="fVa-Vc-Xqo" secondAttribute="leading" id="l77-SL-fwd"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="top" secondItem="fVa-Vc-Xqo" secondAttribute="top" id="ume-YS-DIY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="baseView" destination="Bce-Nt-Qe1" id="Xxi-VF-Bei"/>
+                <outlet property="productImg" destination="ds6-aF-Hjp" id="uRr-qU-ex3"/>
+                <outlet property="productImgDummy" destination="bcd-Lk-O5g" id="Xmc-Y6-Ole"/>
+                <outlet property="productName" destination="4dl-Dd-mtb" id="Q2m-bJ-gdo"/>
+            </connections>
+            <point key="canvasLocation" x="284" y="1"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderdemo.png" width="60" height="60"/>
+        <image name="white32x32.png" width="32" height="32"/>
+    </resources>
+</document>

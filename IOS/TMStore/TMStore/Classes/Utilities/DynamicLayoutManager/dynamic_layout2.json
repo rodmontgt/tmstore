@@ -1,0 +1,133 @@
+{
+    "homeElements": [
+        {
+            "col": 1, 
+            "id": 1, 
+            "row": 10, 
+            "size_x": 6, 
+            "size_y": 6, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FA9566", 
+                    "color": "#111111", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#79FF1E"
+                }, 
+                "tileType": 2, 
+                "tileType_Id": 83
+            }
+        }, 
+        {
+            "col": 1, 
+            "id": 2, 
+            "row": 1, 
+            "size_x": 12, 
+            "size_y": 9, 
+            "variables": {
+                "bannerCount": 2, 
+                "content": [
+                    {
+                        "bgUrl": "", 
+                        "bgcolor": "", 
+                        "img": "http://manage.thetmstore.com/assets-upload/naval.kishore@twistmobile.in/http___playcontest_in_diy_wordpress/custom-layout/banner_1493031220.jpg", 
+                        "redirect": "noredirect", 
+                        "redirect_id": -1
+                    }, 
+                    {
+                        "bgUrl": "", 
+                        "bgcolor": "", 
+                        "img": "http://manage.thetmstore.com/assets-upload/naval.kishore@twistmobile.in/http___playcontest_in_diy_wordpress/custom-layout/banner_1493031237.png", 
+                        "redirect": "noredirect", 
+                        "redirect_id": -1
+                    }
+                ], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FA9566", 
+                    "color": "#111111", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#79FF1E"
+                }, 
+                "tileType": 3, 
+                "tileType_Id": -1
+            }
+        }, 
+        {
+            "col": 7, 
+            "id": 3, 
+            "row": 10, 
+            "size_x": 6, 
+            "size_y": 6, 
+            "variables": {
+                "content": [], 
+                "textStyle": {
+                    "alignment": "below", 
+                    "position": "center"
+                }, 
+                "tileRedirect": "true", 
+                "tileStyle": {
+                    "bgcolor": "#FAFAFA", 
+                    "color": "#111111", 
+                    "fontWeight": 500, 
+                    "fontsize": 14, 
+                    "margin": [
+                        3, 
+                        3, 
+                        3, 
+                        3
+                    ], 
+                    "padding": [
+                        0, 
+                        0, 
+                        0, 
+                        0
+                    ], 
+                    "scaletype": 0, 
+                    "textbgcolor": "#FFFFFF"
+                }, 
+                "tileType": 2, 
+                "tileType_Id": 99
+            }
+        }
+    ], 
+    "max_app_version": "1.4.1", 
+    "min_app_version": "1.3.9"
+}

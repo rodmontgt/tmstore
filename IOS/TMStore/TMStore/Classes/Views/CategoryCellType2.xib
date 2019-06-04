@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fVa-Vc-Xqo" userLabel="CategoryCellType2" customClass="CCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bce-Nt-Qe1">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-aF-Hjp" userLabel="image-Product">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" tag="10000" contentMode="center" image="placeholderdemo.png" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-Lk-O5g" userLabel="image-Dummy">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" image="white32x32.png" translatesAutoresizingMaskIntoConstraints="NO" id="UtJ-he-IjA" userLabel="Image-HeaderBg">
+                            <rect key="frame" x="300" y="0.0" width="300" height="300"/>
+                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dl-Dd-mtb" userLabel="label-ProductName">
+                            <rect key="frame" x="300" y="114" width="300" height="26"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                            <color key="textColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Explore Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOy-Za-40y" userLabel="label-ExploreNow">
+                            <rect key="frame" x="375" y="160" width="150" height="38"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="qnO-bj-Hwz"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="ydI-Lq-DVm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="bcd-Lk-O5g" firstAttribute="centerY" secondItem="Bce-Nt-Qe1" secondAttribute="centerY" id="4RJ-tt-YDM"/>
+                        <constraint firstItem="UtJ-he-IjA" firstAttribute="centerY" secondItem="Bce-Nt-Qe1" secondAttribute="centerY" id="9Ak-1z-AQ3"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="width" secondItem="Bce-Nt-Qe1" secondAttribute="width" multiplier="1:2" id="FL4-BW-dKc"/>
+                        <constraint firstItem="bcd-Lk-O5g" firstAttribute="leading" secondItem="Bce-Nt-Qe1" secondAttribute="leading" id="FfY-AA-ZHw"/>
+                        <constraint firstAttribute="bottom" secondItem="bcd-Lk-O5g" secondAttribute="bottom" id="JeA-f0-4gE"/>
+                        <constraint firstItem="bcd-Lk-O5g" firstAttribute="width" secondItem="ds6-aF-Hjp" secondAttribute="width" id="OQ1-HA-RjD"/>
+                        <constraint firstItem="mOy-Za-40y" firstAttribute="centerX" secondItem="4dl-Dd-mtb" secondAttribute="centerX" id="OxH-ve-FSx"/>
+                        <constraint firstAttribute="trailing" secondItem="UtJ-he-IjA" secondAttribute="trailing" id="Rzb-vx-mSA"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="centerY" secondItem="Bce-Nt-Qe1" secondAttribute="centerY" id="cRB-bI-UhK"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="bottom" secondItem="Bce-Nt-Qe1" secondAttribute="centerY" constant="-10" id="cWO-pZ-W7K"/>
+                        <constraint firstItem="UtJ-he-IjA" firstAttribute="width" secondItem="ds6-aF-Hjp" secondAttribute="width" id="ccU-My-s2K"/>
+                        <constraint firstItem="mOy-Za-40y" firstAttribute="top" secondItem="Bce-Nt-Qe1" secondAttribute="centerY" constant="10" id="mLU-Nk-C91"/>
+                        <constraint firstAttribute="bottom" secondItem="ds6-aF-Hjp" secondAttribute="bottom" id="mQO-3u-BNK"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="leading" secondItem="Bce-Nt-Qe1" secondAttribute="leading" id="noC-Xg-AQm"/>
+                        <constraint firstItem="UtJ-he-IjA" firstAttribute="top" secondItem="Bce-Nt-Qe1" secondAttribute="top" id="sZm-q7-PBz"/>
+                        <constraint firstItem="4dl-Dd-mtb" firstAttribute="width" secondItem="ds6-aF-Hjp" secondAttribute="width" id="uku-ki-evp"/>
+                        <constraint firstItem="ds6-aF-Hjp" firstAttribute="top" secondItem="Bce-Nt-Qe1" secondAttribute="top" id="wbN-lA-kNa"/>
+                        <constraint firstItem="bcd-Lk-O5g" firstAttribute="top" secondItem="Bce-Nt-Qe1" secondAttribute="top" id="xJi-Ir-y0A"/>
+                        <constraint firstItem="mOy-Za-40y" firstAttribute="height" secondItem="Bce-Nt-Qe1" secondAttribute="height" multiplier="1:8" priority="999" id="y68-Aa-d1g"/>
+                        <constraint firstItem="mOy-Za-40y" firstAttribute="width" secondItem="Bce-Nt-Qe1" secondAttribute="width" multiplier="1:4" priority="999" id="yGL-tI-nGg"/>
+                        <constraint firstAttribute="trailing" secondItem="4dl-Dd-mtb" secondAttribute="trailing" id="ydT-mQ-o07"/>
+                        <constraint firstAttribute="bottom" secondItem="UtJ-he-IjA" secondAttribute="bottom" id="zgV-Wg-ubO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="centerX" secondItem="fVa-Vc-Xqo" secondAttribute="centerX" id="FSd-R4-LT5"/>
+                <constraint firstAttribute="bottom" secondItem="Bce-Nt-Qe1" secondAttribute="bottom" id="RLZ-fd-Lgx"/>
+                <constraint firstAttribute="trailing" secondItem="Bce-Nt-Qe1" secondAttribute="trailing" id="dnu-h8-jO9"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="top" secondItem="fVa-Vc-Xqo" secondAttribute="top" id="k46-nm-Qn3"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="centerY" secondItem="fVa-Vc-Xqo" secondAttribute="centerY" id="qSX-5c-mC7"/>
+                <constraint firstItem="Bce-Nt-Qe1" firstAttribute="leading" secondItem="fVa-Vc-Xqo" secondAttribute="leading" id="rzW-cC-bf8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="baseView" destination="Bce-Nt-Qe1" id="Xxi-VF-Bei"/>
+                <outlet property="imgHeaderBg" destination="UtJ-he-IjA" id="oba-Un-odG"/>
+                <outlet property="labelExploreNow" destination="mOy-Za-40y" id="cMA-ym-ir9"/>
+                <outlet property="productImg" destination="ds6-aF-Hjp" id="uRr-qU-ex3"/>
+                <outlet property="productImgDummy" destination="bcd-Lk-O5g" id="1TB-xt-tOK"/>
+                <outlet property="productName" destination="4dl-Dd-mtb" id="Q2m-bJ-gdo"/>
+            </connections>
+            <point key="canvasLocation" x="238" y="8"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholderdemo.png" width="60" height="60"/>
+        <image name="white32x32.png" width="32" height="32"/>
+    </resources>
+</document>

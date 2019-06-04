@@ -1,0 +1,52 @@
+{
+    "min_app_version": "1.3.9",
+    "max_app_version": "1.4.1",
+    "homeElements": [
+                     {
+                     "col": 1,
+                     "row": 28,
+                     "size_x": 12,
+                     "size_y": 8,
+                     "id": 24,
+                     "variables": {
+                     "tileType": 4,
+                     "tileType_Id": -1,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 0,
+                                 0,
+                                 0,
+                                 0
+                                 ],
+                     "margin": [
+                                0,
+                                0,
+                                0,
+                                0
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     },
+                     "scrollerFor": "category",
+                     "scrollerIds": 156,
+                     "tileTitle": "Indore Special",
+                     "scrollerType": "horizontal",
+                     "scrollerCount": 10,
+                     "scrollerToShow": 2,
+                     "showTitle": true,
+                     "carouselTemplete": "0"
+                     }
+                     }
+                     ]
+}

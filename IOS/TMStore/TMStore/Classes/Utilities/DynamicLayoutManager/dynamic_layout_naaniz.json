@@ -1,0 +1,470 @@
+{
+  "min_app_version": "1.3.9",
+  "max_app_version": "1.4.1",
+  "homeElements": [
+    {
+      "col": 1,
+      "row": 5,
+      "size_x": 12,
+      "size_y": 5,
+      "id": 13,
+      "variables": {
+        "tileType": 4,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "id": 115,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 115,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 102,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 102,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 100,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 100,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 96,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 96,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2218,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2218,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 120,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 120,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 864,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 864,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2247,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2247,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2225,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2225,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "scrollerFor": "categories",
+        "scrollerIds": "",
+        "tileTitle": "",
+        "scrollerType": "horizontal",
+        "scrollerCount": 9
+      }
+    },
+    {
+      "col": 1,
+      "row": 10,
+      "size_x": 12,
+      "size_y": 4,
+      "id": 14,
+      "variables": {
+        "tileType": 3,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501765039.jpg",
+            "redirect": "category",
+            "redirect_id": 129,
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "bannerCount": 1
+      }
+    },
+    {
+      "col": 1,
+      "row": 1,
+      "size_x": 12,
+      "size_y": 4,
+      "id": 18,
+      "variables": {
+        "tileType": 3,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501759436.jpg",
+            "redirect": "noredirect",
+            "redirect_id": -1,
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501760871.jpg",
+            "redirect": "noredirect",
+            "redirect_id": -1,
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501761255.jpg",
+            "redirect": "noredirect",
+            "redirect_id": -1,
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "bannerCount": 3
+      }
+    },
+    {
+      "col": 1,
+      "row": 22,
+      "size_x": 12,
+      "size_y": 6,
+      "id": 21,
+      "variables": {
+        "tileType": 8,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "id": 7916,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 7916,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 8842,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 8842,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 7521,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 7521,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2731,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2731,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 8714,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 8714,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2773,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2773,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 2735,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 2735,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 7948,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 7948,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          },
+          {
+            "id": 3498,
+            "name": "",
+            "img": "",
+            "redirect": true,
+            "redirect_id": 3498,
+            "display": "default",
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "scrollerFor": "product",
+        "scrollerIds": "",
+        "tileTitle": "",
+        "scrollerType": "vertical",
+        "scrollerCount": 9
+      }
+    },
+    {
+      "col": 1,
+      "row": 14,
+      "size_x": 12,
+      "size_y": 4,
+      "id": 22,
+      "variables": {
+        "tileType": 3,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501765093.jpg",
+            "redirect": "category",
+            "redirect_id": 118,
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "bannerCount": 1
+      }
+    },
+    {
+      "col": 1,
+      "row": 18,
+      "size_x": 12,
+      "size_y": 4,
+      "id": 23,
+      "variables": {
+        "tileType": 3,
+        "tileType_Id": -1,
+        "tileRedirect": "true",
+        "content": [
+          {
+            "img": "https://manage.thetmstore.com/assets-upload/anshul@naaniskitchen.com/https___naaniskitchen_com/custom-layout/banner_1501765128.jpg",
+            "redirect": "category",
+            "redirect_id": 103,
+            "bgUrl": "",
+            "bgcolor": ""
+          }
+        ],
+        "tileStyle": {
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "margin": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "color": "#111111",
+          "fontsize": 14,
+          "textbgcolor": "#FFFFFF",
+          "bgcolor": "#FAFAFA",
+          "fontWeight": 500,
+          "scaletype": 0
+        },
+        "textStyle": {
+          "position": "left",
+          "alignment": "above"
+        },
+        "bannerCount": 1
+      }
+    }
+  ]
+}

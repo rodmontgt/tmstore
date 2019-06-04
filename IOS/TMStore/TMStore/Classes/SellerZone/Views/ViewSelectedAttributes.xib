@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewSelectedAttributes">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVd-1a-MUy" userLabel="btnRemove">
+                    <rect key="frame" x="10" y="20" width="30" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="wil-2b-O3k"/>
+                        <constraint firstAttribute="width" constant="30" id="ztR-Gr-oA0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="-">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uc-Z7-yVB" userLabel="lblAttributeName">
+                    <rect key="frame" x="50" y="15.5" width="315" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dd-yO-B7S" userLabel="lblAttributeOptions">
+                    <rect key="frame" x="50" y="35" width="315" height="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VVd-1a-MUy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="LkC-I3-Mtj"/>
+                <constraint firstItem="VVd-1a-MUy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cSy-cm-A9N"/>
+                <constraint firstItem="1uc-Z7-yVB" firstAttribute="bottom" secondItem="VVd-1a-MUy" secondAttribute="centerY" id="ddG-s0-bGs"/>
+                <constraint firstItem="1uc-Z7-yVB" firstAttribute="leading" secondItem="VVd-1a-MUy" secondAttribute="trailing" constant="10" id="i2R-cv-gK3"/>
+                <constraint firstItem="7dd-yO-B7S" firstAttribute="centerX" secondItem="1uc-Z7-yVB" secondAttribute="centerX" id="kwf-dO-axm"/>
+                <constraint firstItem="7dd-yO-B7S" firstAttribute="width" secondItem="1uc-Z7-yVB" secondAttribute="width" id="uhl-Zd-tGo"/>
+                <constraint firstAttribute="trailing" secondItem="1uc-Z7-yVB" secondAttribute="trailing" constant="10" id="yGA-LI-3PM"/>
+                <constraint firstItem="7dd-yO-B7S" firstAttribute="top" secondItem="1uc-Z7-yVB" secondAttribute="bottom" id="zaj-Sm-OxB"/>
+            </constraints>
+            <connections>
+                <outlet property="btnRemove" destination="VVd-1a-MUy" id="FPo-hb-Iaq"/>
+                <outlet property="lblAttributeName" destination="1uc-Z7-yVB" id="H27-Dy-NGp"/>
+                <outlet property="lblAttributeOptions" destination="7dd-yO-B7S" id="klM-y3-iR9"/>
+            </connections>
+        </view>
+    </objects>
+</document>

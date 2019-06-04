@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RequiredKeyValues</key>
+	<dict>
+		<key>title_additional_information</key>
+		<string>Additional information</string>
+		<key>seller_verification_is_pending</key>
+		<string>Your verification for seller is pending.</string>
+		<key>seller_subscription_dialog_title</key>
+		<string>Subscription required</string>
+		<key>title_about</key>
+		<string>Contact Us</string>
+		<key>seller_subscription_dialog_msg</key>
+		<string>Your subscription for seller is not active, please subscribe to access this section.</string>
+		<key>select_payment_method</key>
+		<string>Please select a payment option.</string>
+		<key>distance</key>
+		<string>Distance: %@ KM</string>
+		<key>action_sign_in_short</key>
+		<string>Sign In</string>
+		<key>i_ok</key>
+		<string>Ok</string>
+		<key>prompt_password_confirm</key>
+		<string>Confirm Password</string>
+		<key>track_order</key>
+		<string>Track Order</string>
+		<key>i_success</key>
+		<string>Success!</string>
+		<key>menu_title_opinion</key>
+		<string>OPINION</string>
+		<key>enter</key>
+		<string>Enter</string>
+		<key>i_cart_sync_success</key>
+		<string>Cart synced successfully.</string>
+		<key>i_field_compulsary</key>
+		<string>Fields marked as ( * ) are mandatory.</string>
+		<key>i_grand_total</key>
+		<string>Grand Total</string>
+		<key>grand_total</key>
+		<string>Grand Total:</string>
+		<key>city</key>
+		<string>City</string>
+		<key>approval</key>
+		<string>Approval</string>
+		<key>i_password_reset_desc</key>
+		<string>Password reset link will be sent on this email id.</string>
+		<key>i_fill_data_from_billing</key>
+		<string>%@Fill data from Billing Address</string>
+		<key>i_use_same_for_billing</key>
+		<string>%@Use same address for Billing</string>
+		<key>title_login</key>
+		<string>Login</string>
+		<key>i_order_summery</key>
+		<string>Order Summery</string>
+		<key>title_product_info</key>
+		<string>Product Info</string>
+		<key>apply</key>
+		<string>Apply</string>
+		<key>available_payment_options</key>
+		<string>Available Payment Options</string>
+		<key>i_city_postal</key>
+		<string>City: %@	Postal Code: %@</string>
+		<key>coupon_applied_successfully</key>
+		<string>Coupon applied successfully.</string>
+		<key>dont_have_account</key>
+		<string>Don&apos;t have an account?</string>
+		<key>postcode</key>
+		<string>Postal Code</string>
+		<key>i_back</key>
+		<string>Back</string>
+		<key>cancel</key>
+		<string>Cancel</string>
+		<key>done</key>
+		<string>Done</string>
+		<key>i_fill_data_from_shipping</key>
+		<string>%@Fill data from Shipping Address</string>
+		<key>i_use_same_for_shipping</key>
+		<string>%@Use same address for Shipping</string>
+		<key>demo_version</key>
+		<string>Demo Version</string>
+		<key>no_items_in_cart</key>
+		<string>Your Cart is empty.</string>
+		<key>i_price</key>
+		<string>Price:</string>
+		<key>i_use_data_for_billing</key>
+		<string>%@Use same address for Billing</string>
+		<key>txt_go_back</key>
+		<string>Go Back</string>
+		<key>last_name</key>
+		<string>Last Name</string>
+		<key>contact_number</key>
+		<string>Phone No.</string>
+		<key>i_check_this</key>
+		<string>Hey check this out!</string>
+		<key>i_total_shipping_cost</key>
+		<string>Total Shipping Cost</string>
+		<key>address</key>
+		<string>Address</string>
+		<key>i_order_cancel_permission</key>
+		<string>Do you want to cancel the order. Are you sure?</string>
+		<key>launch_sample_app</key>
+		<string>Launch Sample App</string>
+		<key>sign_up_here</key>
+		<string> Sign up here</string>
+		<key>btn_no</key>
+		<string>NO</string>
+		<key>i_save</key>
+		<string>Save</string>
+		<key>buy</key>
+		<string>BUY NOW</string>
+		<key>country</key>
+		<string>Country</string>
+		<key>email</key>
+		<string>E-mail</string>
+		<key>prompt_demo_code</key>
+		<string>Demo Code</string>
+		<key>not_available</key>
+		<string>N/A</string>
+		<key>i_add_address</key>
+		<string>+ Add Address</string>
+		<key>total_savings</key>
+		<string>Total Discount</string>
+		<key>i_cok</key>
+		<string>OK</string>
+		<key>place_order</key>
+		<string>PLACE ORDER</string>
+		<key>i_customer_data_updated</key>
+		<string>Customer data updated successfully.</string>
+		<key>state</key>
+		<string>State</string>
+		<key>header_best_deals</key>
+		<string>Maximum Selling Products</string>
+		<key>delivered</key>
+		<string>Delivered</string>
+		<key>select_payment</key>
+		<string>SELECT PAYMENT</string>
+		<key>header_trending_items</key>
+		<string>Trending</string>
+		<key>i_average_user_rating_review</key>
+		<string>Average User Rating &amp; Reviews</string>
+		<key>processing</key>
+		<string>Processing</string>
+		<key>completed</key>
+		<string>Completed</string>
+		<key>header_fresh_arrival</key>
+		<string>New Products</string>
+		<key>i_refresh_cart_permission</key>
+		<string>Press Ok to refresh your cart!</string>
+		<key>title_logout</key>
+		<string>Logout</string>
+		<key>my_orders</key>
+		<string>My Orders</string>
+		<key>action_sign_up_title</key>
+		<string>New User</string>
+		<key>i_amt_details</key>
+		<string>Amount Details</string>
+		<key>shipping</key>
+		<string>Shipping</string>
+		<key>i_enter_code_desc</key>
+		<string>Enter your Code to view Demo Mobile App\nfor your WooCommerce Website.</string>
+		<key>cancel_order</key>
+		<string>Cancel Order</string>
+		<key>title_search</key>
+		<string>Search</string>
+		<key>updating_order</key>
+		<string>Updating Order..</string>
+		<key>i_via_str</key>
+		<string>via %@</string>
+		<key>i_error</key>
+		<string>Error!</string>
+		<key>apply_new_coupon</key>
+		<string>Apply Coupon:</string>
+		<key>action_reset_password</key>
+		<string>Reset Password</string>
+		<key>i_opinion_empty</key>
+		<string>Your Opinion list is empty.</string>
+		<key>shipping_address</key>
+		<string>Shipping Address</string>
+		<key>i_help&amp;support</key>
+		<string>Help &amp; Support</string>
+		<key>i_orderid</key>
+		<string>Order Id</string>
+		<key>i_no_result_found</key>
+		<string>No Result Found</string>
+		<key>i_version_cmpny</key>
+		<string>Version %@(%@) | thetmstore.com</string>
+		<key>i_delivery_charge_info</key>
+		<string>(*Delivery charges applicable as per item.)</string>
+		<key>change</key>
+		<string>Edit</string>
+		<key>first_name</key>
+		<string>First Name</string>
+		<key>txt_forget</key>
+		<string>Forgot Password?</string>
+		<key>i_total_items</key>
+		<string>Total Items</string>
+		<key>i_shipping_info</key>
+		<string>Shipping Info</string>
+		<key>invalid_coupon_code</key>
+		<string>Invalid Coupon code.</string>
+		<key>powered_by_tm_store</key>
+		<string>Powered By TM Store</string>
+		<key>title_mycart</key>
+		<string>Cart</string>
+		<key>title_poll</key>
+		<string>Opinion</string>
+		<key>sign_in_here</key>
+		<string> Sign in here</string>
+		<key>prompt_password</key>
+		<string>Enter Password</string>
+		<key>enter_coupon_code</key>
+		<string>Enter Coupon Code</string>
+		<key>i_loading_product_data</key>
+		<string>Loading Product Data..</string>
+		<key>i_select</key>
+		<string>Select</string>
+		<key>no_items_in_wishlist</key>
+		<string>Your Wishlist is empty.</string>
+		<key>address1</key>
+		<string>Address1</string>
+		<key>address2</key>
+		<string>Address2</string>
+		<key>i_cancel_order</key>
+		<string>  Cancel Order  </string>
+		<key>out_of_stock</key>
+		<string>OUT OF STOCK</string>
+		<key>action_sign_up_short</key>
+		<string>Register</string>
+		<key>i_refresh</key>
+		<string>Refresh</string>
+		<key>title_categories</key>
+		<string>Categories</string>
+		<key>i_loading_data</key>
+		<string>Loading Data..</string>
+		<key>i_no_user_review_yet</key>
+		<string>No user review yet.</string>
+		<key>i_fetching_reviews</key>
+		<string>Fetching reviews..</string>
+		<key>menu_title_wishlist</key>
+		<string>Wishlist</string>
+		<key>i_cancelling_order</key>
+		<string>Cancelling Order..</string>
+		<key>reviews</key>
+		<string>Reviews</string>
+		<key>proceed</key>
+		<string>PROCEED</string>
+		<key>i_remove</key>
+		<string>Remove</string>
+		<key>i_use_your_email_add</key>
+		<string>Use your email address</string>
+		<key>title_myorders</key>
+		<string>Order</string>
+		<key>i_rate_app</key>
+		<string>Rate This App</string>
+		<key>enter_app_code</key>
+		<string>Enter Code for your App</string>
+		<key>i_no_user_review_rated</key>
+		<string>No user rated/reviewed yet.</string>
+		<key>label_quantity</key>
+		<string>Quantity</string>
+		<key>applied_coupons</key>
+		<string>Applied Coupon:</string>
+		<key>average_user_ratings</key>
+		<string>Average User Rating</string>
+		<key>i_order_val</key>
+		<string>Order %@</string>
+		<key>title_shop</key>
+		<string>Home</string>
+		<key>already_have_account</key>
+		<string>Already have an account?</string>
+		<key>btn_yes</key>
+		<string>YES</string>
+		<key>i_t&amp;c</key>
+		<string>Terms And Conditions</string>
+		<key>billing_address</key>
+		<string>Billing Address</string>
+		<key>sign_in_1_click</key>
+		<string>Sign-in with a simple click.</string>
+		<key>i_no_user_rated_yet</key>
+		<string>No user rated yet.</string>
+		<key>demo_code_help_1</key>
+		<string>Click Here To Get Code</string>
+		<key>discount</key>
+		<string>Discount Zone</string>
+		<key>title_settings</key>
+		<string>Settings</string>
+		<key>title_language</key>
+		<string>Languages</string>
+		<key>toggle_cart_on</key>
+		<string>Add To Cart</string>
+		<key>toggle_wishlist_on</key>
+		<string>Add To Wishlist</string>
+		<key>toggle_wishlist_off</key>
+		<string>Added To Wishlist</string>
+		<key>i_creating_order</key>
+		<string>Creating Order..</string>
+		<key>explore_now</key>
+		<string>Explore Now</string>
+		<key>select_language</key>
+		<string>Select Language</string>
+		<key>txt_search_hint</key>
+		<string>Type here to search...</string>
+		<key>i_state_data_not_available</key>
+		<string>State Data Not Fetched. Sorry!</string>
+		<key>i_cart_totals</key>
+		<string>Cart Total</string>
+		<key>cart_totals</key>
+		<string>Cart Total:</string>
+		<key>syncing_cart</key>
+		<string>Syncing Cart</string>
+		<key>title_change_vendor</key>
+		<string>Set Vendor</string>
+		<key>title_change_merchant</key>
+		<string>Set Merchant</string>
+		<key>vendor_change_confirmation</key>
+		<string>Do you want to set vendor?</string>
+		<key>merchant_change_confirmation</key>
+		<string>Do you want to set merchant?</string>
+		<key>vendor_search_placeholder</key>
+		<string>Search By Vendor Name</string>
+		<key>merchant_search_placeholder</key>
+		<string>Search By Merchant Name</string>
+		<key>no_vendor_found</key>
+		<string>No Vendor Found</string>
+		<key>no_merchant_found</key>
+		<string>No Merchant Found</string>
+		<key>select_all_variations</key>
+		<string>Select all variations.</string>
+		<key>i_select_payment_from</key>
+		<string>Select Payment from</string>
+		<key>vendor_change_confirmation_message</key>
+		<string>All your cart/wishlist items are released. Do you want to set vendor?</string>
+		<key>merchant_change_confirmation_message</key>
+		<string>All your cart/wishlist items are released. Do you want to set merchant?</string>
+		<key>order_note_placeholder</key>
+		<string>Order Note Placeholder</string>
+		<key>cart_note_placeholder</key>
+		<string>Cart Note Placeholder</string>
+		<key>order_note</key>
+		<string>Order Note</string>
+		<key>cart_note</key>
+		<string>Cart Note</string>
+		<key>payment_method</key>
+		<string>Payment Method</string>
+		<key>unable_to_purchase</key>
+		<string>Unable to purchase.</string>
+		<key>sorry</key>
+		<string>Sorry!</string>
+		<key>unable_to_add_cart</key>
+		<string>Unable to add to cart.</string>
+		<key>enter_valid_email</key>
+		<string>Please enter valid email id.</string>
+		<key>login_failed</key>
+		<string>Login Failed</string>
+		<key>invalid_email</key>
+		<string>No user found.</string>
+		<key>invalid_username</key>
+		<string>Invalid Username!</string>
+		<key>invalid_password</key>
+		<string>Invalid Password!</string>
+		<key>both_password_not_same</key>
+		<string>Both passwords are not same.</string>
+		<key>try_again</key>
+		<string>Please try again later.</string>
+		<key>live_chat</key>
+		<string>Live Chat</string>
+		<key>cart_sync_failed</key>
+		<string>Cart synced Failed!</string>
+		<key>account_not_found</key>
+		<string>Account not found.</string>
+		<key>generic_error</key>
+		<string>Something went wrong!</string>
+		<key>add_new_keyboard</key>
+		<string>Add New Keyboards...</string>
+		<key>add_keyboard_settings</key>
+		<string>Add %@ keyboard from Settings.</string>
+		<key>coupon_code</key>
+		<string>Coupon Code : %@</string>
+		<key>ask_later</key>
+		<string>Ask me later</string>
+		<key>no_thanks</key>
+		<string>No, thanks</string>
+		<key>apply_coupon</key>
+		<string>Do you want to apply this coupon?</string>
+		<key>email_not_found</key>
+		<string>Email address not found.</string>
+		<key>setup_account</key>
+		<string>Please setup your account in settings app.</string>
+		<key>insufficient_data</key>
+		<string>Insufficient Data.</string>
+		<key>oops</key>
+		<string>Oops!</string>
+		<key>retry</key>
+		<string>Retry</string>
+		<key>payment_merchant_not_allowed</key>
+		<string>Payments to this merchant are not allowed (invalid clientId)</string>
+		<key>invalid_merchant</key>
+		<string>Invalid merchant</string>
+		<key>items_available</key>
+		<string>%d items are available!</string>
+		<key>select_shipping</key>
+		<string>Please select a shipping option.</string>
+		<key>no_payments_available</key>
+		<string>No Payments Available.</string>
+		<key>password_incorrect</key>
+		<string>Username/Password is incorrect.</string>
+		<key>skip</key>
+		<string>Skip</string>
+		<key>error_loading</key>
+		<string>Error in data loading.</string>
+		<key>note</key>
+		<string>Note</string>
+		<key>points</key>
+		<string>Points</string>
+		<key>my_rewards</key>
+		<string>My Rewards</string>
+		<key>txt_search_hint_home</key>
+		<string>Type to search...</string>
+		<key>unsubscribe_waitlist</key>
+		<string>Unsubscribe from waitlist</string>
+		<key>subscribe_waitlist</key>
+		<string>Subscribe to waitlist</string>
+		<key>unsubscribe_waitlist_desc</key>
+		<string>You are on the waitlist for this product, you can unsubscribe by clicking below button.</string>
+		<key>subscribe_waitlist_desc</key>
+		<string>Subscribe to waitlist to be emailed when this product becomes available.</string>
+		<key>product_points</key>
+		<string>Purchase this product now and earn %d Points.</string>
+		<key>earn_points_desc</key>
+		<string>Complete your order and earn %d Points for a discount on a future purchase</string>
+		<key>use_points_desc</key>
+		<string>Use %d Points for a %@ discount on this order</string>
+		<key>used_points_desc</key>
+		<string>You have used %d Points for a %@ discount on this order.</string>
+		<key>share_wishlist</key>
+		<string>Share WishList</string>
+		<key>remove_discount</key>
+		<string>Remove Discount</string>
+		<key>apply_discount</key>
+		<string>Apply Discount</string>
+		<key>please_wait</key>
+		<string>Please Wait..</string>
+		<key>toggle_cart_off</key>
+		<string>Added To Cart</string>
+		<key>view_cart</key>
+		<string>View Cart</string>
+		<key>title_profile</key>
+		<string>Profile</string>
+		<key>write_to_email</key>
+		<string>Write to %@?</string>
+		<key>call_to_number</key>
+		<string>Call %@?</string>
+		<key>visit_site</key>
+		<string>Visit %@?</string>
+		<key>register_failed</key>
+		<string>Registration Failed</string>
+		<key>no_network_connection</key>
+		<string>No Network!</string>
+		<key>price</key>
+		<string>Price</string>
+		<key>msg_opinion_product</key>
+		<string>Do you like this product?</string>
+		<key>msg_opinion_like</key>
+		<string>Like</string>
+		<key>msg_opinion_dislike</key>
+		<string>Dislike</string>
+		<key>New item - 5</key>
+		<string>Done</string>
+		<key>verifying_cart</key>
+		<string>Verifying Cart..</string>
+		<key>New item - 9</key>
+		<string>Reward Points</string>
+		<key>New item - 10</key>
+		<string>Move To Wishlist</string>
+		<key>New item - 14</key>
+		<string>Please Enter Shipping Address</string>
+		<key>New item - 15</key>
+		<string>Please Enter Billing Address</string>
+		<key>New item - 16</key>
+		<string>Fetching Store Location</string>
+		<key>New item - 17</key>
+		<string>Fetching Shippings</string>
+		<key>New item - 18</key>
+		<string>Fetching Taxes</string>
+		<key>New item - 19</key>
+		<string>Failed!</string>
+		<key>New item - 20</key>
+		<string>Fetching Taxes. Please try again.</string>
+		<key>New item - 21</key>
+		<string>Fetching Shippings. Please try again.</string>
+		<key>New item - 22</key>
+		<string>Fetching Store Location. Please try again.</string>
+		<key>please_enter_address</key>
+		<string>Please enter %@ in %@</string>
+		<key>checkout_info</key>
+		<string>Checkout Info</string>
+		<key>checkout_title</key>
+		<string>Checkout</string>
+		<key>New item - 28</key>
+		<string>Fee Info</string>
+		<key>no_shipping_method_found</key>
+		<string>No Shipping Available.</string>
+		<key>New item - 31</key>
+		<string>Tax Info</string>
+		<key>title_total_amount</key>
+		<string>Total Amount</string>
+		<key>my_addresses</key>
+		<string>My Address</string>
+		<key>New item - 35</key>
+		<string>Click here to create new account /</string>
+		<key>New item - 37</key>
+		<string>Enter Username</string>
+		<key>New item - 38</key>
+		<string>Total Tax</string>
+		<key>New item - 39</key>
+		<string>Total Extra Charges</string>
+		<key>i_points_earned</key>
+		<string>Points Earned</string>
+		<key>i_points_redeemed</key>
+		<string>Points Redeemed</string>
+		<key>onhold</key>
+		<string>On Hold</string>
+		<key>New item - 44</key>
+		<string>Total</string>
+		<key>New item - 45</key>
+		<string>Brand</string>
+		<key>New item - 46</key>
+		<string>Minimum Quantity</string>
+		<key>New item - 47</key>
+		<string>No user reviews yet.</string>
+		<key>New item - 48</key>
+		<string>Login required.</string>
+		<key>New item - 49</key>
+		<string>Change Pincode</string>
+		<key>New item - 50</key>
+		<string>Enter Pincode</string>
+		<key>sponsor_a_friend</key>
+		<string>Sponsor a friend</string>
+		<key>get_code_step_1</key>
+		<string>GET CODE for your WooCommerce Website by following these simple steps.</string>
+		<key>New item - 55</key>
+		<string>\n\n\n\t1.\tGo to your WordPress Admin Panel\n\n\t2.\tGo to Plugins -&gt; Add New\n\n\t3.\tSearch for \&quot;TMStore - WooCommerce Native Mobile App\&quot; Plugin\n\n\t4.\tInstall and Activate the Plugin\n\n\t5.\tGo to \&quot;TM Store\&quot; Plugin Page on your WordPress Admin Panel\n\n\t6.\tFill few Basic Details and Submit\n\n\t7.\tClick on \&quot;GET MOBILE APP\&quot;\n\n\t8.\tGet Code for your Demo Mobile App\n\n\n</string>
+		<key>get_code_step_10</key>
+		<string>Insert the Unique Code in the Demo Mobile App and view your Website in an App.</string>
+		<key>New item - 57</key>
+		<string>This coupon is already applied.</string>
+		<key>coupon_valid_for_max_purchase</key>
+		<string>This coupon is not valid for purchase of more than %@ amount.</string>
+		<key>New item - 59</key>
+		<string>This Coupon can not be combined with previous coupons.</string>
+		<key>coupon_not_applicable_for_products</key>
+		<string>This coupon can not be applied on any of your selected Product.</string>
+		<key>coupon_invalid_for_product</key>
+		<string>This coupon is not valid for %@</string>
+		<key>coupon_surpasses_total_usage_limit</key>
+		<string>This coupon surpasses total usage limit.</string>
+		<key>coupon_exceeds_usage_limit</key>
+		<string>This coupon exceeds usage limit.</string>
+		<key>coupon_not_applicable_for_items</key>
+		<string>This coupon can not be applied on more than %d items.</string>
+		<key>coupon_expired</key>
+		<string>This coupon is expired.</string>
+		<key>coupon_not_applicable_for_category</key>
+		<string>This coupon is not valid for one or more selected Category.</string>
+		<key>coupon_invalid_for_already_sale_items</key>
+		<string>This coupon is not valid for those items which are already on sale.</string>
+		<key>coupon_valid_for_min_purchase</key>
+		<string>This coupon is only valid for minimum purchase of %@ amount.</string>
+		<key>coupon_not_applicable_for_email</key>
+		<string>This coupon is not applicable for your Email id.</string>
+		<key>keep_shopping_cart</key>
+		<string>Keep Shopping</string>
+		<key>district</key>
+		<string>District</string>
+		<key>subdistrict</key>
+		<string>Subdistrict</string>
+		<key>syncing_wishlist</key>
+		<string>Syncing Wishlist</string>
+		<key>your_friend_first_name</key>
+		<string>Your friend&apos;s first name</string>
+		<key>your_friend_last_name</key>
+		<string>Your friend&apos;s last name</string>
+		<key>your_friend_email</key>
+		<string>Your friend&apos;s email</string>
+		<key>optional_message</key>
+		<string>Optional message</string>
+		<key>your_friend_first_name_invalid</key>
+		<string>Your friend&apos;s first name is invalid</string>
+		<key>your_friend_last_name_invalid</key>
+		<string>Your friend&apos;s last name is invalid</string>
+		<key>your_friend_email_invalid</key>
+		<string>Your friend&apos;s email is invalid</string>
+		<key>optional_message_too_large</key>
+		<string>Optional message is too large</string>
+		<key>sponsor_friend_message_sent</key>
+		<string>Congratulations, your message was sent to your friend!</string>
+		<key>app_display_name</key>
+		<string></string>
+		<key>order_again</key>
+		<string>Order Again</string>
+		<key>i_payment_failed_msg</key>
+		<string>Please try again.</string>
+		<key>i_payment_failed_title</key>
+		<string>Payment Failed!</string>
+		<key>your_order_placed</key>
+		<string>Thank you. Your order has been received.</string>
+		<key>introduction</key>
+		<string>Introduction</string>
+		<key>website</key>
+		<string>Website</string>
+		<key>call_or_whatsapp</key>
+		<string>Call or WhatsApp</string>
+		<key>location</key>
+		<string>Location</string>
+		<key>select_date</key>
+		<string>Select Date</string>
+		<key>delivery_date</key>
+		<string>Delivery Date</string>
+		<key>select_delivery_date</key>
+		<string>Please select a delivery date</string>
+		<key>select_delivery_time</key>
+		<string>Please select a delivery time</string>
+		<key>title_available_time_slots</key>
+		<string>Available Time Slots</string>
+		<key>alert_desc_select_slots</key>
+		<string>Select Available Delivery Slots</string>
+		<key>select_time</key>
+		<string>Select Time</string>
+		<key>delivery_time</key>
+		<string>Delivery Time</string>
+		<key>header_crosssells_cart</key>
+		<string>You may be interested in…</string>
+		<key>header_related_products</key>
+		<string>Related Products</string>
+		<key>header_upsells_products</key>
+		<string>You may also like…</string>
+		<key>empty_category_with_filter</key>
+		<string>No Products found for applied Filter</string>
+		<key>attribute_name_unavailable</key>
+		<string>Attribute not available for this combination</string>
+		<key>show_discounted_only</key>
+		<string>Show discounted items only</string>
+		<key>exclude_out_of_stock</key>
+		<string>Exclude Out of stock item</string>
+		<key>reset_all_filters</key>
+		<string>Reset all Filters?</string>
+		<key>sort_by</key>
+		<string>Sort by</string>
+		<key>price_range</key>
+		<string>Price Range</string>
+		<key>stock_check</key>
+		<string>Stock Check</string>
+		<key>clear_filters</key>
+		<string>Clear Filters</string>
+		<key>title_filter</key>
+		<string>Filter</string>
+		<key>select_filter_to_apply</key>
+		<string>Select a filter to apply</string>
+		<key>updating_filters</key>
+		<string>Updating filters...</string>
+		<key>filter_details</key>
+		<string>Filter Details</string>
+		<key>sort_fresh_arrival</key>
+		<string>Fresh Arrival</string>
+		<key>price_prefix</key>
+		<string>Price:</string>
+		<key>sort_featured</key>
+		<string>Featured</string>
+		<key>sort_user_rating</key>
+		<string>User Rating</string>
+		<key>sort_price_high_to_low</key>
+		<string>Price - High to Low</string>
+		<key>sort_price_low_to_high</key>
+		<string>Price - Low to High</string>
+		<key>sort_popularity</key>
+		<string>Popularity</string>
+		<key>btn_sort</key>
+		<string>Sort</string>
+		<key>btn_filter</key>
+		<string>Filter</string>
+		<key>btn_sort_filter</key>
+		<string>Sort &amp; Filter</string>
+		<key>filter_normal</key>
+		<string>Normal</string>
+		<key>in_Stock</key>
+		<string>inStock</string>
+		<key>my_coupons</key>
+		<string>My Coupons</string>
+		<key>no_notifications_found</key>
+		<string>No Notifications Found</string>
+		<key>title_notification</key>
+		<string>Notification</string>
+		<key>share_via_whatsapp</key>
+		<string>Share in WhatsApp</string>
+		<key>share</key>
+		<string>Share</string>
+		<key>on</key>
+		<string>On</string>
+		<key>off</key>
+		<string>Off</string>
+		<key>i_available_discount</key>
+		<string>Available Discount</string>
+		<key>show_more</key>
+		<string>Show More</string>
+		<key>cannot_apply_coupons</key>
+		<string>Cannot Apply on Another Coupons</string>
+		<key>shipment_tracking_id_error</key>
+		<string>Sorry! Unable to fetch tracking details at these moment.</string>
+		<key>shipment_tracking_id_unavailable</key>
+		<string>Sorry! Tracking details are not available.</string>
+		<key>call</key>
+		<string>Call</string>
+		<key>pick_number</key>
+		<string>Pick Number</string>
+		<key>buy_button_description</key>
+		<string>buy_button_description</string>
+		<key>company</key>
+		<string>Company</string>
+		<key>cost</key>
+		<string>Cost</string>
+		<key>title_pickup_location</key>
+		<string>Pickup Location</string>
+		<key>pickup_order_text</key>
+		<string>Your Order Will Be Ready for Pick-up at</string>
+		<key>special_order_note</key>
+		<string>Order form Mobile App</string>
+		<key>delivery_details</key>
+		<string>Delivery Details</string>
+		<key>try_me</key>
+		<string>Try Me!</string>
+		<key>txt_try_me_text</key>
+		<string>Select your Size using India&apos;s First Virtual Fitting service</string>
+		<key>slot_out_of_date</key>
+		<string>Delivery slot out of date. Please add a new date.</string>
+		<key>title_contact_us</key>
+		<string>Contact Us</string>
+		<key>title_reservation</key>
+		<string>Reservation</string>
+		<key>reservation_form_desc</key>
+		<string>To reserve a Table you can use below the form.</string>
+		<key>calculating_time_slots</key>
+		<string>Calculating Time Slots</string>
+		<key>total_tax</key>
+		<string>Total Tax</string>
+		<key>free_shipping_available</key>
+		<string>Free Shipping Available</string>
+		<key>select_time_slot</key>
+		<string>Please select a time slot</string>
+		<key>make_a_payment</key>
+		<string>Make a payment</string>
+		<key>copy</key>
+		<string>Copy</string>
+		<key>error_empty_card_number</key>
+		<string>Empty card number</string>
+		<key>error_invalid_card_number</key>
+		<string>Invalid card number</string>
+		<key>error_empty_cvv</key>
+		<string>Empty CVV</string>
+		<key>error_invalid_cvv</key>
+		<string>Invalid CVV</string>
+		<key>error_invalid_month</key>
+		<string>Invalid month</string>
+		<key>error_invalid_year</key>
+		<string>Invalid year</string>
+		<key>error_invalid_expiry</key>
+		<string>Invalid expiry</string>
+		<key>error_check_card_details</key>
+		<string>Please check card details.</string>
+		<key>title_card_holder_name</key>
+		<string>Name on card</string>
+		<key>hint_card_holder_name</key>
+		<string>default_value</string>
+		<key>title_card_number</key>
+		<string>Card Number</string>
+		<key>hint_card_number</key>
+		<string>default_value</string>
+		<key>title_card_expiry_date</key>
+		<string>Expiry date</string>
+		<key>hint_card_expiry_date</key>
+		<string>default_value</string>
+		<key>title_card_cvv</key>
+		<string>Security Code</string>
+		<key>hint_card_cvv</key>
+		<string>default_value</string>
+		<key>title_card_zip</key>
+		<string>ZIP/Postal code</string>
+		<key>hint_card_zip</key>
+		<string>default_value</string>
+		<key>title_pay</key>
+		<string>Pay</string>
+		<key>all_fields_are_mendatory</key>
+		<string>All fields are mendatory.</string>
+		<key>mobile_number</key>
+		<string>Mobile Number</string>
+		<key>resend_otp</key>
+		<string>Resend OTP</string>
+		<key>verify</key>
+		<string>Verify</string>
+		<key>verification_failed</key>
+		<string>Verification Failed</string>
+		<key>regenerate_otp</key>
+		<string>Regenerate OTP</string>
+		<key>verification_initialization_failed</key>
+		<string>Verification initialization Failed</string>
+		<key>otp_verification</key>
+		<string>OTP VERIFICATION</string>
+		<key>hint_mobile_number</key>
+		<string>Mobile Number</string>
+		<key>enter_otp</key>
+		<string>Enter OTP</string>
+		<key>title_barcode_scan</key>
+		<string>Scan Product</string>
+		<key>locate_store</key>
+		<string>Locate Store</string>
+		<key>apple_pay_app_name</key>
+		<string>default_value</string>
+		<key>get_direction</key>
+		<string>Get Direction</string>
+		<key>show_stores</key>
+		<string>Show Stores</string>
+		<key>no_location_data_provided</key>
+		<string>No location data provided</string>
+		<key>loading_stores</key>
+		<string>Loading Stores…</string>
+		<key>no_stores_available</key>
+		<string>No stores available.</string>
+		<key>error_in_distance</key>
+		<string>Cannot calculate distance</string>
+		<key>passwords_mismatch</key>
+		<string>Passwords does not match.</string>
+		<key>title_reset_password</key>
+		<string>Reset Password</string>
+		<key>prompt_new_password</key>
+		<string>New Password</string>
+		<key>prompt_current_password</key>
+		<string>Current Password</string>
+		<key>tracking_id</key>
+		<string>Tracking ID : %@</string>
+		<key>tracking_provider</key>
+		<string>Shipped Via : %@</string>
+		<key>change_store</key>
+		<string>Change Store</string>
+		<key>cod_otp_dialog_msg</key>
+		<string>OTP will be sent to your Billing Mobile Number</string>
+		<key>update_billing_mobile_no_dialog_msg</key>
+		<string>Your Billing Mobile Number will be Updated with</string>
+		<key>update_billing_mobile_no_dialog_header</key>
+		<string>Update Mobile Number</string>
+		<key>error_invalid_mobile_number</key>
+		<string>Invalid mobile number</string>
+		<key>update</key>
+		<string>Update</string>
+		<key>alert_title</key>
+		<string>alert_title</string>
+		<key>alert_message</key>
+		<string>alert_message</string>
+		<key>title_seller_zone</key>
+		<string>Seller Zone</string>
+		<key>seller_my_products</key>
+		<string>My Products</string>
+		<key>seller_upload_product</key>
+		<string>Upload Product</string>
+		<key>seller_my_orders</key>
+		<string>My Orders</string>
+		<key>title_seller_products</key>
+		<string>Products</string>
+		<key>title_seller_orders</key>
+		<string>Orders</string>
+		<key>title_new_product</key>
+		<string>New Product</string>
+		<key>title_seller_profile</key>
+		<string>Profile</string>
+		<key>label_basic_info</key>
+		<string>Basic Info:</string>
+		<key>label_product_images</key>
+		<string>Product Images:</string>
+		<key>label_category</key>
+		<string>Category:</string>
+		<key>label_full_description</key>
+		<string>Full Description:</string>
+		<key>label_pricing</key>
+		<string>Pricing:</string>
+		<key>label_attributes</key>
+		<string>Attributes:</string>
+		<key>label_stock_option</key>
+		<string>Stock Option:</string>
+		<key>label_other_options</key>
+		<string>Other Options:</string>
+		<key>txt_select_category</key>
+		<string>Select Categories</string>
+		<key>submit</key>
+		<string>Submit</string>
+		<key>hint_product_title</key>
+		<string>Product Title</string>
+		<key>hint_short_description</key>
+		<string>Short Description</string>
+		<key>hint_regular_price</key>
+		<string>Regular Price</string>
+		<key>hint_sale_price</key>
+		<string>Sale Price</string>
+		<key>hint_stock_quantity</key>
+		<string>Stock Quantity</string>
+		<key>update_order</key>
+		<string>Update Order</string>
+		<key>add_new</key>
+		<string>(+ Add New)</string>
+		<key>managing_stock</key>
+		<string>Managing Stock</string>
+		<key>title_edit_product</key>
+		<string>Edit Product</string>
+		<key>title_seller_zone_edit_product</key>
+		<string>Edit</string>
+		<key>title_seller_zone_delete_product</key>
+		<string>Delete</string>
+		<key>updating_status</key>
+		<string>Updating Status</string>
+		<key>label_first_name</key>
+		<string>First Name:</string>
+		<key>label_last_name</key>
+		<string>Last Name:</string>
+		<key>label_contact_number</key>
+		<string>Contact Number:</string>
+		<key>register_as_vendor</key>
+		<string>Register as Vendor</string>
+		<key>vendor_status_label</key>
+		<string>Vendor Status:</string>
+		<key>vendor_status_pending</key>
+		<string>Pending</string>
+		<key>vendor_status_verified</key>
+		<string>Verified</string>
+		<key>assign_order_to_vendor</key>
+		<string>Assigning Order To Vendor</string>
+		<key>loading_seller_info</key>
+		<string>Loading Seller Information…</string>
+		<key>uploading</key>
+		<string>Uploading Product Image…</string>
+		<key>label_shipment_details</key>
+		<string>Shipment details:</string>
+		<key>label_shipment_id</key>
+		<string>Shipment ID: %s</string>
+		<key>label_shipment_provider</key>
+		<string>Shipment Provider: %s</string>
+		<key>label_shipping_types</key>
+		<string>Shipping types:</string>
+		<key>title_select_shipping_types</key>
+		<string>Select shipping types</string>
+		<key>uploading_shipping_data</key>
+		<string>Uploading product shipping data..</string>
+		<key>uploading_product_data</key>
+		<string>Uploading Product Data..</string>
+		<key>product_upload_error</key>
+		<string>Error while uploading product.</string>
+		<key>product_deleted</key>
+		<string>Product deleted successfully.</string>
+		<key>product_delete_error</key>
+		<string>Error while deleting product.</string>
+		<key>product_assign_seller_error</key>
+		<string>Error while assigning seller.</string>
+		<key>select_image</key>
+		<string>Select image</string>
+		<key>are_you_sure</key>
+		<string>Are you sure?</string>
+		<key>please_select_a_category</key>
+		<string>Please Select a Category</string>
+		<key>prompt_shop_name</key>
+		<string>Shop Name</string>
+		<key>invalid</key>
+		<string>Invalid</string>
+		<key>error_high_sale_price</key>
+		<string>Sale price must be less than regular price</string>
+		<key>product_upload_successful</key>
+		<string>Product Uploaded Successfully</string>
+		<key>image_upload_error
+</key>
+		<string>Error while Uploading Image
+</string>
+		<key>seller_intro</key>
+		<string>Register / Login as Seller to add products and start selling from &apos;App Name&apos;</string>
+		<key>btn_seller_register</key>
+		<string>Register / Login</string>
+		<key>shipping_methods</key>
+		<string>Shipping Method</string>
+		<key>i_qty_val</key>
+		<string>Quantity</string>
+		<key>title_order_status</key>
+		<string>Order Status</string>
+		<key>total_order</key>
+		<string>Total</string>
+		<key>total_shipping_cost</key>
+		<string>Total Shipping Cost</string>
+		<key>total_extra_fee</key>
+		<string>Total Extra Fee</string>
+		<key>pending</key>
+		<string>Pending</string>
+		<key>cancelled</key>
+		<string>Cancelled</string>
+		<key>refunded</key>
+		<string>Refunded</string>
+		<key>failed</key>
+		<string>Failed</string>
+		<key>status_updated_successfully</key>
+		<string>Status updated successfully</string>
+		<key>free</key>
+		<string>Free</string>
+		<key>add_new_card</key>
+		<string>Add New Card</string>
+		<key>saved_cards</key>
+		<string>Saved Cards</string>
+		<key>button_continue</key>
+		<string>Continue</string>
+		<key>visit_product</key>
+		<string>Visit Product</string>
+		<key>kilometer</key>
+		<string>Kilometer</string>
+		<key>filter_location</key>
+		<string>Location</string>
+		<key>search_location</key>
+		<string>Search location...</string>
+		<key>title_range</key>
+		<string>Location range</string>
+		<key>title_range_in</key>
+		<string>Location range in</string>
+		<key>mile</key>
+		<string>Mile</string>
+		<key>text_autofill</key>
+		<string>My Location</string>
+		<key>view_all</key>
+		<string>View All</string>
+		<key>title_seller_icon</key>
+		<string>Shop Icon</string>
+		<key>title_seller_avatar</key>
+		<string>Avatar</string>
+		<key>label_shop_address</key>
+		<string>Shop Address:</string>
+		<key>shop_address</key>
+		<string>Shop Address</string>
+		<key>prompt_shop_address</key>
+		<string>Shop Address</string>
+		<key>store_settings</key>
+		<string>Store Settings</string>
+		<key>label_shop_name</key>
+		<string>Shop Name</string>
+		<key>updating_seller_info</key>
+		<string>Updating Seller Info</string>
+		<key>title_currency</key>
+		<string>Currency</string>
+		<key>apply_currency</key>
+		<string>Apply currency</string>
+		<key>change_currency</key>
+		<string>Change currency</string>
+		<key>please_select_currency</key>
+		<string>Please select currency</string>
+		<key>already_selected_currency</key>
+		<string>Selected currency is already set.</string>
+	</dict>
+</dict>
+</plist>

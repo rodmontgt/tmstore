@@ -1,0 +1,309 @@
+{
+    "min_app_version": "1.3.9",
+    "max_app_version": "1.4.1",
+    "homeElements": [
+                     {
+                     "col": 1,
+                     "row": 6,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 8,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 285,
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#FFFFFF",
+                     "bgcolor": "#FFFFFF",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "center",
+                     "alignment": "hide",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 5,
+                     "row": 6,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 11,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 284,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#FAFAFA",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "center",
+                     "alignment": "hide",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 9,
+                     "row": 6,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 12,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 281,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#FAFAFA",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "center",
+                     "alignment": "below",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 1,
+                     "row": 11,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 13,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 282,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 0,
+                                 0,
+                                 0,
+                                 0
+                                 ],
+                     "margin": [
+                                0,
+                                0,
+                                0,
+                                0
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#50FA7B",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 5,
+                     "row": 11,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 14,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 283,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#00000000",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 1,
+                     "row": 16,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 15,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 286,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 9,
+                     "row": 11,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 16,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 287,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     }
+                     }
+                     },
+                     {
+                     "col": 5,
+                     "row": 16,
+                     "size_x": 4,
+                     "size_y": 5,
+                     "id": 17,
+                     "variables": {
+                     "tileType": 1,
+                     "tileType_Id": 288,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 3,
+                                 3,
+                                 3,
+                                 3
+                                 ],
+                     "margin": [
+                                5,
+                                5,
+                                5,
+                                5
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     }
+                     }
+                     }
+                     ]
+}

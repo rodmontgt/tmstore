@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrencyViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-lS-lrk" userLabel="mainView">
+                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzL-7R-3cd" userLabel="navBar">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <textAttributes key="titleTextAttributes">
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Heading" id="SVq-Yk-KmI" userLabel="currentItem">
+                                    <barButtonItem key="leftBarButtonItem" title="&lt; PrevHeading" id="bfw-m7-UWK" userLabel="previousItem"/>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvj-89-RpP" userLabel="lineView">
+                            <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="XnW-iN-Qd0"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zzf-9h-Kf3">
+                            <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="JzL-7R-3cd" secondAttribute="trailing" id="5dI-9p-Wyv"/>
+                        <constraint firstItem="wvj-89-RpP" firstAttribute="centerX" secondItem="Zcv-lS-lrk" secondAttribute="centerX" id="QRj-p4-2J4"/>
+                        <constraint firstItem="Zzf-9h-Kf3" firstAttribute="leading" secondItem="Zcv-lS-lrk" secondAttribute="leading" id="W89-hv-gyQ"/>
+                        <constraint firstItem="Zzf-9h-Kf3" firstAttribute="top" secondItem="wvj-89-RpP" secondAttribute="bottom" id="Yga-vX-T9z"/>
+                        <constraint firstItem="JzL-7R-3cd" firstAttribute="top" secondItem="Zcv-lS-lrk" secondAttribute="top" id="cRo-mZ-Plo"/>
+                        <constraint firstAttribute="bottom" secondItem="Zzf-9h-Kf3" secondAttribute="bottom" id="gkE-wu-Jff"/>
+                        <constraint firstAttribute="trailing" secondItem="wvj-89-RpP" secondAttribute="trailing" id="m7E-b9-gZr"/>
+                        <constraint firstItem="JzL-7R-3cd" firstAttribute="bottom" secondItem="wvj-89-RpP" secondAttribute="bottom" id="pSx-T4-VNC"/>
+                        <constraint firstItem="JzL-7R-3cd" firstAttribute="leading" secondItem="Zcv-lS-lrk" secondAttribute="leading" id="puv-TU-a8T"/>
+                        <constraint firstItem="wvj-89-RpP" firstAttribute="leading" secondItem="Zcv-lS-lrk" secondAttribute="leading" id="qQv-Ig-hrg"/>
+                        <constraint firstAttribute="trailing" secondItem="Zzf-9h-Kf3" secondAttribute="trailing" id="wBW-Iq-3OS"/>
+                        <constraint firstItem="JzL-7R-3cd" firstAttribute="centerX" secondItem="Zcv-lS-lrk" secondAttribute="centerX" id="xar-pj-se2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Zcv-lS-lrk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="29y-qE-LBs"/>
+                <constraint firstAttribute="bottom" secondItem="Zcv-lS-lrk" secondAttribute="bottom" id="Qqy-cA-hsI"/>
+                <constraint firstAttribute="trailing" secondItem="Zcv-lS-lrk" secondAttribute="trailing" id="RXY-zF-lmU"/>
+                <constraint firstItem="Zcv-lS-lrk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UEo-KJ-TlM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-198" y="67"/>
+        </view>
+    </objects>
+</document>

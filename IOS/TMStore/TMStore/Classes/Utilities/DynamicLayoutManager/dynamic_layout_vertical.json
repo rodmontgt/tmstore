@@ -1,0 +1,88 @@
+{
+    "min_app_version": "1.3.9",
+    "max_app_version": "1.4.1",
+    "homeElements": [
+                     {
+                     "col": 1,
+                     "row": 36,
+                     "size_x": 12,
+                     "size_y": 7,
+                     "id": 25,
+                     "variables": {
+                     "tileType": 8,
+                     "tileType_Id": -1,
+                     "tileRedirect": "true",
+                     "content": [],
+                     "tileStyle": {
+                     "padding": [
+                                 0,
+                                 0,
+                                 0,
+                                 0
+                                 ],
+                     "margin": [
+                                0,
+                                0,
+                                0,
+                                0
+                                ],
+                     "color": "#111111",
+                     "fontsize": 17,
+                     "textbgcolor": "#fafafa",
+                     "bgcolor": "#fafafa",
+                     "fontWeight": 500,
+                     "scaletype": 0
+                     },
+                     "textStyle": {
+                     "position": "left",
+                     "alignment": "above",
+                     "type": 0
+                     },
+                     "scrollerFor": "category",
+                     "scrollerIds": 108,
+                     "tileTitle": "Maharashtra Special",
+                     "scrollerType": "vertical",
+                     "scrollerCount": 10,
+                     "scrollerToShow": 2,
+                     "showTitle": true,
+                     "carouselTemplete": "0"
+                     }
+                     }
+                     ],
+    "themeConfig": {
+        "android": {
+            "colorConfig": {
+                "color_theme_statusbar": "",
+                "color_theme": "",
+                "normal_button_color": "#e62263",
+                "normal_button_text_color": "#ffffff",
+                "color_pager_title_strip": "#ffffff",
+                "color_header_text": "#FAFAFA",
+                "selected_button_color": "#c41d4f",
+                "selected_button_text_color": "#ffffff",
+                "desable_button_color": "#D3D3D3",
+                "color_actionbar_text": "#FAFAFA",
+                "color_theme_dark": ""
+            },
+            "splashUrl": "",
+            "displayName": "Store Name",
+            "displayType": "name"
+        },
+        "ios": {
+            "colorConfig": {
+                "ios_header": "#ffffff",
+                "ios_theme": null,
+                "ios_footer": "#ffffff",
+                "ios_btn_normal": null,
+                "ios_btn_big_normalBg": "#e62263",
+                "ios_btn_selected": "#e62263",
+                "ios_btn_selected_text": "#ffffff",
+                "ios_btn_disabled": "#3993A5",
+                "ios_btn_big_normalFont": "#ffffff"
+            },
+            "splashUrl": null,
+            "displayName": "",
+            "displayType": "logo"
+        }
+    }
+}

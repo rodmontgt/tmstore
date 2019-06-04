@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="L0S-mz-UKL" customClass="DynamicViewAll">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-cy-aBZ">
+                    <rect key="frame" x="10" y="0.0" width="43.5" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ei0-aJ-ogN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.96470588239999999" green="1" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-nV-1ME">
+                    <rect key="frame" x="255" y="0.0" width="55" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bse-2I-IhD"/>
+                    </constraints>
+                    <state key="normal" title="View All">
+                        <color key="titleColor" red="0.96470588239999999" green="1" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.070588235294117646" green="0.21176470588235294" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Qi-nV-1ME" firstAttribute="top" secondItem="L0S-mz-UKL" secondAttribute="top" id="11f-gJ-W8J"/>
+                <constraint firstAttribute="bottom" secondItem="8Qi-nV-1ME" secondAttribute="bottom" id="PdC-h4-SbV"/>
+                <constraint firstItem="VAR-cy-aBZ" firstAttribute="leading" secondItem="L0S-mz-UKL" secondAttribute="leading" constant="10" id="UDT-sU-e2Z"/>
+                <constraint firstAttribute="trailing" secondItem="8Qi-nV-1ME" secondAttribute="trailing" constant="10" id="cfX-lb-W6a"/>
+                <constraint firstItem="VAR-cy-aBZ" firstAttribute="top" secondItem="L0S-mz-UKL" secondAttribute="top" id="jT6-Tm-GKy"/>
+                <constraint firstAttribute="bottom" secondItem="VAR-cy-aBZ" secondAttribute="bottom" id="nuK-38-pNQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buttonViewAll" destination="8Qi-nV-1ME" id="01s-pJ-WFd"/>
+                <outlet property="labelHeader" destination="VAR-cy-aBZ" id="9tN-OB-DS6"/>
+            </connections>
+            <point key="canvasLocation" x="-19" y="-105"/>
+        </view>
+    </objects>
+</document>
