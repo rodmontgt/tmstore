@@ -270,14 +270,21 @@ static ParseHelper *pHelper = nil;
      }];
      */
 
+
+
     //new code
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-                RLOG(@" Hello : %@", merchantObjectId);
+        PFQuery *query = [PFQuery queryWithClassName:PClassAppData];
+        [query whereKey:@"merchant_obj" equalTo:[PFObject objectWithoutDataWithClassName:PClassMerchantPluginData objectId:merchantObjectId]];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+            if (error == nil){
+                [self parseAppDataRow:object error:error];
+            }
+            else{
                 PFQuery *query1 = [PFQuery queryWithClassName:PClassMerchantPluginData];
-
                 [query1 getObjectInBackgroundWithId:merchantObjectId block:^(PFObject * _Nullable object1, NSError * _Nullable error) {
                     if (error == nil){
-                        [self parseDataDemo:object1];
+                        [self parseAppDataRow:object error:error];
                     } else {
                         RLOG(@"%@", error);
                         [MRProgressOverlayView dismissAllOverlaysForView:[[UIApplication sharedApplication] keyWindow] animated:YES];
@@ -285,8 +292,8 @@ static ParseHelper *pHelper = nil;
                         [alertView show];
                     }
                 }];
-
-
+            }
+        }];
     });
 }
 - (void)loadAllPlatformData:(void(^)(void))success
@@ -422,7 +429,7 @@ static ParseHelper *pHelper = nil;
 
 
         if (IS_NOT_NULL(object, @"enableCoupons")) {
-            dm.enable_coupons = true;//[[object objectForKey:@"enableCoupons"] boolValue];
+            dm.enable_coupons = [[object objectForKey:@"enableCoupons"] boolValue];
         }
 
 

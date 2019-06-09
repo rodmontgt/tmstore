@@ -312,7 +312,7 @@ static BOOL _categoryVarifiedFromServer = false;
     return tempListCategories;
 }
 + (void)refineCategories {
-    
+//    BOOL isDemoApp = [[DataManager sharedManager] appType] == APP_TYPE_DEMO ? true : false;
     if ([[DataManager sharedManager] isRefineCategoriesEnable]) {
         NSMutableArray* categoriesToDelete = [[NSMutableArray alloc] init];
         for (CategoryInfo* cObj in [CategoryInfo getAll]) {

@@ -63,16 +63,11 @@
                         {
                             tmLanguage.askForLanguageChange = KEYBOARD_CHANGE_NONE;
                             [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:tmLanguage.askForLanguageChange] forKey:@"askForLanguageChange"];
-                            // IOS 11 update Pallavi
-//                            NSURL *url = [NSURL URLWithString:@"prefs:root=General&path=Keyboard/KEYBOARDS"];
-//                            RLOG(@"OpenURL_A");
-//                            if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//                                [[UIApplication sharedApplication] openURL:url];
-//                            }
-                            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-
+                            
+                            NSURL *url = [NSURL URLWithString:@"prefs:root=General&path=Keyboard/KEYBOARDS"];
+                            RLOG(@"OpenURL_A");
                             if ([[UIApplication sharedApplication] canOpenURL:url]) {
-                                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+                                [[UIApplication sharedApplication] openURL:url];
                             }
                             RLOG(@"OpenURL_B");
                         }break;

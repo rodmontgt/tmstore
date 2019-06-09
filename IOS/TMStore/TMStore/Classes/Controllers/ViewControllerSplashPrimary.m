@@ -135,7 +135,7 @@
     }
 }
 - (void)addViews {
-   RLOG(@"start %s", __PRETTY_FUNCTION__);
+    RLOG(@"start %s", __PRETTY_FUNCTION__);
     for (UIView*view in [self.view subviews]) {
         if (view == _mainView || view == _labelPoweredBy || view == _labelVersionInfo ||view == _imageFg || view == _imgSplash) {
         } else {
@@ -420,6 +420,11 @@
     RLOG(@"%s", __PRETTY_FUNCTION__);
     if (![_textFieldDemoKey.text isEqualToString:@""]) {
         [Utility createCustomizedLoadingBar:Localize(@"i_loading_data") isBottomAlign:true isClearViewEnabled:true isShadowEnabled:true];
+        //        [MRProgressOverlayView dismissOverlayForView:[[UIApplication sharedApplication] keyWindow] animated:YES];
+        //        MRProgressOverlayView *overlayView = [MRProgressOverlayView showOverlayAddedTo:[[UIApplication sharedApplication] keyWindow] title:@"" mode:MRProgressOverlayViewModeIndeterminateSmall animated:NO];
+        //        overlayView.isMannualPositionEnable = true;
+        //        overlayView.mannualBound = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height * 2);
+        //        overlayView.mannualPosition = CGPointMake(self.view.frame.size.width * 0.5f, self.view.frame.size.height * 0.85f);
         _dm.merchantObjectId = _textFieldDemoKey.text;
         [self performSelector:@selector(callCheckDataLoaded) withObject:nil afterDelay:1.0f];
     }
@@ -555,7 +560,13 @@
 #pragma mark - Methods
 - (void)goToNextViewController:(float)dt {
     RLOG(@"%s", __PRETTY_FUNCTION__);
+//    PRINT_RECT_STR(@"goToNextViewControllerSSP1", self.view.frame);
+//    PRINT_RECT_STR(@"goToNextViewControllerSSP2", self.mainView.frame);
+    
+    
     if ([[ParseHelper sharedManager] isParseDataLoaded]) {
+        
+        
         if (_dm.show_tmstore_text) {
             [_labelPoweredBy setText:Localize(@"powered_by_tm_store")];
         } else {
@@ -576,7 +587,7 @@
                 SAVE_CUSTOM_OBJ(_demoCodeObj, @"#0002");
             }
             [self gotonextscreen];
-        } else {
+        }else{
             if ([[TMLanguage sharedManager] isUserLanguageSet]) {
                 [self gotonextscreen];
             } else {
@@ -586,7 +597,9 @@
         }
     }
     else if([[ParseHelper sharedManager] isParseDataLoaded] == false && [[ParseHelper sharedManager] isParseDataLoadedWithError]) {
-        if (![[DataManager sharedManager] isUpdateInfoLoaded]) {
+        if ([[DataManager sharedManager] isUpdateInfoLoaded]) {
+            
+        } else {
             [self callCheckDataLoaded];
         }
     } else {

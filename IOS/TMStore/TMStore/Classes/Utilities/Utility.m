@@ -2552,7 +2552,7 @@ static id vcByIdentifier = nil;
 
 + (BOOL)isMultiStoreAppTMStore {
     multiStoreAppEnableTMStore = false;
-    //check wheth	er app is multistore or not
+    //check whether app is multistore or not
     {
         NSString *pathAndFileName = [[NSBundle mainBundle] pathForResource:@"tmstore" ofType:@"plist"];
         if ([[NSFileManager defaultManager] fileExistsAtPath:pathAndFileName])

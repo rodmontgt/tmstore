@@ -1,29 +1,5 @@
 #ifndef VariousKeys_h
 #define VariousKeys_h
-#define ENABLE_DEBUGGING 1
-#define ENABLE_TMSTOREMAIN 1
-
-#if ENABLE_DEBUGGING
-#define ENABLE_TMSTORE_DEMO 0
-
-#endif
-
-#define MY_APPID @"1085057567"
-
-#define GMS_SERVICES_API_KEY @""
-#define GMS_PLACES_CLIENT_API_KEY @""
-
-#if ENABLE_TMSTOREMAIN
-#define PARSE_MERCHANT_APPLICATION_ID @"HdsXVzCYvl49Zzx8VIfkPP3Va5Q7lzdsAbymIZiY"
-#define PARSE_MERCHANT_CLIENT_KEY @"ZdVi6vtCVu3fu5TFM4rDaqNbayaQAMrT9dwdPUsc"
-#endif
-
-#if ENABLE_TMSTORE_DEMO
-    #define PARSE_MERCHANT_APPLICATION_ID @"FYyEmwEjjyBPCKidKjETdb3096gmlBvlKbQtH7SI"
-    #define PARSE_MERCHANT_CLIENT_KEY @"u2pIKxTHpnhc1RdX6lP8ogFcpxzIffWJO0TYHVqE"
-#endif
-
-
 
 #endif
 

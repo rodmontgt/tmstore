@@ -163,7 +163,7 @@ static BOOL deviceSleepingMode = false;
     [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = parseApplicationId;
         configuration.clientKey = parseClientKey;
-        configuration.server = @"http://128.199.93.108:1337/parse";
+        configuration.server = @"https://parseapi.back4app.com";
         configuration.localDatastoreEnabled = YES;
     }]];
     [PFUser enableAutomaticUser];

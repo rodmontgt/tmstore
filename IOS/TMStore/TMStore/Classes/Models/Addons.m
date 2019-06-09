@@ -83,7 +83,7 @@ static ProductDetailsConfig *productDetailsConfigObj = nil;
         
         self.show_vertical_layout_components = false;
         self.contact_numbers = nil;
-        self.show_full_share_section= true;
+        self.show_full_share_section= false;
         self.show_buy_button_description = false;
         self.select_variation_with_button = false;
         self.show_additional_info = true;

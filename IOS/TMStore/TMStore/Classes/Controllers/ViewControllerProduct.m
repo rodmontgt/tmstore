@@ -1741,6 +1741,7 @@ static int kTagForNoSpacing = -1;
     
 }
 - (void)shareIt:(UIButton*)button {
+    if ([[Utility sharedManager] checkForDemoApp:true]) return;
     
     ProductInfo* pInfo = _currentItem.pInfo;
     [[Utility sharedManager] shareBranchButtonClicked:pInfo button:button];

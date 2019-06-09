@@ -351,7 +351,7 @@ static int kTagForNoSpacing = -1;
 - (UIView*)addCouponView {
     DataManager* dm = [DataManager sharedManager];
     if (dm.enable_coupons == false) {
-       return nil;
+        return nil;
     }
     
     float fontHeight = [[Utility getUIFont:kUIFontType18 isBold:false] lineHeight];
@@ -2446,7 +2446,7 @@ static int kTagForNoSpacing = -1;
     if (_isKeyboardVisible) {
         return;
     }
-    //if ([[Utility sharedManager] checkForDemoApp:true]) return;
+    if ([[Utility sharedManager] checkForDemoApp:true]) return;
     
     _isPlaceOrderClicked = true;
     

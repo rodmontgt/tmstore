@@ -51,9 +51,9 @@
 	<key>isAppForExternalUser</key>
 	<integer>1</integer>
 	<key>isDemoApp</key>
-	<integer>1</integer>
-	<key>isFreeApp</key>
 	<integer>0</integer>
+	<key>isFreeApp</key>
+	<integer>1</integer>
 	<key>isPaidApp</key>
 	<integer>0</integer>
 	<key>isMultiStore</key>

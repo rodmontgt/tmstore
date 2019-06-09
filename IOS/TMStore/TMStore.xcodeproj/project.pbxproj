@@ -3023,7 +3023,7 @@
 				B12E9E141BC4FCA10090C5B2 /* Resources */,
 				D0413361162B319E1DE7035E /* [CP] Embed Pods Frameworks */,
 				A15886F8C5922CC4C3D17ADA /* [CP] Copy Pods Resources */,
-				B14BCC861F13A1690010FAEB /* Run Script */,
+				B14BCC861F13A1690010FAEB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3065,7 +3065,6 @@
 					B12E9E151BC4FCA10090C5B2 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = CE65BN8JZG;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -3526,19 +3525,18 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TMStore/Pods-TMStore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B14BCC861F13A1690010FAEB /* Run Script */ = {
+		B14BCC861F13A1690010FAEB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1aba6c3975fd2f5ba786d9b9ee3017adeaeead25 420e425e151f9e9bca7a2c2ad466f42100656b23492a9a4ab9ba8358fe1ad43f\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1aba6c3975fd2f5ba786d9b9ee3017adeaeead25 420e425e151f9e9bca7a2c2ad466f42100656b23492a9a4ab9ba8358fe1ad43f";
 		};
 		D0413361162B319E1DE7035E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3952,9 +3950,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImages;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Changables/TMStore.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: pramod  pandey (7ECL5PZ763)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: pramod  pandey (7ECL5PZ763)";
 				DEVELOPMENT_TEAM = CE65BN8JZG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3998,7 +3995,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmstore.demo;
 				PRODUCT_NAME = TMStoreTMStore;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "TMStore Development";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TMPaymentSDK/TMPaymentSDK.xcodeproj\" $(BUILT_PRODUCTS_DIR)";
@@ -4015,9 +4012,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImages;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Changables/TMStore.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Twist Mobile Pvt Ltd (CE65BN8JZG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Twist Mobile Pvt Ltd (CE65BN8JZG)";
 				DEVELOPMENT_TEAM = CE65BN8JZG;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4061,7 +4057,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmstore.demo;
 				PRODUCT_NAME = TMStoreTMStore;
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "TMStore Distribution";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/TMPaymentSDK/TMPaymentSDK.xcodeproj\" $(BUILT_PRODUCTS_DIR)";

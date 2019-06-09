@@ -17,7 +17,7 @@ if "%ANDROID_SDK_PATH%"=="" (
 echo ::::::: Checking System Requirements [DONE] :::::::::
 echo ::::::: Building Projects [BEGINE] :::::::::
 cd "%PROJS_DIRECTORY%"
-echo ################# before loop... ########################
+echo ################## before loop... ########################
 for /f %%f in ('dir /b /AD') do (
 	echo ################# inside loop... ########################
 	echo ::::::: making project[ %cd%/%%f ]:::::::::

@@ -246,7 +246,6 @@ static DataManager *sharedDataManager = nil;
     BOOL isDemoApp = GET_VALUE_BOOL(dictRoot, @"isDemoApp");
     BOOL isFreeApp = GET_VALUE_BOOL(dictRoot, @"isFreeApp");
     BOOL isPaidApp = GET_VALUE_BOOL(dictRoot, @"isPaidApp");
-
     if (isDemoApp) {
         _appType = APP_TYPE_DEMO;
     }
@@ -256,6 +255,7 @@ static DataManager *sharedDataManager = nil;
     if (isPaidApp) {
         _appType = APP_TYPE_PAID;
     }
+    
     
     if (IS_NOT_NULL(dictRoot, @"color")) {
         NSMutableDictionary* colors = GET_VALUE_OBJECT(dictRoot, @"color");
