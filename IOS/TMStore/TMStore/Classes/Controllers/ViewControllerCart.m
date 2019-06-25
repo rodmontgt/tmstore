@@ -39,7 +39,7 @@ static int kTagForNoSpacing = -1;
     NSMutableArray *_horizontalScrollViews;
     NSMutableArray *_tempPairArray;
     NSMutableArray* crossCellIds;
-    
+
     MRProgressOverlayView* mrpoView;
 }
 @end
@@ -51,12 +51,12 @@ static int kTagForNoSpacing = -1;
 - (void)viewDidLoad {
     RLOG(@"%s", __PRETTY_FUNCTION__);
     [super viewDidLoad];
-    
+
 //    Addons* addons = [Addons sharedManager];
 //    addons.show_crosssell_products = false;
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(CartLoginToggle:) name:@"CartLogInToggle" object:nil];
-    
+
     RLOG(@"ViewControllerCart = %@", self);
     _strCollectionView2 = [[Utility sharedManager] getHorizontalViewString];
     _strCollectionView3 = [[Utility sharedManager] getHorizontalViewString];
@@ -104,13 +104,13 @@ static int kTagForNoSpacing = -1;
                                             cancelButtonTitle:Localize(@"i_ok")
                                             otherButtonTitles:nil];
     [self alertView:_alertViewUpdateCart clickedButtonAtIndex:0];
-    
-    
+
+
     AppDelegate* appD = (AppDelegate*)[UIApplication sharedApplication].delegate;
     if (appD.isPrevScreenCouponCode) {
         appD.isPrevScreenCouponCode = false;
         _textFieldApplyCoupon.text = appD.nJsonData_couponCode;
-        
+
         UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
         pasteboard.string = @"";
         [self applyCoupon:nil];
@@ -144,23 +144,23 @@ static int kTagForNoSpacing = -1;
 - (void)viewWillAppear:(BOOL)animated {
     RLOG(@"%s", __PRETTY_FUNCTION__);
     [super viewWillAppear:animated];
-    
+
     _isKeyboardVisible = false;
     if ([Coupon getAllCoupons] == NULL) {
         [[[DataManager sharedManager] tmDataDoctor] fetchCouponsData:nil];
     }
-    
+
     //rv//[SDWebImageManager.sharedManager.imageDownloader setValue:@"SDWebImage Demo" forHTTPHeaderField:@"AppName"];
 //    SDWebImageManager.sharedManager.imageDownloader.executionOrder = SDWebImageDownloaderFIFOExecutionOrder;
-    
-    
+
+
     _couponView = nil;
     _couponViewWithAppliedCoupon = nil;
     _couponViewWithTextField = nil;
-    
+
     _rewardDiscountView = nil;
     _rewardDiscountViewWithTextField = nil;
-    
+
     _autoAppliedCouponView = nil;
     [self loadViewDA];
     [Cart resetNotificationItemCount];
@@ -177,7 +177,7 @@ static int kTagForNoSpacing = -1;
 
 /*
  #pragma mark - Navigation
- 
+
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
@@ -186,7 +186,7 @@ static int kTagForNoSpacing = -1;
  */
 - (void)flushCache {
     [SDWebImageManager.sharedManager.imageCache clearMemory];
-    
+
 }
 - (void)initVariables {
     [_scrollView setBackgroundColor:[Utility getUIColor:kUIColorBgTheme]];
@@ -218,7 +218,7 @@ static int kTagForNoSpacing = -1;
     [_viewsAdded removeAllObjects];
     _couponView = nil;
     [self.view setBackgroundColor:[Utility getUIColor:kUIColorBgTheme]];
-    
+
     int itemsCount = (int)[[[AppUser sharedManager] _cartArray] count];
     if (itemsCount > 0) {
         _scrollView.hidden = false;
@@ -239,13 +239,13 @@ static int kTagForNoSpacing = -1;
             }
 #endif
         }
-        
+
         _couponView = [self addCouponView];
         if (_couponView) {
             [_couponView setTag:kTagForGlobalSpacing];
         }
-        
-        
+
+
         Addons* addon = [Addons sharedManager];
         if (addon.enable_auto_coupons) {
             _autoAppliedCouponView = [self createAppliedCouponView];
@@ -253,16 +253,16 @@ static int kTagForNoSpacing = -1;
                 [_autoAppliedCouponView setTag:kTagForGlobalSpacing];
             }
         }
-        
-        
-        
+
+
+
         _rewardDiscountView = [self addRewardDiscountView];
         if (_rewardDiscountView) {
             [_rewardDiscountView setTag:kTagForGlobalSpacing];
             [self updateRewardDiscountView];
         }
-        
-        
+
+
         if (([[GuestConfig sharedInstance] hide_price] && ![AppUser isSignedIn]) || [[Addons sharedManager] hide_price]) {
         } else {
             _finalAmountView = [self addFinalAmountView];
@@ -270,11 +270,11 @@ static int kTagForNoSpacing = -1;
                 [_finalAmountView setTag:kTagForGlobalSpacing];
             }
         }
-        
-        
-        
-        
-        
+
+
+
+
+
 #if ENABLE_CART_NOTE
         if ([[Addons sharedManager] cartNote]){
             if ([[[Addons sharedManager] cartNote] note_location] == CART_NOTE_LOCATION_BEFORE_PLACE_ORDER_BUTTON || [[[Addons sharedManager] cartNote] note_location] == CART_NOTE_LOCATION_BOTH) {
@@ -325,7 +325,7 @@ static int kTagForNoSpacing = -1;
     if (_isKeyboardVisible) {
         return;
     }
-    
+
     int variationId = -1;
     int variationIndex = -1;
     Cart* cart = nil;
@@ -345,7 +345,7 @@ static int kTagForNoSpacing = -1;
     [self updateRewardDiscountView];
     [self updateViews];
     [self resetMainScrollView:0.1f];
-    
+
     return nil;
 }
 - (UIView*)addCouponView {
@@ -353,13 +353,13 @@ static int kTagForNoSpacing = -1;
     if (dm.enable_coupons == false) {
         return nil;
     }
-    
+
     float fontHeight = [[Utility getUIFont:kUIFontType18 isBold:false] lineHeight];
     float viewMaxHeight = 0;
     float viewMaxWidth = self.view.frame.size.width * .98f;
     float viewOriginX = self.view.frame.size.width * .01f;
     float viewOriginY = self.view.frame.size.width * .01f;
-    
+
     UIView* view;
     if (_couponView == nil) {
         view = [[UIView alloc] init];
@@ -373,8 +373,8 @@ static int kTagForNoSpacing = -1;
     } else {
         view = _couponView;
     }
-    
-    
+
+
     float elementPosYInTopView = self.view.frame.size.width * .02f;
     float diff = self.view.frame.size.width * .025f;
     UIView* viewWithAppliedCoupons;
@@ -399,7 +399,7 @@ static int kTagForNoSpacing = -1;
         [labelAppliedCoupon sizeToFitUI];
         [viewWithAppliedCoupons addSubview:labelAppliedCoupon];
         elementPosYInTopView += (fontHeight + diff);
-        
+
         int appliedCouponWidth = [[MyDevice sharedManager] screenWidthInPortrait] * .5f;
         int appliedCouponRemoveWidth = 50;
         int appliedCouponHeight = 30;
@@ -418,9 +418,9 @@ static int kTagForNoSpacing = -1;
             [buttonCoupon.layer setBorderColor:[[Utility getUIColor:kUIColorBorder] CGColor]];
             [buttonCoupon.layer setBorderWidth:1];
             [buttonCoupon.titleLabel setUIFont:kUIFontType14 isBold:true];
-            
-            
-            
+
+
+
             UIButton* buttonCouponRemove = [[UIButton alloc] init];
             [viewWithAppliedCoupons addSubview:buttonCouponRemove];
             [buttonCouponRemove setFrame:CGRectMake(appliedCouponRemovePosX, elementPosYInTopView, appliedCouponRemoveWidth, appliedCouponHeight)];
@@ -435,16 +435,16 @@ static int kTagForNoSpacing = -1;
             [buttonCouponRemove addTarget:self action:@selector(removeCoupon:) forControlEvents:UIControlEventTouchUpInside];
             [buttonCouponRemove.layer setValue:coupon forKey:@"MY_OBJECT"];
             elementPosYInTopView += (appliedCouponHeight + diff);
-            
+
             [buttonCouponRemove setTintColor:[Utility getUIColor:kUIColorThemeButtonSelected]];
         }
     } else {
         elementPosYInTopView = 0;
     }
-    
-    
-    
-    
+
+
+
+
     float elementPosYInBottomView = self.view.frame.size.width * .02f;
     UIView* viewWithTextField;
     if (_couponViewWithTextField == nil) {
@@ -453,7 +453,7 @@ static int kTagForNoSpacing = -1;
         [viewWithTextField setFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
         [viewWithTextField setBackgroundColor:[UIColor whiteColor]];
         [view addSubview:viewWithTextField];
-        
+
         elementPosYInBottomView += diff;
         UILabel* labelApplyNewCoupon = [[UILabel alloc] init];
         [viewWithTextField addSubview:labelApplyNewCoupon];
@@ -463,27 +463,27 @@ static int kTagForNoSpacing = -1;
         [labelApplyNewCoupon setTextColor:[Utility getUIColor:kUIColorFontLight]];
         [labelApplyNewCoupon sizeToFitUI];
         elementPosYInBottomView += (fontHeight + diff);
-        
+
         elementPosYInBottomView += diff;
         _textFieldApplyCoupon = [[UITextField alloc] init];
         [viewWithTextField addSubview:_textFieldApplyCoupon];
-        
+
         float buttonWidth;
-        
+
         if ([[MyDevice sharedManager] isIpad]) {
             buttonWidth = [[MyDevice sharedManager] screenWidthInPortrait] * .30f;
         } else {
             buttonWidth = [[MyDevice sharedManager] screenWidthInPortrait] * .40f;
         }
-        
-        
+
+
         [_textFieldApplyCoupon setFrame:CGRectMake(
                                                    self.view.frame.size.width * .46f -  buttonWidth,
                                                    elementPosYInBottomView,
                                                    buttonWidth,
                                                    fontHeight*2
                                                    )];
-        
+
         [_textFieldApplyCoupon setUIFont:kUIFontType18 isBold:false];
         [_textFieldApplyCoupon setPlaceholder:Localize(@"enter_coupon_code")];
         [_textFieldApplyCoupon setTextColor:[Utility getUIColor:kUIColorFontLight]];
@@ -504,52 +504,52 @@ static int kTagForNoSpacing = -1;
 //            [_textFieldApplyCoupon setLeftViewMode:UITextFieldViewModeAlways];
 //            [_textFieldApplyCoupon setLeftView:spacerView];
 //        }
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         UIButton* buttonApply  = [[UIButton alloc] init];
         [viewWithTextField addSubview:buttonApply];
-        
+
         [buttonApply setFrame:CGRectMake(
                                          self.view.frame.size.width * .52f,
                                          elementPosYInBottomView,
                                          buttonWidth,
                                          fontHeight*2
                                          )];
-        
+
         [buttonApply setBackgroundColor:[Utility getUIColor:kUIColorBuyButtonNormalBg]];
         [buttonApply setTitleColor:[Utility getUIColor:kUIColorBuyButtonFont] forState:UIControlStateNormal];
         [[buttonApply titleLabel] setUIFont:kUIFontType18 isBold:false];
         [buttonApply setTitle:Localize(@"apply") forState:UIControlStateNormal];
         [buttonApply addTarget:self action:@selector(applyCoupon:) forControlEvents:UIControlEventTouchUpInside];
-      
+
         elementPosYInBottomView += (fontHeight*2 + diff);
-        
+
         if (![[Addons sharedManager] hide_coupon_list]) {
-            
+
             UIButton* buttonMyCoupon  = [[UIButton alloc] init];
             [viewWithTextField addSubview:buttonMyCoupon];
-            
+
             [buttonMyCoupon setFrame:CGRectMake(
                                                 self.view.frame.size.width * .50f - (buttonWidth/2),
                                                 elementPosYInBottomView,
                                                 buttonWidth,
                                                 fontHeight*2
                                                 )];
-            
+
             [buttonMyCoupon setBackgroundColor:[UIColor clearColor]];
             [buttonMyCoupon setTitleColor:[Utility getUIColor:kUIColorBuyButtonNormalBg] forState:UIControlStateNormal];
             [[buttonMyCoupon titleLabel] setUIFont:kUIFontType18 isBold:false];
             [buttonMyCoupon setTitle:Localize(@"my_coupons") forState:UIControlStateNormal];
             [buttonMyCoupon addTarget:self action:@selector(myCoupone:) forControlEvents:UIControlEventTouchUpInside];
         }
-        
-        
+
+
         elementPosYInBottomView += (fontHeight*2 + diff);
-        
+
         //    UILabel* labelCouponMessage = [[UILabel alloc] init];
         //    [viewWithTextField addSubview:labelCouponMessage];
         //    [labelCouponMessage setFrame:CGRectMake(self.view.frame.size.width * .02f, elementPosYInBottomView, view.frame.size.width * .96f, fontHeight)];
@@ -562,20 +562,20 @@ static int kTagForNoSpacing = -1;
         viewWithTextField = _couponViewWithTextField;
         elementPosYInBottomView = _couponViewWithTextField.frame.size.height;
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     CGRect rect;
     BOOL isApplyCouponIsOnTop = true;
-    
+
     if (isApplyCouponIsOnTop) {
         rect = viewWithAppliedCoupons.frame;
         rect.origin.y = elementPosYInBottomView;
         rect.size.height = elementPosYInTopView;
         [viewWithAppliedCoupons setFrame:rect];
-        
+
         rect = viewWithTextField.frame;
         rect.size.height = elementPosYInBottomView;
         [viewWithTextField setFrame:rect];
@@ -583,23 +583,23 @@ static int kTagForNoSpacing = -1;
         rect = viewWithAppliedCoupons.frame;
         rect.size.height = elementPosYInTopView;
         [viewWithAppliedCoupons setFrame:rect];
-        
+
         rect = viewWithTextField.frame;
         rect.origin.y = elementPosYInTopView;
         rect.size.height = elementPosYInBottomView;
         [viewWithTextField setFrame:rect];
     }
-    
+
     rect = view.frame;
     rect.size.height = elementPosYInTopView + elementPosYInBottomView + diff;
     [view setFrame:rect];
-    
+
     [view.layer setShadowOpacity:0.0f];
     [Utility showShadow:view];
-    
-    
-    
-    
+
+
+
+
     return view;
 }
 
@@ -614,9 +614,9 @@ static int kTagForNoSpacing = -1;
     [UIView animateWithDuration:0.4 delay:0.0 usingSpringWithDamping:0.2 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         _labelApplyRewardDiscountDesc.transform = CGAffineTransformIdentity;
     } completion:nil];
-    
+
     int earnPoints = [self getTotalRewardPoints];
-    
+
     AppUser* appUser = [AppUser sharedManager];
     if (_rewardPointsApplied) {
         float useDiscounts = [[AppUser sharedManager] rewardDiscount];
@@ -635,7 +635,7 @@ static int kTagForNoSpacing = -1;
         }
         [_labelApplyRewardDiscountDesc setFrame:CGRectMake(_labelApplyRewardDiscountDesc.frame.origin.x, _labelApplyRewardDiscountDesc.frame.origin.y, buttonWidth, _labelApplyRewardDiscountDesc.frame.size.height)];
         [_labelApplyRewardDiscountDesc sizeToFitUI];
-        
+
         [_buttonApplyRewardDiscount setTitle:Localize(@"remove_discount") forState:UIControlStateNormal];
         _buttonApplyRewardDiscount.center = CGPointMake(_buttonApplyRewardDiscount.center.x, _labelApplyRewardDiscountDesc.center.y);
     } else {
@@ -671,7 +671,7 @@ static int kTagForNoSpacing = -1;
     }
     _rewardDiscountView.layer.shadowOpacity = 0.0f;
     [Utility showShadow:_rewardDiscountView];
-    
+
     if (earnPoints == 0) {
         if (_labelApplyRewardDiscountDesc.hidden && _buttonApplyRewardDiscount.hidden) {
             _labelApplyRewardDiscountHeading.hidden = true;
@@ -690,7 +690,7 @@ static int kTagForNoSpacing = -1;
     else {
         _labelApplyRewardDiscountHeading.hidden = false;
     }
-    
+
     if (_labelApplyRewardDiscountHeading.hidden &&
         _labelApplyRewardDiscountDesc.hidden &&
         _buttonApplyRewardDiscount.hidden) {
@@ -698,7 +698,7 @@ static int kTagForNoSpacing = -1;
     } else {
         [_rewardDiscountView setTag:kTagForGlobalSpacing];
     }
-    
+
     _rewardDiscountViewWithTextField.backgroundColor = [UIColor clearColor];
 
     [self updateViews];
@@ -711,15 +711,15 @@ static int kTagForNoSpacing = -1;
     float viewOriginX = self.view.frame.size.width * .01f;
     float viewOriginY = self.view.frame.size.width * .01f;
     AppUser* appUser = [AppUser sharedManager];
-    
+
     int earnPoints = [self getTotalRewardPoints];
     int usePoints = appUser.rewardPoints;
     float useDiscounts = appUser.rewardDiscount;
     NSString* useDiscountStr = [[Utility sharedManager] convertToString:useDiscounts isCurrency:true];
-    
-    
-    
-    
+
+
+
+
     UIView* view;
     if (_rewardDiscountView == nil) {
         view = [[UIView alloc] init];
@@ -732,11 +732,11 @@ static int kTagForNoSpacing = -1;
     }else{
         view = _rewardDiscountView;
     }
-    
-    
+
+
     float elementPosYInTopView = self.view.frame.size.width * .02f;
     float diff = self.view.frame.size.width * .025f;
-    
+
     float elementPosYInBottomView = self.view.frame.size.width * .02f;
     UIView* viewWithTextField;
     if (_rewardDiscountViewWithTextField == nil) {
@@ -745,11 +745,11 @@ static int kTagForNoSpacing = -1;
         [viewWithTextField setFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
         [viewWithTextField setBackgroundColor:[UIColor whiteColor]];
         [view addSubview:viewWithTextField];
-        
+
         elementPosYInBottomView += diff;
         _labelApplyRewardDiscountHeading = [[UILabel alloc] init];
         [viewWithTextField addSubview:_labelApplyRewardDiscountHeading];
-        
+
         if ([[TMLanguage sharedManager] isRTLEnabled]) {
             [_labelApplyRewardDiscountHeading setTextAlignment:NSTextAlignmentRight];
         } else {
@@ -762,26 +762,26 @@ static int kTagForNoSpacing = -1;
         [_labelApplyRewardDiscountHeading setNumberOfLines:0];
         [_labelApplyRewardDiscountHeading sizeToFitUI];
         elementPosYInBottomView = (CGRectGetMaxY(_labelApplyRewardDiscountHeading.frame)  + diff);
-        
+
         _labelApplyRewardDiscountDesc = [[UILabel alloc] init];
         [viewWithTextField addSubview:_labelApplyRewardDiscountDesc];
-        
+
         float buttonWidth;
-        
+
         if ([[MyDevice sharedManager] isIpad]) {
             buttonWidth = [[MyDevice sharedManager] screenWidthInPortrait] * .30f;
         } else {
             buttonWidth = [[MyDevice sharedManager] screenWidthInPortrait] * .40f;
         }
-        
-        
+
+
         [_labelApplyRewardDiscountDesc setFrame:CGRectMake(
                                                            self.view.frame.size.width * .46f -  buttonWidth,
                                                            elementPosYInBottomView,
                                                            buttonWidth,
                                                            fontHeight*2
                                                            )];
-        
+
         [_labelApplyRewardDiscountDesc setUIFont:kUIFontType18 isBold:false];
 //        RLOG(Localize(@"use_points_desc"));
         [_labelApplyRewardDiscountDesc setText:[NSString stringWithFormat:Localize(@"use_points_desc"), usePoints, useDiscountStr]];
@@ -789,42 +789,42 @@ static int kTagForNoSpacing = -1;
         [_labelApplyRewardDiscountDesc setTextAlignment:NSTextAlignmentCenter];
         [_labelApplyRewardDiscountDesc setNumberOfLines:0];
         [_labelApplyRewardDiscountDesc sizeToFitUI];
-        
+
         _buttonApplyRewardDiscount  = [[UIButton alloc] init];
         [viewWithTextField addSubview:_buttonApplyRewardDiscount];
-        
+
         [_buttonApplyRewardDiscount setFrame:CGRectMake(
                                                         self.view.frame.size.width * .52f,
                                                         elementPosYInBottomView,
                                                         buttonWidth,
                                                         fontHeight*2
                                                         )];
-        
+
         [_buttonApplyRewardDiscount setBackgroundColor:[Utility getUIColor:kUIColorBuyButtonNormalBg]];
         [_buttonApplyRewardDiscount setTitleColor:[Utility getUIColor:kUIColorBuyButtonFont] forState:UIControlStateNormal];
         [[_buttonApplyRewardDiscount titleLabel] setUIFont:kUIFontType18 isBold:false];
         [_buttonApplyRewardDiscount setTitle:Localize(@"apply_discount") forState:UIControlStateNormal];
         [_buttonApplyRewardDiscount addTarget:self action:@selector(applyRewardDiscount:) forControlEvents:UIControlEventTouchUpInside];
-        
+
         _buttonApplyRewardDiscount.center = CGPointMake(_buttonApplyRewardDiscount.center.x, _labelApplyRewardDiscountDesc.center.y);
         elementPosYInBottomView += (fontHeight*2 + diff);
     } else{
         viewWithTextField = _rewardDiscountViewWithTextField;
         elementPosYInBottomView = _rewardDiscountViewWithTextField.frame.size.height;
     }
-    
+
     CGRect rect = viewWithTextField.frame;
     rect.size.height = elementPosYInBottomView;
     [viewWithTextField setFrame:rect];
-    
+
     rect = view.frame;
     rect.size.height = elementPosYInTopView + elementPosYInBottomView + diff;
     [view setFrame:rect];
-    
+
     [view.layer setShadowOpacity:0.0f];
     [Utility showShadow:view];
-    
-    
+
+
     [self updateRewardDiscountView];
     return view;
 }
@@ -845,7 +845,7 @@ static int kTagForNoSpacing = -1;
     if (_isKeyboardVisible) {
         return;
     }
-    
+
     AppUser* appUser = [AppUser sharedManager];
     if(appUser._isUserLoggedIn == false){
         ViewControllerMain* mainVC = [ViewControllerMain getInstance];
@@ -905,7 +905,7 @@ static int kTagForNoSpacing = -1;
 #endif
         }
     }
-    
+
 
 
 }
@@ -930,39 +930,39 @@ static int kTagForNoSpacing = -1;
     [_scrollView addSubview:mainView];
     [_viewsAdded addObject:mainView];
     [mainView setTag:kTagForGlobalSpacing];
-    
-    
+
+
     float viewMaxHeight = 250;
     float viewMaxWidth = self.view.frame.size.width * .98f;
     float viewOriginX = self.view.frame.size.width * .01f;
     float viewOriginY = self.view.frame.size.width * .01f;
-    
+
     float imgRectH = MIN(viewMaxHeight * .75f * .80f, viewMaxWidth * .25f);
     viewMaxHeight = imgRectH * 1.67f;
-    
+
     UIView* viewTop = [[UIView alloc] init];
     [viewTop setFrame:CGRectMake(viewOriginX, viewOriginY, viewMaxWidth, viewMaxHeight * .75f)];
     [viewTop.layer setBorderColor:[[Utility getUIColor:kUIColorBorder] CGColor]];
     [viewTop.layer setBorderWidth:1];
     [viewTop setBackgroundColor:[UIColor whiteColor]];
-    
+
     UIView* viewBottom = [[UIView alloc] init];
     [viewBottom setFrame:CGRectMake(viewOriginX, viewOriginY, viewMaxWidth, viewMaxHeight * .25f)];
     [viewBottom.layer setBorderColor:[[Utility getUIColor:kUIColorBorder] CGColor]];
     [viewBottom.layer setBorderWidth:1];
     [viewBottom setBackgroundColor:[UIColor whiteColor]];
-    
+
     [mainView addSubview:viewTop];
     [mainView addSubview:viewBottom];
-    
-    
+
+
     float viewTopWidth = viewTop.frame.size.width;
     float viewTopHeight = viewTop.frame.size.height;
     CGRect imgRect = CGRectMake(viewTopHeight * .1f,
                                 viewTopHeight * .1f,
                                 viewTopHeight * .8f,
                                 viewTopHeight * .8f);
-    
+
     CGRect nameRect = CGRectMake(imgRect.origin.x * 2 + imgRect.size.width,
                                  viewTopHeight * .15f,
                                  viewTopWidth,
@@ -975,28 +975,28 @@ static int kTagForNoSpacing = -1;
                                   viewTopHeight * .6f,
                                   viewTopWidth,
                                   viewTopHeight);
-    
+
     CGRect priceOldRect = CGRectMake(viewTopHeight * .1f,
                                      viewTopHeight * .6f,
                                      viewTopWidth,
                                      viewTopHeight);
-    
+
     CGRect priceNewRect = CGRectMake(viewTopHeight * .1f,
                                      viewTopHeight * .8f,
                                      viewTopWidth,
                                      viewTopHeight);
-    
+
     CGRect priceFinalRect = CGRectMake(viewTopHeight * .1f,
                                        viewTopHeight * .8f,
                                        viewTopWidth,
                                        viewTopHeight);
-    
-    
-    
+
+
+
     UIImageView* imgProduct = [[UIImageView alloc] init];
     imgProduct.frame = imgRect;
     [viewTop addSubview:imgProduct];
-    
+
     if ([variation._images count] > 0) {
         [Utility setImage:imgProduct url:((ProductImage*)[variation._images objectAtIndex:0])._src resizeType:kRESIZE_TYPE_PRODUCT_THUMBNAIL isLocal:false];
     }else{
@@ -1005,57 +1005,57 @@ static int kTagForNoSpacing = -1;
         }
         [Utility setImage:imgProduct url:((ProductImage*)[pInfo._images objectAtIndex:0])._src resizeType:kRESIZE_TYPE_PRODUCT_THUMBNAIL isLocal:false];
     }
-    
+
     [imgProduct.layer setBorderColor:[[Utility getUIColor:kUIColorBorder] CGColor]];
     [imgProduct.layer setBorderWidth:1];
     [imgProduct setContentMode:UIViewContentModeScaleAspectFill];
     [imgProduct setClipsToBounds:true];
-    
+
     UILabel* labelName = [[UILabel alloc] init];
     [viewTop addSubview:labelName];
-    
+
     UILabel* labelDesc = [[UILabel alloc] init];
     //    [labelDesc setLineBreakMode:NSLineBreakByWordWrapping];
     //    [labelDesc setNumberOfLines:0];
-    
+
     labelDesc.adjustsFontSizeToFitWidth = NO;
     labelDesc.lineBreakMode = NSLineBreakByTruncatingTail;
-    
+
     [viewTop addSubview:labelDesc];
-    
+
     UILabel* labelPrice = [[UILabel alloc] init];
     [viewTop addSubview:labelPrice];
-    
+
     UILabel* labelPriceOld = [[UILabel alloc] init];
     [viewTop addSubview:labelPriceOld];
-    
+
     UILabel* labelPriceNew = [[UILabel alloc] init];
     [viewTop addSubview:labelPriceNew];
-    
+
     UILabel* labelPriceFinal = [[UILabel alloc] init];
     [viewTop addSubview:labelPriceFinal];
-    
-    
+
+
     [labelName setUIFont:kUIFontType18 isBold:true];
     [labelDesc setUIFont:kUIFontType14 isBold:false];
     [labelPrice setUIFont:kUIFontType16 isBold:false];
     [labelPriceOld setUIFont:kUIFontType14 isBold:false];
     [labelPriceNew setUIFont:kUIFontType16 isBold:false];
     [labelPriceFinal setUIFont:kUIFontType16 isBold:false];
-    
+
     labelName.frame = nameRect;
     labelDesc.frame = descRect;
     labelPrice.frame = priceRect;
-    
+
     [labelName setText:pInfo._titleForOuterView];
     [labelDesc setText:Localize(@"title_product_info")];
     [labelDesc setAttributedText:[[NSAttributedString alloc] initWithString:Localize(@"title_product_info")]];
     //    float labelSingleLineDescHeight = LABEL_SIZE(labelDesc).height ;
-    
+
     NSString * htmlString = @"";//pInfo._short_description;
     NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     [labelDesc setAttributedText:attrStr];
-    
+
     NSString* priceStr;
     BOOL isDiscounted;
     float price;
@@ -1075,8 +1075,8 @@ static int kTagForNoSpacing = -1;
         price = [pInfo getNewPrice:-1];
         oldPrice = [pInfo getOldPrice:-1];
     }
-    
-    
+
+
     if ([[Addons sharedManager] enable_mixmatch_products]) {
         if (c.product.mMixMatch) {
             price = 0.0f;
@@ -1085,38 +1085,38 @@ static int kTagForNoSpacing = -1;
             }
         }
     }
-    
-    
+
+
     priceStr = [[Utility sharedManager] convertToString:price isCurrency:true];
     [labelPriceOld setAttributedText:[[Utility sharedManager] convertToStringStrikethrough:oldPrice isCurrency:true]];
-    
+
 //    RLOG(@"Final Rate = %@", [[Utility sharedManager] convertToStringStrikethrough:pInfo._regular_price isCurrency:true]);
-    
-    
-    
-    
-    
+
+
+
+
+
     NSString* newPrice = @"";
     if ([[TMLanguage sharedManager] isRTLEnabled]) {
         newPrice = [NSString stringWithFormat:@"   X   %@", priceStr];
     } else {
         newPrice = [NSString stringWithFormat:@"%@   X   ", priceStr];
     }
-    
+
     [labelPriceNew setText:newPrice];
     [labelPrice setText:Localize(@"i_price")];
     [labelPriceFinal setText:[[Utility sharedManager] convertToString:(price * quantity) isCurrency:true]];
-    
-    
+
+
     priceOldRect.origin.x = priceOldRect.origin.x + LABEL_SIZE(labelPrice).width + viewTopHeight * .1f;
     labelPriceOld.frame = priceOldRect;
-    
+
     priceNewRect.origin.x = priceNewRect.origin.x + LABEL_SIZE(labelPrice).width + viewTopHeight * .1f;
     labelPriceNew.frame = priceNewRect;
-    
+
     priceFinalRect.origin.x = viewTopWidth - LABEL_SIZE(labelPriceFinal).width - viewTopHeight * .1f;
     labelPriceFinal.frame = priceFinalRect;
-    
+
     if(isDiscounted == false){
         priceNewRect = priceOldRect;
         labelPriceOld.hidden = true;
@@ -1125,7 +1125,7 @@ static int kTagForNoSpacing = -1;
     [labelPriceOld setTextColor:[Utility getUIColor:kUIColorFontPriceOld]];
     [labelPriceNew setTextColor:[Utility getUIColor:kUIColorFontDark]];
     [labelPriceFinal setTextColor:[Utility getUIColor:kUIColorFontDark]];
-    
+
     [labelDesc setUIFont:kUIFontType14 isBold:false];
     [labelDesc sizeToFitUI];
     [labelPrice sizeToFitUI];
@@ -1135,54 +1135,54 @@ static int kTagForNoSpacing = -1;
     float bottomPointDesc = labelDesc.frame.origin.y + labelDesc.frame.size.height;
     float startPointPriceOld = viewTopHeight * .6f;
     float startPointPriceNew = bottomPointDesc ;//+ viewTopHeight * .15f;
-    
+
     float diffHeight = startPointPriceNew - startPointPriceOld;
     float labelPriceOldHeight = LABEL_SIZE(labelPriceOld).height ;
     if (diffHeight < 0 ) {
         diffHeight = 0;
     }
-    
+
     RLOG(@"diffHeight = %.f",diffHeight);
     CGRect topViewUpdatedRect = viewTop.frame;
     if (labelPriceOld.hidden && diffHeight > labelPriceOldHeight) {
         topViewUpdatedRect.size.height += (diffHeight - labelPriceOldHeight);
     }
     viewTop.frame = topViewUpdatedRect;
-    
+
     CGRect tempRect = labelPrice.frame;
     tempRect.origin.y +=  diffHeight;
     labelPrice.frame = tempRect;
-    
+
     tempRect = labelPriceOld.frame;
     tempRect.origin.y +=  diffHeight;
     labelPriceOld.frame = tempRect;
-    
+
     tempRect = labelPriceNew.frame;
     tempRect.origin.y +=  diffHeight;
     labelPriceNew.frame = tempRect;
-    
+
     tempRect = labelPriceFinal.frame;
     tempRect.origin.y = labelPriceNew.frame.origin.y;
     labelPriceFinal.frame = tempRect;
-    
+
     [labelName sizeToFitUI];
-    
+
     CGRect nameRe = labelName.frame;
     nameRe.size.width = (viewTopWidth - nameRect.origin.x - viewTopHeight * .1f);
     labelName.frame = nameRe;
-    
-    
+
+
     //    [labelDesc sizeToFitUI];
     CGRect descRe = labelDesc.frame;
     descRe.size.width = (viewTopWidth - nameRect.origin.x - viewTopHeight * .1f);
     labelDesc.frame = descRe;
-    
+
     [labelPrice sizeToFitUI];
     [labelPriceOld sizeToFitUI];
     [labelPriceNew sizeToFitUI];
     [labelPriceFinal sizeToFitUI];
-    
-    
+
+
     tempRect = labelPriceFinal.frame;
     tempRect.origin.x = viewTopHeight * .1f;
     tempRect.size.width = viewTopWidth - viewTopHeight * .2f;
@@ -1192,16 +1192,16 @@ static int kTagForNoSpacing = -1;
     } else {
         [labelPriceFinal setTextAlignment:NSTextAlignmentRight];
     }
-    
-    
+
+
     [labelName setTextColor:[Utility getUIColor:kUIColorFontLight]];
     [labelDesc setTextColor:[Utility getUIColor:kUIColorFontLight]];
     [labelPrice setTextColor:[Utility getUIColor:kUIColorFontDark]];
     [labelPriceOld setTextColor:[Utility getUIColor:kUIColorFontPriceOld]];
     [labelPriceNew setTextColor:[Utility getUIColor:kUIColorFontDark]];
     [labelPriceFinal setTextColor:[Utility getUIColor:kUIColorFontDark]];
-    
-    
+
+
     UIButton* buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     [buttonLeft.titleLabel setUIFont:kUIFontType20 isBold:false];
     [buttonLeft setFrame:CGRectMake(0, 0 , (viewBottom.frame.size.width+2)/2+2, viewBottom.frame.size.height)];
@@ -1211,8 +1211,8 @@ static int kTagForNoSpacing = -1;
     [buttonLeft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonLeft setImageEdgeInsets:UIEdgeInsetsMake(viewBottom.frame.size.height * .25f, 0, viewBottom.frame.size.height * .25f, 0)];
     //    [buttonLeft setTitleEdgeInsets:UIEdgeInsetsMake(viewBottom.frame.size.height * .25f, 0, viewBottom.frame.size.height * .25f, 0)];
-    
-    
+
+
     UIButton* buttonRight =[UIButton buttonWithType:UIButtonTypeCustom];
     [buttonRight.titleLabel setUIFont:kUIFontType20 isBold:false];
     [buttonRight setFrame:CGRectMake((viewBottom.frame.size.width+2)/2+1, 0, viewBottom.frame.size.width/2, viewBottom.frame.size.height)];
@@ -1222,11 +1222,11 @@ static int kTagForNoSpacing = -1;
     [buttonRight.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonRight setImageEdgeInsets:UIEdgeInsetsMake(viewBottom.frame.size.height * .25f, 0, viewBottom.frame.size.height * .25f, 0)];
     //    [buttonRight setTitleEdgeInsets:UIEdgeInsetsMake(viewBottom.frame.size.height * .25f, 0, viewBottom.frame.size.height * .25f, 0)];
-    
-    
+
+
     [viewBottom addSubview:buttonLeft];
     [viewBottom addSubview:buttonRight];
-    
+
     NSString *titleLeftButtonPressed;
     NSString *titleRightButtonPressed;
     UIColor *colorLeftButtonPressed;
@@ -1251,7 +1251,7 @@ static int kTagForNoSpacing = -1;
         colorRightButtonPressed = [Utility getUIColor:kUIColorThemeButtonNormal];
         [buttonRight addTarget:self action:@selector(addToCart:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
+
     [buttonLeft setUIImage:imageLeftButtonPressed forState:UIControlStateNormal];
     [buttonLeft setUIImage:imageLeftButtonPressed forState:UIControlStateSelected];
     [buttonLeft setTitle:titleLeftButtonPressed forState:UIControlStateNormal];
@@ -1259,7 +1259,7 @@ static int kTagForNoSpacing = -1;
     [buttonLeft setTitleColor:colorLeftButtonPressed forState:UIControlStateNormal];
     [buttonLeft setTitleColor:colorLeftButtonPressed forState:UIControlStateSelected];
     [buttonLeft setTintColor:colorLeftButtonPressed];
-    
+
     [buttonRight setUIImage:imageRightButtonPressed forState:UIControlStateNormal];
     [buttonRight setUIImage:imageRightButtonPressed forState:UIControlStateSelected];
     [buttonRight setTitle:titleRightButtonPressed forState:UIControlStateNormal];
@@ -1267,41 +1267,41 @@ static int kTagForNoSpacing = -1;
     [buttonRight setTitleColor:colorRightButtonPressed forState:UIControlStateNormal];
     [buttonRight setTitleColor:colorRightButtonPressed forState:UIControlStateSelected];
     [buttonRight setTintColor:colorRightButtonPressed];
-    
+
     [buttonLeft addTarget:self action:@selector(removeFromList:) forControlEvents:UIControlEventTouchUpInside];
-    
+
     [buttonLeft setTag:listId];
     [buttonRight setTag:listId];
-    
+
     PairCart* pair = [[PairCart alloc] init];
     pair.buttonLeft = buttonLeft;
     pair.buttonRight = buttonRight;
     pair.cart = c;
     [_tempPairArray addObject:pair];
-    
+
     CGRect viewT = viewTop.frame;
     CGRect viewB = viewBottom.frame;
     CGRect viewM = mainView.frame;
-    
+
     //    viewM = CGRectMake(0, 0, viewT.size.width, viewT.size.height + viewB.size.height);
     //    viewT = CGRectMake(viewT.origin.x, viewT.origin.y, viewT.size.width, viewT.size.height);
     //    viewB = CGRectMake(viewB.origin.x, viewB.origin.y + viewT.size.height, viewB.size.width, viewB.size.height);
-    
+
     viewM = CGRectMake(self.view.frame.size.width * .01f, self.view.frame.size.width * .01f, self.view.frame.size.width * .98f, viewT.size.height + viewB.size.height);
     viewT = CGRectMake(-1, 0, viewM.size.width + 2, viewT.size.height);
     viewB = CGRectMake(-1, viewB.origin.y + viewT.size.height, viewM.size.width + 2, viewB.size.height);
-    
+
     viewTop.frame = viewT;
     viewBottom.frame = viewB;
     mainView.frame = viewM;
-    
-    
+
+
     UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, viewTop.frame.size.width, viewTop.frame.size.height)];
     [button addTarget:self action:@selector(myEvent:) forControlEvents:UIControlEventTouchUpInside];
     pair.buttonImage = button;
     [viewTop addSubview:button];
     [button setTag:pInfo._id];
-    
+
     ///////////
     UILabel* labelProp = [[UILabel alloc] init];
     NSMutableString *properties = [NSMutableString string];
@@ -1349,8 +1349,8 @@ static int kTagForNoSpacing = -1;
             i++;
         }
     }
-    
-    
+
+
     if (c.product._isFullRetrieved == false) {
         if (c.selectedVariationId != -1 && [properties isEqualToString:@""]) {
             i = 0;
@@ -1368,8 +1368,8 @@ static int kTagForNoSpacing = -1;
             }
         }
     }
-    
-    
+
+
 #if (ENABLE_PRODUCT_DELIVERY_DATA_PLUGIN && 0)
     if ([[Addons sharedManager] productDeliveryDatePlugin] && [[[Addons sharedManager] productDeliveryDatePlugin] isEnabled]) {
         if (c.prddDate && ![c.prddDate isEqualToString:@""]) {
@@ -1399,15 +1399,15 @@ static int kTagForNoSpacing = -1;
     }
 #endif
 
-    
-    
-    
+
+
+
     if ([properties isEqualToString:@""]){
         [properties appendString:Localize(@"not_available")];
     }
     [labelProp setUIFont:labelDesc.font];
-    
-    
+
+
     [labelProp setText:properties];
     labelProp.textColor = labelPrice.textColor;
     [labelProp setFrame:labelDesc.frame];
@@ -1419,7 +1419,7 @@ static int kTagForNoSpacing = -1;
     rectProp.origin.y += (gap - rectProp.size.height)/2;
     [labelProp setFrame:rectProp];
     [labelDesc.superview addSubview:labelProp];
-    
+
     CGRect rect_title = labelName.frame;
     CGRect rect_desc = labelDesc.frame;
     CGRect rect_prop = labelProp.frame;
@@ -1427,8 +1427,8 @@ static int kTagForNoSpacing = -1;
     CGRect rect_priceOld = labelPriceOld.frame;
     CGRect rect_priceNew = labelPriceNew.frame;
     CGRect rect_priceTotal = labelPriceFinal.frame;
-    
-    
+
+
     rect_desc.origin.y = CGRectGetMaxY(rect_title) + 10;
     labelDesc.frame = rect_desc;
     if (labelDesc.frame.size.height == 0) {
@@ -1438,12 +1438,12 @@ static int kTagForNoSpacing = -1;
         rect_prop.origin.y = CGRectGetMaxY(rect_desc) + 10;
         labelProp.frame = rect_prop;
     }
-    
-    
+
+
     float gapDateTime = 0;
 #if ENABLE_PRODUCT_DELIVERY_DATA_PLUGIN
     if ([[Addons sharedManager] productDeliveryDatePlugin] && [[[Addons sharedManager] productDeliveryDatePlugin] isEnabled]) {
-        
+
         float spacingIconX = 30;
         float spacingLabelX = 15;
         float iconW = 16;
@@ -1462,14 +1462,14 @@ static int kTagForNoSpacing = -1;
         if (c.prddDate && ![c.prddDate isEqualToString:@""]) {
             gapDateTime += 5;
             NSString* deliveryDate = [NSString stringWithFormat:@"%@", c.prddDate];
-            
+
             UIImageView* dateSelectionIcon = [[UIImageView alloc] init];
             dateSelectionIcon.frame = CGRectMake(labelProp.frame.origin.x + spacingIconX, CGRectGetMaxY(rect_prop) + gapDateTime, iconW, iconH);
             [dateSelectionIcon setImage:[UIImage imageNamed:@"date_icon.png"]];
             [labelProp.superview addSubview:dateSelectionIcon];
             [dateSelectionIcon setTintColor:[Utility getUIColor:kUIColorFontDark]];
             [dateSelectionIcon setContentMode:UIViewContentModeScaleAspectFit];
-            
+
             UILabel* dateSelectionLabel = [[UILabel alloc] init];
             [dateSelectionLabel setUIFont:kUIFontType14 isBold:false];
             dateSelectionLabel.frame = CGRectMake(CGRectGetMaxX(dateSelectionIcon.frame) + spacingLabelX,CGRectGetMaxY(rect_prop) + gapDateTime,(viewTopWidth - viewTopHeight * .1f - (CGRectGetMaxX(dateSelectionIcon.frame) + spacingLabelX)),MAX(dateSelectionLabel.font.lineHeight, iconH));
@@ -1481,14 +1481,14 @@ static int kTagForNoSpacing = -1;
         if (c.prddTime && ![c.prddTime.slot_title isEqualToString:@""]) {
             gapDateTime += 5;
             NSString* deliveryTime = [NSString stringWithFormat:@"%@", c.prddTime.slot_title];
-            
+
             UIImageView* dateSelectionIcon = [[UIImageView alloc] init];
             dateSelectionIcon.frame = CGRectMake(labelProp.frame.origin.x + spacingIconX, CGRectGetMaxY(rect_prop) + gapDateTime, iconW, iconH);
             [dateSelectionIcon setImage:[UIImage imageNamed:@"time_icon.png"]];
             [labelProp.superview addSubview:dateSelectionIcon];
             [dateSelectionIcon setTintColor:[Utility getUIColor:kUIColorFontDark]];
             [dateSelectionIcon setContentMode:UIViewContentModeScaleAspectFit];
-            
+
             UILabel* dateSelectionLabel = [[UILabel alloc] init];
             [dateSelectionLabel setUIFont:kUIFontType14 isBold:false];
             dateSelectionLabel.frame = CGRectMake(
@@ -1504,11 +1504,11 @@ static int kTagForNoSpacing = -1;
     }
 #endif
     rect_prop.size.height += gapDateTime;
-    
+
     float newMargin = 0;
     rect_priceHeader.origin.y = CGRectGetMaxY(rect_prop) + newMargin;
     labelPrice.frame = rect_priceHeader;
-    
+
     if (labelPriceOld.frame.size.height == 0) {
         rect_priceOld.origin.y = MAX(CGRectGetMaxY(rect_prop), CGRectGetMaxY(imgProduct.frame)) + newMargin;
         labelPriceOld.frame = rect_priceOld;
@@ -1527,19 +1527,19 @@ static int kTagForNoSpacing = -1;
         labelPriceNew.frame = rect_priceNew;
         rect_priceTotal.origin.y = MAX(CGRectGetMaxY(rect_priceOld), CGRectGetMaxY(imgProduct.frame)) + newMargin;
         labelPriceFinal.frame = rect_priceTotal;
-        
+
     }
-    
+
     tempRect = labelPriceNew.frame;
-    
-    
+
+
     if (labelPriceOld.hidden == true) {
         labelPrice.frame = CGRectMake(labelPrice.frame.origin.x, labelPriceNew.frame.origin.y, labelPrice.frame.size.width, labelPrice.frame.size.height);
     } else {
         labelPrice.frame = CGRectMake(labelPrice.frame.origin.x, labelPriceOld.frame.origin.y, labelPrice.frame.size.width, labelPrice.frame.size.height);
     }
-    
-    
+
+
     UILabel* tempQuantityLabel = [[UILabel alloc] init];
     [tempQuantityLabel setText:@"0000000000"];
     [tempQuantityLabel setUIFont:kUIFontType16 isBold:false];
@@ -1549,7 +1549,7 @@ static int kTagForNoSpacing = -1;
     [textInputQuantity setKeyboardType:UIKeyboardTypeNumberPad];
     [textInputQuantity setReturnKeyType:UIReturnKeyDone];
     //    [textInputQuantity setEnablesReturnKeyAutomatically:true];
-    
+
     if ([[MyDevice sharedManager] isIphone]) {
         UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
         //        [numberToolbar.layer setBorderWidth:0.5f];
@@ -1560,7 +1560,7 @@ static int kTagForNoSpacing = -1;
         UIBarButtonItem* doneBtn = [[UIBarButtonItem alloc]initWithTitle:Localize(@"apply") style:UIBarButtonItemStyleBordered target:self action:@selector(doneWithNumberPad:)];
         pair.cancelBtn = cancelBtn;
         pair.doneBtn = doneBtn;
-        
+
         numberToolbar.items = @[
                                 cancelBtn,
                                 [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
@@ -1568,18 +1568,18 @@ static int kTagForNoSpacing = -1;
         [numberToolbar sizeToFit];
         textInputQuantity.inputAccessoryView = numberToolbar;
     }
-    
+
     UIColor *color = [Utility getUIColor:kUIColorFontDark];
     textInputQuantity.attributedPlaceholder = [[NSAttributedString alloc] initWithString:quantityStr attributes:@{NSForegroundColorAttributeName:color}];
     pair.textFieldQuantity = textInputQuantity;
     pair.labelFinalPrice = labelPriceFinal;
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     if ([[MyDevice sharedManager] isIphone]) {
         float inputViewMaxY = CGRectGetMaxY(textInputQuantity.frame);
         CGRect finalPriceRect = pair.labelFinalPrice.frame;
@@ -1589,16 +1589,16 @@ static int kTagForNoSpacing = -1;
         pair.labelFinalPrice.frame = finalPriceRect;
         finalPriceRect.origin.x = viewMaxWidth - finalPriceRect.size.width - self.view.frame.size.width * .02f;
         pair.labelFinalPrice.frame = finalPriceRect;
-        
+
         CGRect topViewRect = viewTop.frame;
         topViewRect.size.height = CGRectGetMaxY(pair.labelFinalPrice.frame) + viewTopHeight * .1f;
 //        topViewRect.size.height = CGRectGetMaxY(pair.labelFinalPrice.frame)+finalPriceHeight;
         viewTop.frame = topViewRect;
-        
+
         CGRect bottomViewRect = viewBottom.frame;
         bottomViewRect.origin.y = CGRectGetMaxY(topViewRect);
         viewBottom.frame = bottomViewRect;
-        
+
         CGRect mainViewRect = mainView.frame;
         mainViewRect.size.height = CGRectGetMaxY(bottomViewRect);
         mainView.frame = mainViewRect;
@@ -1607,7 +1607,7 @@ static int kTagForNoSpacing = -1;
         topViewRect.size.height = CGRectGetMaxY(pair.textFieldQuantity.frame) + viewTopHeight * .1f;
         viewTop.frame = topViewRect;
     }
-    
+
     if (([[GuestConfig sharedInstance] hide_price] && ![AppUser isSignedIn]) || [[Addons sharedManager] hide_price]) {
         [labelPriceOld setText:@""];
         [labelPriceNew setText:@""];
@@ -1624,8 +1624,8 @@ static int kTagForNoSpacing = -1;
     } else {
         [textInputQuantity setHidden:false];
     }
-    
-    
+
+
     UIView* middleView = [[UIView alloc] init];
     [mainView addSubview:middleView];
     {
@@ -1653,7 +1653,7 @@ static int kTagForNoSpacing = -1;
                     imgV.layer.borderWidth = 1;
                     imgV.layer.borderColor = [Utility getUIColor:kUIColorBorder].CGColor;
                     [Utility setImage:imgV url:cmItem.imgUrl resizeType:kRESIZE_TYPE_PRODUCT_THUMBNAIL isLocal:false];
-                    
+
                     UILabel* pTitle = [[UILabel alloc] init];
                     pTitle.frame = CGRectMake(
                                             x + CGRectGetMaxX(imgV.frame),
@@ -1669,8 +1669,8 @@ static int kTagForNoSpacing = -1;
                     pTitleFrame.size.height = [pTitle.font lineHeight];
                     pTitle.frame = pTitleFrame;
                     pTitle.center = CGPointMake(pTitle.center.x, internalH * .33f);
-                    
-                    
+
+
                     UILabel* pQty = [[UILabel alloc] init];
                     pQty.frame = CGRectMake(
                                               x + CGRectGetMaxX(imgV.frame),
@@ -1687,9 +1687,9 @@ static int kTagForNoSpacing = -1;
                     pQtyFrame.size.height = [pQty.font lineHeight];
                     pQty.frame = pQtyFrame;
                     pQty.center = CGPointMake(pQty.center.x, internalH * .66f);
-                    
-                    
-                    
+
+
+
                     UILabel* pPrice = [[UILabel alloc] init];
                     pPrice.frame = pQtyFrame;
                     [pPrice setUIFont:kUIFontType16 isBold:false];
@@ -1699,7 +1699,7 @@ static int kTagForNoSpacing = -1;
                     [v addSubview:pPrice];
                     pPrice.frame = pQtyFrame;
                     pPrice.center = CGPointMake(pQty.center.x, internalH * .66f);
-                    
+
                     cmItem.labelQty = pQty;
                     cmItem.labelPrice = pPrice;
 
@@ -1724,7 +1724,7 @@ static int kTagForNoSpacing = -1;
                     imgV.layer.borderWidth = 1;
                     imgV.layer.borderColor = [Utility getUIColor:kUIColorBorder].CGColor;
                     [Utility setImage:imgV url:cmItem.imgUrl resizeType:kRESIZE_TYPE_PRODUCT_THUMBNAIL isLocal:false];
-                    
+
                     UILabel* pTitle = [[UILabel alloc] init];
                     pTitle.frame = CGRectMake(
                                               x + CGRectGetMaxX(imgV.frame),
@@ -1740,8 +1740,8 @@ static int kTagForNoSpacing = -1;
                     pTitleFrame.size.height = [pTitle.font lineHeight];
                     pTitle.frame = pTitleFrame;
                     pTitle.center = CGPointMake(pTitle.center.x, internalH * .33f);
-                    
-                    
+
+
                     UILabel* pQty = [[UILabel alloc] init];
                     pQty.frame = CGRectMake(
                                             x + CGRectGetMaxX(imgV.frame),
@@ -1758,7 +1758,7 @@ static int kTagForNoSpacing = -1;
                     pQtyFrame.size.height = [pQty.font lineHeight];
                     pQty.frame = pQtyFrame;
                     pQty.center = CGPointMake(pQty.center.x, internalH * .66f);
-                    
+
                     UILabel* pPrice = [[UILabel alloc] init];
                     pPrice.frame = pQtyFrame;
                     [pPrice setUIFont:kUIFontType16 isBold:false];
@@ -1769,8 +1769,8 @@ static int kTagForNoSpacing = -1;
                     [v addSubview:pPrice];
                     pPrice.frame = pQtyFrame;
                     pPrice.center = CGPointMake(pQty.center.x, internalH * .66f);
-                    
-                    
+
+
                     cmItem.labelQty = pQty;
                     cmItem.labelPrice = pPrice;
                 }
@@ -1779,44 +1779,44 @@ static int kTagForNoSpacing = -1;
             middleView.frame = middleViewRect;
         }
     }
-    
+
     CGRect topViewRect = viewTop.frame;
     CGRect middleViewRect = middleView.frame;
     CGRect bottomViewRect = viewBottom.frame;
-    
+
     middleViewRect.origin.y = CGRectGetMaxY(topViewRect) - 1;
     middleViewRect.origin.x += 1;
     middleView.frame = middleViewRect;
-    
+
     bottomViewRect.origin.y = CGRectGetMaxY(middleViewRect);
     viewBottom.frame = bottomViewRect;
-    
+
     CGRect mainViewRect = mainView.frame;
     mainViewRect.size.height = CGRectGetMaxY(bottomViewRect);
     mainView.frame = mainViewRect;
-    
+
     [Utility showShadow:mainView];
-    
+
     if ([[TMLanguage sharedManager] isRTLEnabled]) {
         [labelName setTextAlignment:NSTextAlignmentRight];
         [labelDesc setTextAlignment:NSTextAlignmentRight];
         [labelProp setTextAlignment:NSTextAlignmentRight];
     }
-    
-    
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
     return mainView;
-    
+
 }
 
 
@@ -1843,7 +1843,7 @@ static int kTagForNoSpacing = -1;
     textField.delegate = self;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [parentView addSubview:textField];
-    
+
     //    UIView *spacerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     //
     //    if ([[TMLanguage sharedManager] isRTLEnabled]) {
@@ -1862,14 +1862,14 @@ static int kTagForNoSpacing = -1;
         _couponView = nil;
         _couponViewWithAppliedCoupon = nil;
         _couponViewWithTextField = nil;
-        
+
         _rewardDiscountView= nil;
         _rewardDiscountViewWithTextField = nil;
         _autoAppliedCouponView = nil;
         //        [self loadViewDA];
         //        [Cart resetNotificationItemCount];
         //        [self resetMainScrollView: 0.0f];
-        
+
         _scrollView.alpha = 0.0f;
         [self loadViewDA];
         for(UIView *vieww in _viewsAdded)
@@ -1879,16 +1879,16 @@ static int kTagForNoSpacing = -1;
         _scrollView.alpha = 1.0f;
         [self afterRotation:0.5f];
         [self resetMainScrollView:0.5f];
-        
+
         return;
     }
-    
+
     if([alertView tag] == 23)
     {
         if (_cartNeedToMoveToWishlist) {
             [self moveToWishlist:_cartNeedToMoveToWishlist.buttonRight forcedRemove:true];
         }
-        
+
     }
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -1932,7 +1932,7 @@ static int kTagForNoSpacing = -1;
         RLOG(@"_textFieldApplyCoupon = %@", str);
         return YES;
     }
-    
+
     int userDemand = [textField.text intValue];
     PairCart* selectedPairCart = nil;
     for (PairCart* p in _tempPairArray) {
@@ -1954,15 +1954,15 @@ static int kTagForNoSpacing = -1;
             }];
         }
     }
-    
-    
+
+
     int availState = [selectedPairCart.cart getProductAvailibleState:userDemand];
     int qty = [selectedPairCart.cart getProductAvailibleQuantity:userDemand];
     if (availState == PRODUCT_QTY_ZERO) {
         //out of stock
         userDemand = 0;
         //item out of stock and move to wishlist
-        
+
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:pInfo._titleForOuterView message:Localize(@"out_of_stock") delegate:self cancelButtonTitle:Localize(@"Move To Wishlist") otherButtonTitles:nil, nil];
 
         [errorAlert setTag:23];
@@ -1980,8 +1980,8 @@ static int kTagForNoSpacing = -1;
         //available to purchase
         RLOG(@"available to purchase");
     }
-    
-    
+
+
     BOOL isDiscounted;
     float price;
     float oldPrice;
@@ -1997,11 +1997,11 @@ static int kTagForNoSpacing = -1;
     int oldCartCount = selectedPairCart.cart.count;
     int newCartCount = userDemand;
     int incrementCartCount = newCartCount - oldCartCount;
-    
+
 #if ENABLE_PARSE_ANALYTICS
     [[ParseHelper sharedManager] registerParseCartProduct:pInfo._id categoryId:pInfo._parent_id increment:incrementCartCount];
 #endif
-    
+
     selectedPairCart.cart.count = userDemand;
     if ([[Addons sharedManager] enable_mixmatch_products]) {
         if (selectedPairCart.cart.product.mMixMatch) {
@@ -2031,7 +2031,7 @@ static int kTagForNoSpacing = -1;
     NSString* stringGrandTotal = [[Utility sharedManager] convertToString:totalPrice isCurrency:true];
     [_labelTotalItems setText:stringItemsCount];
     [_labelGrandTotal setText:stringGrandTotal];
-    
+
     _cartNeedToMoveToWishlist = selectedPairCart;
     [self updateViews];
     return YES;
@@ -2056,8 +2056,8 @@ static int kTagForNoSpacing = -1;
             RLOG(@"textField= %@", textField);
             RLOG(@"p.textFieldQuantity= %@", p.textFieldQuantity);
             [p.textFieldQuantity setPlaceholder:@""];
-            
-            
+
+
             if(string.length > 0) {
                 NSCharacterSet *numbersOnly = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
                 NSCharacterSet *characterSetFromTextField = [NSCharacterSet characterSetWithCharactersInString:string];
@@ -2136,10 +2136,10 @@ static int kTagForNoSpacing = -1;
     float viewMaxWidth = self.view.frame.size.width * .98f;
     float viewOriginX = self.view.frame.size.width * .01f;
     float viewOriginY = self.view.frame.size.width * .01f;
-    
+
     _labelTotalItems = [[UILabel alloc] init];
     _labelGrandTotal = [[UILabel alloc] init];
-    
+
     UIView* view = [[UIView alloc] init];
     [view setFrame:CGRectMake(viewOriginX, viewOriginY, viewMaxWidth, viewMaxHeight * .3f)];
     [Utility showShadow:view];
@@ -2149,34 +2149,34 @@ static int kTagForNoSpacing = -1;
     [_scrollView addSubview:view];
     [_viewsAdded addObject:view];
     [view setTag:kTagForGlobalSpacing];
-    
+
     UILabel* labelTotalItemsHeading = [[UILabel alloc] init];
     UILabel* labelTotalItems = _labelTotalItems;
     UILabel* labelGrandTotalHeading = [[UILabel alloc] init];
     UILabel* labelGrandTotal = _labelGrandTotal;
-    
+
     [view addSubview:labelTotalItemsHeading];
     [view addSubview:labelTotalItems];
     [view addSubview:labelGrandTotalHeading];
     [view addSubview:labelGrandTotal];
-    
+
     [labelTotalItemsHeading setText:Localize(@"i_total_items")];
     [labelGrandTotalHeading setText:Localize(@"i_cart_totals")];
-    
+
     int itemsCount = [Cart getItemCount];
     float totalPrice = [Cart getTotalPayment];
-    
+
     NSString* stringItemsCount = [NSString stringWithFormat:@"%d", itemsCount];
     NSString* stringGrandTotal = [[Utility sharedManager] convertToString:totalPrice isCurrency:true];
-    
+
     [labelTotalItems setText:stringItemsCount];
     [labelGrandTotal setText:stringGrandTotal];
-    
+
 //    [labelGrandTotalHeading.layer setBorderWidth:1];
     [labelGrandTotalHeading setLineBreakMode:NSLineBreakByCharWrapping];
     [labelGrandTotalHeading setNumberOfLines:0];
     [labelGrandTotalHeading sizeToFitUI];
-    
+
     if ([[TMLanguage sharedManager] isRTLEnabled]) {
         [labelTotalItemsHeading setTextAlignment:NSTextAlignmentRight];
         [labelGrandTotalHeading setTextAlignment:NSTextAlignmentRight];
@@ -2188,23 +2188,23 @@ static int kTagForNoSpacing = -1;
         [labelTotalItems setTextAlignment:NSTextAlignmentRight];
         [labelGrandTotal setTextAlignment:NSTextAlignmentRight];
     }
-    
+
     [labelTotalItemsHeading setUIFont:kUIFontType18 isBold:false];
     [labelTotalItems setUIFont:kUIFontType18 isBold:false];
     [labelGrandTotalHeading setUIFont:kUIFontType20 isBold:false];
     [labelGrandTotal setUIFont:kUIFontType20 isBold:false];
-    
-    
+
+
     labelTotalItemsHeading.textColor = [Utility getUIColor:kUIColorFontLight];
     labelTotalItems.textColor = [Utility getUIColor:kUIColorFontLight];
     labelGrandTotalHeading.textColor = [Utility getUIColor:kUIColorFontDark];
     labelGrandTotal.textColor = [Utility getUIColor:kUIColorFontDark];
-    
+
     float horizontalPadding = view.frame.size.width * .15f;
     float width = view.frame.size.width - horizontalPadding * 2;
     float label1Posy = view.frame.size.height * .33f;
     float label2Posy = view.frame.size.height * .66f;
-    
+
     [labelGrandTotalHeading setFrame:CGRectMake(horizontalPadding,
                                                label2Posy - labelGrandTotalHeading.frame.size.height / 2,
                                                width/2,
@@ -2216,17 +2216,17 @@ static int kTagForNoSpacing = -1;
                                          width/2,
                                          labelGrandTotal.frame.size.height
                                          )];
-    
-    
+
+
     [labelTotalItemsHeading sizeToFitUI];
     [labelGrandTotalHeading sizeToFitUI];
     [labelTotalItems sizeToFitUI];
     [labelGrandTotal sizeToFitUI];
-    
-    
+
+
     [labelTotalItemsHeading setFrame:CGRectMake(horizontalPadding, label1Posy - labelTotalItemsHeading.frame.size.height / 2, width, labelTotalItemsHeading.frame.size.height)];
     [labelTotalItems setFrame:CGRectMake(horizontalPadding, label1Posy - labelTotalItems.frame.size.height / 2, width, labelTotalItems.frame.size.height)];
-    
+
     [labelGrandTotalHeading setFrame:CGRectMake(horizontalPadding,
                                                 label2Posy - labelGrandTotalHeading.frame.size.height / 2,
                                                 width/2,
@@ -2238,7 +2238,7 @@ static int kTagForNoSpacing = -1;
                                          width/2,
                                          labelGrandTotal.frame.size.height
                                          )];
-    
+
     return view;
 }
 //- (UIButton*)addPlaceOrderButton {
@@ -2270,9 +2270,17 @@ static int kTagForNoSpacing = -1;
     if(showKeepShopping == false && showPlaceOrder == false) {
         return;
     }
-    
+
     float buttonHeight = [[MyDevice sharedManager] screenHeightInPortrait] * .075f;
     float viewHeight = buttonHeight * 1.25f;
+    //Yogesh Changes
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+       CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+       if (screenSize.height >= 810){
+           viewHeight = buttonHeight * 2.00f;
+           NSLog(@"iPhone X");
+       }
+   }
     _scrollView.frame = CGRectMake(_scrollView.frame.origin.x, _scrollView.frame.origin.y, _scrollView.frame.size.width, [[MyDevice sharedManager] screenSize].height - [[Utility sharedManager] getBottomBarHeight]  - [[Utility sharedManager] getTopBarHeight] - viewHeight);
 }
 -(void)keepShoppingAndPlaceorderButtonView {
@@ -2281,7 +2289,7 @@ static int kTagForNoSpacing = -1;
     if(showKeepShopping == false && showPlaceOrder == false) {
         return;
     }
-    
+
     float buttonHeight = [[MyDevice sharedManager] screenHeightInPortrait] * .075f;
     float viewHeight = buttonHeight * 1.25f;
     _scrollView.frame = CGRectMake(_scrollView.frame.origin.x, _scrollView.frame.origin.y, _scrollView.frame.size.width, [[MyDevice sharedManager] screenSize].height - [[Utility sharedManager] getBottomBarHeight]  - [[Utility sharedManager] getTopBarHeight] - viewHeight);
@@ -2291,17 +2299,25 @@ static int kTagForNoSpacing = -1;
     }
     _footerView=[[UIView alloc]init];
     _footerView.frame = CGRectMake(0, _scrollView.frame.size.height, viewWidth, viewHeight);
+    //Yogesh Changes
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+        if (screenSize.height >= 810){
+            _footerView.frame = CGRectMake(0, _scrollView.frame.size.height-buttonHeight * 0.70f, viewWidth, viewHeight);
+            NSLog(@"iPhone X f");
+        }
+    }
     _footerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_footerView];
-    
-    
-    
+
+
+
     BOOL isSingleButton = false;
     if (showKeepShopping != showPlaceOrder) {
         isSingleButton = true;
     }
-    
-    
+
+
     if (showKeepShopping) {
         [self addKeepshoppingButton:isSingleButton];
     }
@@ -2363,7 +2379,7 @@ static int kTagForNoSpacing = -1;
         if (_isKeyboardVisible) {
             return;
         }
-        
+
         RLOG(@"Button moveToWishlist");
         if ([button isSelected]) {
             [button setSelected:false];
@@ -2379,7 +2395,7 @@ static int kTagForNoSpacing = -1;
             [_viewsAdded removeObject:button.superview.superview];
             [self resetMainScrollView:0.25f];
         }];
-        
+
         for (PairCart* p in _tempPairArray) {
             if(button == p.buttonRight || button == p.buttonLeft){
                 ProductInfo* pInfo = p.cart.product;
@@ -2408,7 +2424,7 @@ static int kTagForNoSpacing = -1;
     if (_isKeyboardVisible) {
         return;
     }
-    
+
     RLOG(@"Button removeFromList");
     if ([button isSelected]) {
         [button setSelected:false];
@@ -2447,9 +2463,9 @@ static int kTagForNoSpacing = -1;
         return;
     }
     if ([[Utility sharedManager] checkForDemoApp:true]) return;
-    
+
     _isPlaceOrderClicked = true;
-    
+
 #if ESCAPE_CART_VARIFICATION
     [self goToNextStep];
     return;
@@ -2459,7 +2475,7 @@ static int kTagForNoSpacing = -1;
 }
 - (void)fetchCartFullData {
     [[[DataManager sharedManager] tmDataDoctor] fetchCartProductsDataFromPlugin:^(id data) {
-        
+
         if ([[Addons sharedManager] enable_multi_store_checkout] && [[MultiStoreCheckoutConfig getInstance] isDataFetched] == false) {
             [[[DataManager sharedManager] tmDataDoctor] getWCCMData:^(id data) {
 //                RLOG(@"%@", data);
@@ -2476,7 +2492,7 @@ static int kTagForNoSpacing = -1;
             [MRProgressOverlayView dismissOverlayForView:[[UIApplication sharedApplication] keyWindow] animated:YES];
             [self goToNextStep];
         }
-        
+
 //        [MRProgressOverlayView dismissOverlayForView:[[UIApplication sharedApplication] keyWindow] animated:YES];
 //        [self goToNextStep];
     } failure:^(NSString *error) {
@@ -2490,8 +2506,8 @@ static int kTagForNoSpacing = -1;
         selectedPairCart = p;
         int userDemand = selectedPairCart.cart.count;
         ProductInfo* pInfo = selectedPairCart.cart.product;
-        
-        
+
+
         if(selectedPairCart.cart.prddDate){
             NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
             [dateFormat setDateFormat:@"dd/MM/yyyy"];
@@ -2523,8 +2539,8 @@ static int kTagForNoSpacing = -1;
                             selectedTimeEM = [[endTimes objectAtIndex:1] intValue];
                         }
                     }
-                    
-                    
+
+
                     int currentTimeEH = 0;
                     int currentTimeEM = 0;
                     NSDate *now = [NSDate date];
@@ -2548,7 +2564,7 @@ static int kTagForNoSpacing = -1;
                 }
             }
         }
-        
+
         if (selectedPairCart.cart.selectedVariationIndex != -1) {
             int userDemand_ByVariation = 0;
             for (PairCart* temp_p in _tempPairArray) {
@@ -2564,13 +2580,13 @@ static int kTagForNoSpacing = -1;
                     userDemand_ByVariation = 0;
                     _cartNeedToMoveToWishlist = selectedPairCart;
                     selectedPairCart.cart.count = userDemand_ByVariation;
-                    
+
                     //item out of stock and move to wishlist
-                    
+
                     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:pInfo._titleForOuterView message:Localize(@"out_of_stock") delegate:self cancelButtonTitle:Localize(@"Move To Wishlist") otherButtonTitles:nil, nil];
                     [errorAlert setTag:23];
                     [errorAlert show];
-                    
+
                     return;
                 }
                 else if (availState_ByVariation == PRODUCT_QTY_STOCK) {
@@ -2579,7 +2595,7 @@ static int kTagForNoSpacing = -1;
                     //                    _cartNeedToMoveToWishlist = selectedPairCart;
                     //                    selectedPairCart.cart.count = userDemand_ByVariation;
                     //                    [selectedPairCart.textFieldQuantity setText:[NSString stringWithFormat:@"%d",userDemand_ByVariation]];
-                    
+
                     NSString * strQty = [NSString stringWithFormat:Localize(@"items_available"), qty_ByVariation];
                     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:pInfo._titleForOuterView message:strQty delegate:self cancelButtonTitle:Localize(@"i_ok") otherButtonTitles:nil, nil];
                     [errorAlert setTag:24];
@@ -2591,9 +2607,9 @@ static int kTagForNoSpacing = -1;
                 }
             }
         }
-        
-        
-        
+
+
+
         int availState = [selectedPairCart.cart getProductAvailibleState:userDemand];
         int qty = [selectedPairCart.cart getProductAvailibleQuantity:userDemand];
         if (availState == PRODUCT_QTY_ZERO) {
@@ -2601,13 +2617,13 @@ static int kTagForNoSpacing = -1;
             userDemand = 0;
             _cartNeedToMoveToWishlist = selectedPairCart;
             selectedPairCart.cart.count = userDemand;
-            
+
             //item out of stock and move to wishlist
 
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:pInfo._titleForOuterView message:Localize(@"out_of_stock") delegate:self cancelButtonTitle:Localize(@"Move To Wishlist") otherButtonTitles:nil, nil];
             [errorAlert setTag:23];
             [errorAlert show];
-            
+
             return;
         }
         else if (availState == PRODUCT_QTY_STOCK) {
@@ -2616,7 +2632,7 @@ static int kTagForNoSpacing = -1;
             _cartNeedToMoveToWishlist = selectedPairCart;
             selectedPairCart.cart.count = userDemand;
             [selectedPairCart.textFieldQuantity setText:[NSString stringWithFormat:@"%d",userDemand]];
-            
+
             NSString * strQty = [NSString stringWithFormat:Localize(@"items_available"), qty];
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:pInfo._titleForOuterView message:strQty delegate:self cancelButtonTitle:Localize(@"i_ok") otherButtonTitles:nil, nil];
             [errorAlert setTag:24];
@@ -2627,9 +2643,9 @@ static int kTagForNoSpacing = -1;
             //available to purchase
         }
     }
-    
-    
-    
+
+
+
     AppUser* appUser = [AppUser sharedManager];
     if(appUser._isUserLoggedIn || [[GuestConfig sharedInstance] guest_checkout]){
         BOOL gotoDirectConfirmation = true;
@@ -2655,7 +2671,7 @@ static int kTagForNoSpacing = -1;
     } else{
         [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginCompletedCart" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(LoginCompletedCart:) name:@"LoginCompletedCart" object:nil];
-        
+
         ViewControllerMain* mainVC = [ViewControllerMain getInstance];
         ViewControllerLeft* leftVC = (ViewControllerLeft*)(mainVC.revealController.rearViewController);
         [leftVC showLoginPopup:true];
@@ -2727,8 +2743,8 @@ static int kTagForNoSpacing = -1;
     } else {
         [labelHeading setText:[NSString stringWithFormat:@"%@:", Localize(@"applied_coupons")]];
     }
-    
-    
+
+
     [labelHeading setTextColor:[Utility getUIColor:kUIColorFontLight]];
     [labelHeading setNumberOfLines:0];
     [labelHeading sizeToFitUI];
@@ -2738,12 +2754,12 @@ static int kTagForNoSpacing = -1;
         UILabel* labelAmountColon= [[UILabel alloc] init];
         [labelAmountColon setUIFont:kUIFontType16 isBold:false];
         fontHeight = [[labelAmountColon font] lineHeight];
-        
+
         float discountAmount = appliedCoupon.discount_amount;
         NSString* couponTitleString = [NSString stringWithFormat:@"%@", appliedCoupon.title];
         NSString* couponCostString = [NSString stringWithFormat:@"- %@",[[Utility sharedManager] convertToString:discountAmount isCurrency:true symbolAtLast:false]];
-        
-        
+
+
         UILabel* labelTitle= [[UILabel alloc] init];
         [labelTitle setUIFont:kUIFontType16 isBold:false];
         [labelTitle setTextColor:[Utility getUIColor:kUIColorFontLight]];
@@ -2758,8 +2774,8 @@ static int kTagForNoSpacing = -1;
         }
         labelTitle.layer.borderWidth = 1;
         labelTitle.layer.borderColor = [Utility getUIColor:kUIColorBorder].CGColor;
-        
-        
+
+
         UILabel* labelAmount= [[UILabel alloc] init];
         [labelAmount setUIFont:kUIFontType16 isBold:false];
         fontHeight = [[labelAmount font] lineHeight];
@@ -2883,7 +2899,7 @@ static int kTagForNoSpacing = -1;
     }
     if (i < _kTotalViewsCartScreen && _propCollectionView[i]._insetTop != -1) {
         collectionView.contentInset = UIEdgeInsetsMake(_propCollectionView[i]._insetTop, _propCollectionView[i]._insetLeft, _propCollectionView[i]._insetBottom, _propCollectionView[i]._insetRight);
-        
+
     }
     switch (i) {
         case _kCrossSell:
@@ -2925,7 +2941,7 @@ static int kTagForNoSpacing = -1;
                 if ([pInfo._images count] == 0) {
                     [pInfo._images addObject:[[ProductImage alloc] init]];
                 }
-                
+
                 if (([[GuestConfig sharedInstance] hide_price] && ![AppUser isSignedIn]) || [[Addons sharedManager] hide_price]) {
                     [[cell productPriceOriginal] setText:@""];
                     [[cell productPriceFinal] setText:@""];
@@ -3172,13 +3188,13 @@ static int kTagForNoSpacing = -1;
     [self afterRotation:0.1f];
 }
 - (void)beforeRotation:(float)dt {
-    
+
     [UIView animateWithDuration:dt animations:^{
         [_footerView setAlpha:0.0f];
     }completion:^(BOOL finished){
     }];
-    
-    
+
+
     UIView* lastView = [_viewsAdded lastObject];
     for(UIView *view in _viewsAdded)
     {
@@ -3211,10 +3227,10 @@ static int kTagForNoSpacing = -1;
         [UIView animateWithDuration:dt animations:^{
             [vieww setAlpha:1.0f];
         }completion:^(BOOL finished){
-            
+
         }];
     }
-    
+
     [UIView animateWithDuration:dt animations:^{
         [_footerView setAlpha:1.0f];
     }completion:^(BOOL finished){
@@ -3278,27 +3294,27 @@ static int kTagForNoSpacing = -1;
     if(itemsCount == 0){
         _finalAmountView.hidden = true;
         _placeOrderButton.hidden = true;
-        
+
         _scrollView.hidden = true;
         _footerView.hidden = true;
         _labelNoItems.hidden = false;
         _labelNoItems.text = Localize(@"no_items_in_cart");
-        
+
     }else{
         _finalAmountView.hidden = false;
         _placeOrderButton.hidden = false;
-        
+
         _scrollView.hidden = false;
         _footerView.hidden = false;
         _labelNoItems.hidden = true;
-        
+
     }
     NSString* stringItemsCount = [NSString stringWithFormat:@"%d", itemsCount];
     NSString* stringGrandTotal = [[Utility sharedManager] convertToString:totalPrice isCurrency:true];
-    
+
     [_labelTotalItems setText:stringItemsCount];
     [_labelGrandTotal setText:stringGrandTotal];
-    
+
     [self loadAutoCoupons];
 }
 
@@ -3312,7 +3328,7 @@ static int kTagForNoSpacing = -1;
     if (self.isLoadingAppliedCoupon == true) {
         return;
     }
-    
+
     [[[CartMeta sharedInstance] getAppliedCoupons] removeAllObjects];
     self.isLoadingAppliedCoupon = true;
     [self createAppliedCouponView];
@@ -3347,7 +3363,7 @@ static int kTagForNoSpacing = -1;
     clickedItemData.pInfo = productClicked;
     clickedItemData.variationId = variationId;
     clickedItemData.variationIndex = variationIndex;
-    
+
     DataPass* previousItemData = [[DataPass alloc] init];
     previousItemData.itemId = currentItemData.cInfo._id;
     previousItemData.isCategory = currentItemData.isCategory;
@@ -3357,8 +3373,8 @@ static int kTagForNoSpacing = -1;
     previousItemData.cInfo = currentItemData.cInfo;
     previousItemData.variationId = currentItemData.variationId;
     previousItemData.variationIndex = currentItemData.variationIndex;
-    
-    
+
+
     ViewControllerProduct* vcProduct = [[Utility sharedManager] pushProductScreen:mainVC.vcCenterTop];
     //    [vcProduct loadData:clickedItemData previousItem:previousItemData drillingLevel:0];
     clickedItemData.cart = cart;
@@ -3381,8 +3397,8 @@ static int kTagForNoSpacing = -1;
 //            }
 //        }
 //    }
-    
-    
+
+
 }
 - (UIView*)addBorder:(UIView*)view{
     UIView* viewBorder = [[UIView alloc] init];
@@ -3405,8 +3421,8 @@ static int kTagForNoSpacing = -1;
     [view setTag:kTagForGlobalSpacing];
     float fontHeight = [[labelTemp font] lineHeight];
     [view addSubview:[self addBorder:view]];
-    
-    
+
+
     float textFieldPosX = self.view.frame.size.width * 0.02f;
     float textFieldPosY = self.view.frame.size.width * 0.02f;
     float textFieldWidth = view.frame.size.width - self.view.frame.size.width * 0.04f;
@@ -3417,8 +3433,8 @@ static int kTagForNoSpacing = -1;
     } else {
         fontType = kUIFontType18;
     }
-    
-    
+
+
     UILabel* cartPlaceHolder = [[UILabel alloc] initWithFrame:CGRectMake(textFieldPosX, textFieldPosY, textFieldWidth, textFieldHeight)];
     [cartPlaceHolder setUIFont:fontType isBold:false];
     [cartPlaceHolder setTextColor:[Utility getUIColor:kUIColorFontLight]];
@@ -3431,19 +3447,19 @@ static int kTagForNoSpacing = -1;
     [cartPlaceHolder setLineBreakMode:NSLineBreakByWordWrapping];
     [cartPlaceHolder sizeToFitUI];
     [view addSubview:cartPlaceHolder];
-    
+
     if (cartPlaceHolder.frame.size.height != 0) {
         itemPosY = self.view.frame.size.width * 0.02f + CGRectGetMaxY(cartPlaceHolder.frame);
     }
-    
-    
+
+
     UILabel* tempLabel = [[UILabel alloc] init];
     [tempLabel setText:@"W"];
     [tempLabel setUIFont:fontType isBold:false];
     [tempLabel sizeToFit];
     int fontW = tempLabel.frame.size.width;
     int fontH = tempLabel.frame.size.height;
-    
+
     CGRect rectTextView;
     int noteLineCount = cartNote.note_line_count;
     BOOL noteSingleLine = cartNote.note_single_line;
@@ -3472,11 +3488,11 @@ static int kTagForNoSpacing = -1;
             textView = [self createTextView:view fontType:fontType fontColorType:kUIColorFontDark frame:rectTextView tag:0 textStrPlaceHolder:Localize(@"cart_note_placeholder") textView:textView];
             [textView setKeyboardType:UIKeyboardTypeDecimalPad];
             break;
-            
+
         default:
             break;
     }
-    
+
     if ([[MyDevice sharedManager] isIphone]) {
         UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
         numberToolbar.backgroundColor = [UIColor lightGrayColor];
@@ -3487,19 +3503,19 @@ static int kTagForNoSpacing = -1;
         [numberToolbar sizeToFit];
         textView.inputAccessoryView = numberToolbar;
     }
-    
-    
+
+
     itemPosY = self.view.frame.size.width * 0.02f + CGRectGetMaxY(textView.frame);
-    
+
     [view setFrame:CGRectMake(self.view.frame.size.width * 0.01f, 0, self.view.frame.size.width * 0.98f, itemPosY)];
     return view;
 }
 -(void)resetCrosscellData{
     Addons* addons = [Addons sharedManager];
     if (addons.show_crosssell_products == true) {
-        
+
         RLOG(@"**************   crossCell Product View  *************");
-        
+
         crossCellIds = [[NSMutableArray alloc] init];
         for (NSObject* obj in [Cart getAll]) {
             Cart* cInfo = (Cart*)obj;
@@ -3570,11 +3586,11 @@ static int kTagForNoSpacing = -1;
                     [Cart setOrderNoteCart:textView.text];
                 }
             }break;
-                
+
             default:
                 break;
         }
-        
+
     }
 }
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -3590,9 +3606,9 @@ static int kTagForNoSpacing = -1;
 - (void)applyRewardDiscount:(UIButton*)button {
     _rewardPointsApplied = !_rewardPointsApplied;
     [self updateRewardDiscountView];
-    
-    
-    
+
+
+
 }
 - (BOOL) rewardPointsCheck {
     return [[Addons sharedManager] enable_custom_points]
@@ -3604,7 +3620,7 @@ static int kTagForNoSpacing = -1;
     if (![self rewardPointsCheck]) {
         return;
     }
-    
+
     NSMutableString* str = [[NSMutableString alloc] init];
     NSArray* carts = [[AppUser sharedManager] _cartArray];
     int i = 0;
@@ -3620,14 +3636,14 @@ static int kTagForNoSpacing = -1;
         }
         i++;
     }
-    
+
     NSString* prodData = [NSString stringWithFormat:@"[%@]", str];
-    
+
     NSDictionary* params = @{@"type": base64_str(@"poll_reward_data"),
                              @"prod_data": base64_str(prodData),
                              @"email_id": base64_str([[AppUser sharedManager] _email]),
                              @"user_id": base64_int([[AppUser sharedManager] _id])};
-    
+
     [Utility showProgressView:Localize(@"please_wait")];
     [[DataManager getDataDoctor] getCartProductsRewardPoints:params
                                                      success:^(id data) {
